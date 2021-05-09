@@ -34,7 +34,7 @@ LOAD DATA LOCAL INFILE './processed/regions.csv' INTO TABLE Region
 
 CREATE TABLE IF NOT EXISTS Democracies(
    country   VARCHAR(58) NOT NULL PRIMARY KEY
-  ,democrocy_index  VARCHAR(100) NOT NULL,
+  ,democracy_index  VARCHAR(100) NOT NULL,
    FOREIGN KEY (country) REFERENCES Countries(country)  ON DELETE CASCADE  ON UPDATE CASCADE
 );
 LOAD DATA LOCAL INFILE './processed/democracies.csv' INTO TABLE Democracies
@@ -117,3 +117,74 @@ CREATE TABLE IF NOT EXISTS covid19_recovered_global(
 );
 LOAD DATA LOCAL INFILE './processed/covid19_recovered_global.csv' INTO TABLE covid19_recovered_global
    FIELDS TERMINATED BY ',';  
+
+
+DELIMITER //
+
+CREATE PROCEDURE Query1(IN c VARCHAR(58))
+BEGIN
+   SELECT * 
+   FROM Malaria 
+   WHERE country = c;
+
+END; //
+
+CREATE PROCEDURE TopMalaria()
+BEGIN
+   SELECT country, malaria_incidence
+   FROM Malaria 
+   WHERE YEAR(Malaria.year) = 2019
+   ORDER BY Malaria.malaria_incidence DESC
+   LIMIT 20;
+
+END; //
+
+CREATE PROCEDURE LowestMalaria()
+BEGIN
+   SELECT country, malaria_incidence
+   FROM Malaria 
+   WHERE YEAR(Malaria.year) = 2019
+   ORDER BY Malaria.malaria_incidence ASC
+   LIMIT 20;
+
+END; //
+
+CREATE PROCEDURE TopPopulation()
+BEGIN
+   SELECT * 
+   FROM Population 
+   ORDER BY population DESC
+   LIMIT 20;
+
+END; //
+
+CREATE PROCEDURE LowestPopulation()
+BEGIN
+   SELECT * 
+   FROM Population 
+   ORDER BY population ASC
+   LIMIT 20;
+
+END; //
+
+CREATE PROCEDURE TopDemocracy()
+BEGIN
+   SELECT * 
+   FROM Democracies 
+   ORDER BY democracy_index DESC
+   LIMIT 20;
+
+END; //
+
+CREATE PROCEDURE LowestDemocracy()
+BEGIN
+   SELECT * 
+   FROM Democracies 
+   ORDER BY democracy_index ASC
+   LIMIT 20;
+
+END; //
+
+
+
+DELIMITER ;
