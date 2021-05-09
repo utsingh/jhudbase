@@ -11,13 +11,13 @@
 	$dataPoints = array();
 
 	//we'll soon see how to upgrade our queries so they aren't plain strings
-	$sql = "SELECT * FROM COVID19_US_Confirmed;";
+	$sql = "SELECT * FROM Population;";
 
 	//execute the query, then run through the result table row by row to
 	//put each row's data into our array
 	if ($result = mysqli_query($conn,$sql)){
 	   foreach($result as $row){
-	      array_push($dataPoints, array( "label"=> $row["Combined_Key"], "y"=> $row["04_12_2021"]));
+	      array_push($dataPoints, array( "label"=> $row["country"], "y"=> $row["population"]));
 	   }
 	}
 	
@@ -35,10 +35,13 @@ window.onload = function () {
 		exportEnabled: true,
 		theme: "light1", // "light1", "light2", "dark1", "dark2"
 		title:{
-			text: "PHP Line Chart from Database - MySQLi"
+			text: "Population Data from mysqli"
+		},
+		axisX:{
+			interval: 1
 		},
 		data: [{
-			type: "line", //change type to column, bar, line, area, pie, etc  
+			type: "column", //change type to column, bar, line, area, pie, etc  
 			dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 		}]
 	});
@@ -47,7 +50,7 @@ window.onload = function () {
 </script>
 </head>
 <body>
-	<div id="chartContainer" style="height: 2000px; width: 400%;"></div>
+	<div id="chartContainer" ></div><!--style="height: 100%; width: 100%;"></div>-->
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
