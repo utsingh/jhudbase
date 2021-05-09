@@ -26,7 +26,7 @@ def covid():
 
 def filterCountries(fn):
     filterDF = pd.read_csv(fn)
-    countriesDF = pd.read_csv("Countries.csv")
+    countriesDF = pd.read_csv(os.path.join("processed", "Countries.csv"))
 
     filterCountries = filterDF["country"].tolist()
     realCountries= countriesDF["country"].tolist()
@@ -40,7 +40,7 @@ def filterCountries(fn):
 
 def filterCountriesVerifier(fn):
     filterDF = pd.read_csv(fn)
-    countriesDF = pd.read_csv(os.path.join("processed", "covid19_recovered_global.csv"))
+    countriesDF = pd.read_csv(os.path.join("processed", "Countries.csv"))
 
     filterCountries = filterDF["country"].tolist()
     realCountries= countriesDF["country"].tolist()
@@ -53,5 +53,5 @@ def filterCountriesVerifier(fn):
         print(country, difflib.get_close_matches(country, countryDiff), difflib.get_close_matches(country.split()[0], countryDiff), "\n")
 
 # covid()
-filterCountries(os.path.join("processed", "covid19_deaths_global-small.csv"))
+filterCountries(os.path.join("original", "regions.csv"))
     

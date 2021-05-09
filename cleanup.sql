@@ -19,4 +19,6 @@ DROP TABLE IF EXISTS Population;
 DROP TABLE IF EXISTS covid19_confirmed_global;
 DROP TABLE IF EXISTS covid19_deaths_global;
 DROP TABLE IF EXISTS covid19_recovered_global;
+DROP TABLE IF EXISTS Democracies;
+DROP TABLE IF EXISTS Regions;
 DROP TABLE IF EXISTS Countries;

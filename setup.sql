@@ -24,6 +24,21 @@ CREATE TABLE IF NOT EXISTS Countries(
 LOAD DATA LOCAL INFILE './processed/Countries.csv' INTO TABLE Countries
    FIELDS TERMINATED BY ',';  
 
+CREATE TABLE IF NOT EXISTS Region(
+   country   VARCHAR(58) NOT NULL PRIMARY KEY
+  ,region  VARCHAR(100) NOT NULL,
+   FOREIGN KEY (country) REFERENCES Countries(country)  ON DELETE CASCADE  ON UPDATE CASCADE
+);
+LOAD DATA LOCAL INFILE './processed/regions.csv' INTO TABLE Region
+   FIELDS TERMINATED BY ',';  
+
+CREATE TABLE IF NOT EXISTS Democracies(
+   country   VARCHAR(58) NOT NULL PRIMARY KEY
+  ,democrocy_index  VARCHAR(100) NOT NULL,
+   FOREIGN KEY (country) REFERENCES Countries(country)  ON DELETE CASCADE  ON UPDATE CASCADE
+);
+LOAD DATA LOCAL INFILE './processed/democracies.csv' INTO TABLE Democracies
+   FIELDS TERMINATED BY ',';  
 
 CREATE TABLE IF NOT EXISTS Population(
    country    VARCHAR(24) NOT NULL PRIMARY KEY,
