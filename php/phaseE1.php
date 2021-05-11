@@ -33,7 +33,7 @@ if (empty($item)) {
       //the variables that follow: 's' means string, 'i' means integer, 'd' means
       //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
       //and the other two are strings, the first argument included should be "sis".
-      $stmt->bind_param("s", $item);
+      $stmt->bind_param("ss", "UNDER" ,$item);
 
       //Run the actual query
       if ($stmt->execute()) {
