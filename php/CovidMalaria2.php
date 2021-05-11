@@ -31,6 +31,7 @@ ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
 $item = $_POST['item'];
+echo $item;
 $underover = isset($_POST['cars']);
 
 //construct an array in which we'll store our data
