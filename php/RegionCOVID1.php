@@ -113,7 +113,7 @@ window.onload = function () {
          text: "Regional COVID: NORTH/SOUTH Hemisphere"
       },
       data: [{
-         type: "line", //change type to column, bar, line, area, pie, etc  
+         type: "bar", //change type to column, bar, line, area, pie, etc  
          dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
       }]
    });
