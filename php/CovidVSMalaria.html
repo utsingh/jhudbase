@@ -1,121 +1,72 @@
-<!DOCTYPE html>
 <html>
-<head>
-<title>COVID19 VS Malaria</title>
-<style>
-  ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style>
-</head>
-  <body>
-
-
-<!-- Navigation Menu -->
-<ul>
-  <li><a href="kgorman4_usingh5.html">Home</a></li>
-  
-  <!--<li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Overviews</a>
-    <div class="dropdown-content">
-      <a href="oTopMalaria.php">Top Malaria</a>
-      <a href="#">Lowest Malaria</a>
-    </div>
-  </li>-->
-  <li><a href="Overviews.html">Overviews</a></li>
-  <li><a href="MalariaVSCovid.html">Malaria vs COVID-19</a></li>
-  <li><a href="Population.html">Population</a></li>
-  <li><a href="RegionalCovid.html">Regional COVID-19</a></li>
-  <li><a href="GeographicAggregates.html">Geographic Aggregates</a></li>
-  <li><a href="HealthcareVSDemocracy.html">Healthcare vs Democracy</a></li>
-  <li><a href="LifeExpectancy.html">Life Expectancy</a></li>
-  <li><a href="CovidAggregates.html">COVID Aggregates</a></li>
-</ul>
-
-
-    <h1>COVID-19 vs Malaria</h1>
+   <body>
+	<h1>COVID-19 vs Malaria</h1>
     <h3>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h3>
 
     <hr><br>
 
-<h3>1. Which are the countries with malaria incidence rates in the world where cumulative COVID19 case counts are (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)? </h3>
+   	<h3>1. Which are the countries with malaria incidence rates in the world where cumulative COVID19 case counts are (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)? </h3>
     <h3> Example: "UNDER 100 OVER 1" -- (will return all countries where COVID cases are under 100 OR over 1)</h3>
-  <form action="CovidMalaria1.php" method="post">
-    <label for="trucks">Choose Under / Over: </label>
-      <select id="trucks" name="trucks">
-        <option value="UNDER">Under</option>
-        <option value="OVER">Over</option>
-      </select>
-    Threshold: <input type="text" name="option"><br>
-    <label for="trucks">Choose Under / Over: </label>
-      <select id="trucks" name="trucks">
-        <option value="UNDER">Under</option>
-        <option value="OVER">Over</option>
-      </select>
-    Threshold: <input type="text" name="option">
-    <input type="submit">
-  </form>
-  <br/><br/>
+	<form action="CovidMalaria1.php" method="post">
+		<label for="trucks">Choose Under / Over: </label>
+		  <select id="trucks" name="trucks">
+		    <option value="UNDER">Under</option>
+		    <option value="OVER">Over</option>
+		  </select>
+		Threshold: <input type="text" name="option"><br>
+		<label for="trucks">Choose Under / Over: </label>
+		  <select id="trucks" name="trucks">
+		    <option value="UNDER">Under</option>
+		    <option value="OVER">Over</option>
+		  </select>
+		Threshold: <input type="text" name="option">
+		<input type="submit">
+	</form>
+	<br/><br/>
 
-  <h3>2. What are the COVID-19 incidents for the countries with malaria rates (UNDER/ABOVE) (Threshold amount)?</h3>
+	<h3>2. What are the COVID-19 incidents for the countries with malaria rates (UNDER/ABOVE) (Threshold amount)?</h3>
     <h3> Example: "UNDER 100" -- (will return all countries where malaria rates are UNDER 100)</h3>
-  <form action="CovidMalaria2.php" method="post">
-    <label for="cars">Choose Under / Over: </label>
-      <select id="cars" name="cars">
-        <option value="UNDER">Under</option>
-        <option value="OVER">Over</option>
-      </select>
-    Threshold: <input type="text" name="item">
-    <input type="submit">
-  </form>
-  <br/><br/>
+	Malaria
+	<form action="CovidMalaria21.php" method="post">
+		<label for="cars">Choose Under / Over: </label>
+		  <select id="cars" name="cars">
+		    <option value="UNDER">Under</option>
+		    <option value="OVER">Over</option>
+		  </select>
+		Threshold: <input type="text" name="item">
+		<input type="submit">
+	</form>
+	Covid Confirmed
+	<form action="CovidMalaria22.php" method="post">
+		<label for="cars">Choose Under / Over: </label>
+		  <select id="cars" name="cars">
+		    <option value="UNDER">Under</option>
+		    <option value="OVER">Over</option>
+		  </select>
+		Threshold: <input type="text" name="item">
+		<input type="submit">
+	</form>
+	Covid Recovered
+	<form action="CovidMalaria23.php" method="post">
+		<label for="cars">Choose Under / Over: </label>
+		  <select id="cars" name="cars">
+		    <option value="UNDER">Under</option>
+		    <option value="OVER">Over</option>
+		  </select>
+		Threshold: <input type="text" name="item">
+		<input type="submit">
+	</form>
+	Covid Deaths
+	<form action="CovidMalaria24.php" method="post">
+		<label for="cars">Choose Under / Over: </label>
+		  <select id="cars" name="cars">
+		    <option value="UNDER">Under</option>
+		    <option value="OVER">Over</option>
+		  </select>
+		Threshold: <input type="text" name="item">
+		<input type="submit">
+	</form>
+	<br/><br/>
 
-  </body>
+   </body>
 </html>
