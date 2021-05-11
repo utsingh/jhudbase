@@ -11,8 +11,8 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item = $_POST['threshold3'];
-$underover = $_POST['underover3'];
+$item = isset($_POST['threshold3']);
+$underover = isset($_POST['underover3']);
 
 echo "<h2>covidmalaria2</h2>";
 echo "Under/Over: ";
@@ -34,7 +34,7 @@ if (empty($item)) {
       //the variables that follow: 's' means string, 'i' means integer, 'd' means
       //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
       //and the other two are strings, the first argument included should be "sis".
-      $stmt->bind_param("ss" ,$underover, $item);
+      $stmt->bind_param("ss", $underover, $item);
       //Run the actual query
       if ($stmt->execute()) {
 
