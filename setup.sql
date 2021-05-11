@@ -932,7 +932,7 @@ END; //
 
 --Which countries solved (less than X cases) COVID crises in under (N DAYS) and display their democracy, life expectancy, and population size?
 DROP PROCEDURE IF EXISTS COVIDCrisisHandling1 //
-CREATE PROCEDURE COVIDCrisisHandling1(IN x1 NUMERIC(9,4)), IN x2 NUMERIC(9,4))
+CREATE PROCEDURE COVIDCrisisHandling1(IN x1 NUMERIC(9,4), IN x2 NUMERIC(9,4))
 BEGIN
    WITH Solved AS (
            WITH MinCOVID19 AS (
@@ -955,15 +955,15 @@ BEGIN
            ON covid19_confirmed_global.country = MinCOVID19.country
            WHERE covid19_confirmed_global.dataDate = DATE_ADD(MinCOVID19.dataDate, INTERVAL x2 DAY)
            AND covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths < x1)
-SELECT Solved.country, Solved.active, democracy_index, life_expectancy, population
-FROM Solved 
-INNER JOIN Democracies
-ON Solved.country = Democracies.country 
-INNER JOIN MostRecentLifeExpectancy 
-ON Solved.country = MostRecentLifeExpectancy.country
-INNER JOIN Population 
-ON Solved.country = Population.country
-WHERE MostRecentLifeExpectancy.sex = "Both sexes" AND MostRecentLifeExpectancy.age = 0
+   SELECT Solved.country, Solved.active, democracy_index, life_expectancy, population
+   FROM Solved 
+   INNER JOIN Democracies
+   ON Solved.country = Democracies.country 
+   INNER JOIN MostRecentLifeExpectancy 
+   ON Solved.country = MostRecentLifeExpectancy.country
+   INNER JOIN Population 
+   ON Solved.country = Population.country
+   WHERE MostRecentLifeExpectancy.sex = "Both sexes" AND MostRecentLifeExpectancy.age = 0;
 END; //
 
 
