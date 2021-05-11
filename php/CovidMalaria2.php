@@ -70,7 +70,7 @@ if (empty($item)) {
             echo "No bids found for the specified item";
 
          } else {
-	 /*
+	 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
             echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
@@ -87,24 +87,8 @@ if (empty($item)) {
             } 
          
 	 
-            echo "</table>";*/
-/*
-            for ($i = 0; $i < count($arraytime); $i++) {
-                $arr[] = array('x' => $arraytime[$i], 'y' => $arraytime[$i]);
-            }
+            echo "</table>";
 
-            echo json_encode($dataPoints);
-            //foreach($result as $row){
-            while ($row = $result->fetch_row()) {
-               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
-               //array_push($dataPoints2, array( "label"=> $row["country"], "y"=> $row["confirmed"]));
-               //array_push($dataPoints3, array( "label"=> $row["country"], "y"=> $row["recovered"]));
-               //array_push($dataPoints4, array( "label"=> $row["country"], "y"=> $row["deaths"]));
-            }*/
-
-            foreach ($result as $key=>$index){
-    echo "$key => $index <br>";
-}
          }	 
 
          //We are done with the result set returned above, so free it
