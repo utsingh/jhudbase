@@ -8,8 +8,8 @@ include 'open.php';
 
 //Override the PHP configuration file to display all errors
 //This is useful during development but generally disabled before release
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', true);
+//ini_set('error_reporting', E_ALL);
+//ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
 $item = $_POST['item'];
@@ -126,5 +126,5 @@ window.onload = function () {
 }
 </script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<div id="chartContainer" style="width: 45%; height: 300px;display: inline-block;"></div> 
+<div id="chartContainer" style="width: 100%;"></div> 
 </body>
