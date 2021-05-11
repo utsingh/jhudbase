@@ -12,6 +12,7 @@ ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
 $item = $_POST['item'];
+$underover = "UNDER";
 
 echo "<h2>Bid History</h2>";
 echo "Item number: ";
@@ -26,14 +27,14 @@ if (empty($item)) {
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL ShowBidHistory(?)")) {
+   if ($stmt = $conn->prepare("CALL CovidMalaria2(?,?)")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of
       //the variables that follow: 's' means string, 'i' means integer, 'd' means
       //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
       //and the other two are strings, the first argument included should be "sis".
-      $stmt->bind_param("s", $item);
+      $stmt->bind_param("ss", $underover, $item);
 
       //Run the actual query
       if ($stmt->execute()) {
