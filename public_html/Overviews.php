@@ -3,30 +3,24 @@
   include 'open.php';
 
   //construct an array in which we'll store our data
-  $dataPoints1 = array();
-  $dataPoints2 = array();
-  $dataPoints3 = array();
-  $dataPoints4 = array();
-  $dataPoints5 = array();
-  $dataPoints6 = array();
-  $dataPoints7 = array();
-  $dataPoints8 = array();
+  $dataPoints = array();
+
 
   //SQL Prepared Statements
-  $sql1 = "CALL TopMalaria;";
+  $sql = "CALL TopMalaria;";
   $sql2 = "CALL LowestMalaria;";
   $sql3 = "CALL TopPopulation;";
   $sql4 = "CALL LowestPopulation;";
   $sql5 = "CALL TopDemocracy;";
   $sql6 = "CALL LowestDemocracy;";
   $sql7 = "CALL TopLifeExpectancy;";
-  $sql8 = "CALL LowestLifeExpectancy";
+  $sql8 = "CALL LowestLifeExpectancy;";
 
   //execute the query, then run through the result table row by row to
   //put each row's data into our array
-  if ($result1 = mysqli_query($conn,$sql1)){
-     foreach($result1 as $row){
-        array_push($dataPoints1, array( "label"=> $row["country"], "y"=> $row["malaria_incidence"]));
+  if ($result = mysqli_query($conn,$sql)){
+     foreach($result as $row){
+        array_push($dataPoints, array( "label"=> $row["country"], "y"=> $row["population"]));
      }
   }
   
@@ -42,11 +36,11 @@ window.onload = function () {
     exportEnabled: true,
     theme: "light1", // "light1", "light2", "dark1", "dark2"
     title:{
-      text: "Top Malaria Incidence Countries"
+      text: "Population"
     },
     data: [{
       type: "line", //change type to column, bar, line, area, pie, etc  
-      dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
+      dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
     }]
   });
   chart.render(); 
@@ -56,8 +50,6 @@ window.onload = function () {
 <body>
   <div id="chartContainer" style="width: 100%;"></div>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-<!--
 </body>
 </html>
 
@@ -82,7 +74,7 @@ window.onload = function () {
 
 
   <body>
--->
+
     <h1>Overviews</h1>
     <h3>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h3>
 
