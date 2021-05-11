@@ -2,7 +2,58 @@
 <html>
 <head>
 <title>Overviews</title>
-<link rel="stylesheet" href="style.css">
+<style>
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
 </head>
   <body>
 
@@ -17,7 +68,7 @@
     </form>
 
     <h3>2. The Lowest Malaria Countries</h3>
-    <form action="oLowMalaria.php" method="post">
+    <form action="oLowestMalaria.php" method="post">
       <input type="submit" value="Lowest Malaria Countries">
     </form>
 
@@ -27,7 +78,7 @@
     </form>
 
     <h3>4. The Lowest Population Countries</h3>
-    <form action="oLowPopulation.php" method="post">
+    <form action="oLowestPopulation.php" method="post">
       <input type="submit" value="Lowest Population Countries">
     </form>
 
@@ -37,7 +88,7 @@
     </form>
 
     <h3>6. The Lowest Democracy Index Countries</h3>
-    <form action="oLowDemocracy.php" method="post">
+    <form action="oLowestDemocracy.php" method="post">
       <input type="submit" value="Lowest Democracy Countries">
     </form>
 
@@ -47,7 +98,7 @@
     </form>
 
     <h3>8. The Lowest Life-Expectancy Countries</h3>
-    <form action="oLowLifeExpectancy.php" method="post">
+    <form action="oLowestLifeExpectancy.php" method="post">
       <input type="submit" value="Lowest Life-Expectancy Countries">
     </form>
 
