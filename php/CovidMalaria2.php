@@ -2,7 +2,7 @@
 <head><title>PHP PreparedStatement example</title>
 <script>
 window.onload = function () { 
-   var chart = new CanvasJS.Chart("chartContainer1", {
+   var chart = new CanvasJS.Chart("chartContainer", {
       animationEnabled: true,
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
@@ -12,48 +12,6 @@ window.onload = function () {
       data: [{
          type: "line", //change type to column, bar, line, area, pie, etc  
          dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
-      }]
-   });
-   chart.render(); 
-
-   var chart = new CanvasJS.Chart("chartContainer2", {
-      animationEnabled: true,
-      exportEnabled: true,
-      theme: "light1", // "light1", "light2", "dark1", "dark2"
-      title:{
-         text: "Population"
-      },
-      data: [{
-         type: "line", //change type to column, bar, line, area, pie, etc  
-         dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
-      }]
-   });
-   chart.render(); 
-
-   var chart = new CanvasJS.Chart("chartContainer3", {
-      animationEnabled: true,
-      exportEnabled: true,
-      theme: "light1", // "light1", "light2", "dark1", "dark2"
-      title:{
-         text: "Population"
-      },
-      data: [{
-         type: "line", //change type to column, bar, line, area, pie, etc  
-         dataPoints: <?php echo json_encode($dataPoints3, JSON_NUMERIC_CHECK); ?>
-      }]
-   });
-   chart.render(); 
-
-   var chart = new CanvasJS.Chart("chartContainer4", {
-      animationEnabled: true,
-      exportEnabled: true,
-      theme: "light1", // "light1", "light2", "dark1", "dark2"
-      title:{
-         text: "Population"
-      },
-      data: [{
-         type: "line", //change type to column, bar, line, area, pie, etc  
-         dataPoints: <?php echo json_encode($dataPoints4, JSON_NUMERIC_CHECK); ?>
       }]
    });
    chart.render(); 
@@ -73,13 +31,10 @@ ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
 $item = $_POST['item'];
-$underover = $_POST['cars'];
+$underover = isset($_POST['cars']);
 
 //construct an array in which we'll store our data
-$dataPoints1 = array();
-$dataPoints2 = array();
-$dataPoints3 = array();
-$dataPoints4 = array();
+$dataPoints = array();
 
 //echo "<h2>Bid History</h2>";
 //echo "Item number: ";
@@ -134,11 +89,12 @@ if (empty($item)) {
 	 
             echo "</table>";*/
 
-            foreach($result as $row){
-               array_push($dataPoints1, array( "label"=> $row["country"], "y"=> $row["malaria_incidence"]));
-               array_push($dataPoints2, array( "label"=> $row["country"], "y"=> $row["confirmed"]));
-               array_push($dataPoints3, array( "label"=> $row["country"], "y"=> $row["recovered"]));
-               array_push($dataPoints4, array( "label"=> $row["country"], "y"=> $row["deaths"]));
+            //foreach($result as $row){
+            while ($row = $result->fetch_row()) {
+               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
+               //array_push($dataPoints2, array( "label"=> $row["country"], "y"=> $row["confirmed"]));
+               //array_push($dataPoints3, array( "label"=> $row["country"], "y"=> $row["recovered"]));
+               //array_push($dataPoints4, array( "label"=> $row["country"], "y"=> $row["deaths"]));
             }
          }	 
 
@@ -171,8 +127,5 @@ $conn->close();
 ?>
 
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
-<div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
-<div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
-<div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
+<div id="chartContainer" style="width: 45%; height: 300px;display: inline-block;"></div> 
 </body>
