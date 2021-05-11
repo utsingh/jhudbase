@@ -84,47 +84,38 @@ li.dropdown {
     <h3>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h3>
 
     <hr><br>
-  <!-- List of Overviews -->
- <!--   <h3>1.  (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)?</h3>
-    <form action="CovidMalaria1.php" method="post">
-      <input type="submit" value="Top Malaria Countries">
-    </form>
--->
 
-    <h3>1. Which are the countries with malaria incidence rates in the world where cumulative COVID19 case counts are (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)? </h3>
+<h3>1. Which are the countries with malaria incidence rates in the world where cumulative COVID19 case counts are (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)? </h3>
     <h3> Example: "UNDER 100 OVER 1" -- (will return all countries where COVID cases are under 100 OR over 1)</h3>
-    <form action="CovidMalaria1.php">
-      <label for="underover11">Select Under / Over and input an integer: COVID TOTAL CASE COUNTS </label>
-      <select id="underover11" name="underover11">
-        <option value="UNDER">UNDER</option>
-        <option value="OVER">OVER</option>
+  <form action="CovidMalaria1.php" method="post">
+    <label for="trucks">Choose Under / Over: </label>
+      <select id="trucks" name="trucks">
+        <option value="UNDER">Under</option>
+        <option value="OVER">Over</option>
       </select>
-      <input type="text" name="threshold11">
-      <br>OR<br>
-      <label for="underover12">Select Under / Over and input an integer: COVID DEATHS</label>
-      <select id="underover12" name="underover12">
-        <option value="UNDER">UNDER</option>
-        <option value="OVER">OVER</option>
+    Threshold: <input type="text" name="option"><br>
+    <label for="trucks">Choose Under / Over: </label>
+      <select id="trucks" name="trucks">
+        <option value="UNDER">Under</option>
+        <option value="OVER">Over</option>
       </select>
-      <input type="text" name="threshold12">
-      <br>
-      <input type="submit">
-    </form>
+    Threshold: <input type="text" name="option">
+    <input type="submit">
+  </form>
+  <br/><br/>
 
-<br><br>
-
-    <h3>2. What are the COVID-19 incidents for the countries with malaria rates (UNDER/ABOVE) (Threshold amount)?</h3>
+  <h3>2. What are the COVID-19 incidents for the countries with malaria rates (UNDER/ABOVE) (Threshold amount)?</h3>
     <h3> Example: "UNDER 100" -- (will return all countries where malaria rates are UNDER 100)</h3>
-    <form action="CovidMalaria2.php">
-      <label for="underover2">Select Under / Over and input an integer: </label>
-      <select id="underover2" name="underover2">
-        <option value="UNDER">UNDER</option>
-        <option value="OVER">OVER</option>
-      </select><br>
-      Threshold: <input type="text" name="item">
-      <br>
-      <input type="submit">
-    </form>
+  <form action="CovidMalaria2.php" method="post">
+    <label for="cars">Choose Under / Over: </label>
+      <select id="cars" name="cars">
+        <option value="UNDER">Under</option>
+        <option value="OVER">Over</option>
+      </select>
+    Threshold: <input type="text" name="item">
+    <input type="submit">
+  </form>
+  <br/><br/>
 
   </body>
 </html>

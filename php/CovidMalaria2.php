@@ -27,7 +27,7 @@ if (empty($item)) {
 
 } else {
 
-   echo $cars.$item."<br><br>";
+   //echo $cars.$item."<br><br>";
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
