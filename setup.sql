@@ -451,35 +451,31 @@ CREATE PROCEDURE CovidMalaria1(IN underover1 VARCHAR(5), IN x1 NUMERIC(9,4), IN 
 BEGIN
    IF underover1 = 'UNDER' AND underover2 = 'UNDER' THEN
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.deaths AS deaths
-      FROM COVID19 INNER JOIN Malaria                       
-      ON COVID19.country = Malaria.country
+      FROM COVID19 INNER JOIN MostRecentMalaria                       
+      ON COVID19.country = MostRecentMalaria.country
       WHERE COVID19.confirmed < x1
       OR COVID19.deaths < x2
-      AND Malaria.year = "2019"
       ORDER BY COVID19.confirmed ASC, COVID19.deaths ASC;
    ELSEIF underover1 = 'OVER' AND underover2 = 'UNDER' THEN
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.deaths AS deaths
-      FROM COVID19 INNER JOIN Malaria                       
-      ON COVID19.country = Malaria.country
+      FROM COVID19 INNER JOIN MostRecentMalaria                       
+      ON COVID19.country = MostRecentMalaria.country
       WHERE COVID19.confirmed > x1
       OR COVID19.deaths < x2
-      AND Malaria.year = "2019"
       ORDER BY COVID19.confirmed ASC, COVID19.deaths DESC;
    ELSEIF underover1 = 'UNDER' AND underover2 = 'OVER' THEN
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.deaths AS deaths
-      FROM COVID19 INNER JOIN Malaria                       
-      ON COVID19.country = Malaria.country
+      FROM COVID19 INNER JOIN MostRecentMalaria                       
+      ON COVID19.country = MostRecentMalaria.country
       WHERE COVID19.confirmed < x1
       OR COVID19.deaths > x2
-      AND Malaria.year = "2019"
       ORDER BY COVID19.confirmed DESC, COVID19.deaths ASC;
    ELSE
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.deaths AS deaths
-      FROM COVID19 INNER JOIN Malaria                       
-      ON COVID19.country = Malaria.country
+      FROM COVID19 INNER JOIN MostRecentMalaria                       
+      ON COVID19.country = MostRecentMalaria.country
       WHERE COVID19.confirmed > x1
       OR COVID19.deaths > x2
-      AND Malaria.year = "2019"
       ORDER BY COVID19.confirmed DESC, COVID19.deaths DESC;
    END IF;
 END; //
@@ -491,17 +487,15 @@ CREATE PROCEDURE CovidMalaria2(IN underover VARCHAR(5), IN x NUMERIC(9,4))
 BEGIN
    IF underover = 'UNDER' THEN
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.recovered AS recovered, COVID19.deaths AS deaths
-      FROM COVID19 INNER JOIN Malaria                       
-      ON COVID19.country = Malaria.country
+      FROM COVID19 INNER JOIN MostRecentMalaria                       
+      ON COVID19.country = MostRecentMalaria.country
       WHERE Malaria.malaria_incidence < x
-      AND  Malaria.year = "2019"
       ORDER BY Malaria.malaria_incidence ASC;
    ELSE
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.recovered AS recovered, COVID19.deaths AS deaths
-      FROM COVID19 INNER JOIN Malaria                       
-      ON COVID19.country = Malaria.country
+      FROM COVID19 INNER JOIN MostRecentMalaria                       
+      ON COVID19.country = MostRecentMalaria.country
       WHERE Malaria.malaria_incidence > x
-      AND  Malaria.year = "2019"
       ORDER BY Malaria.malaria_incidence DESC;
    END IF;
 END; //
@@ -512,31 +506,204 @@ CREATE PROCEDURE MostPopulous(IN underover VARCHAR(5), IN x NUMERIC(9,4))
 BEGIN
       IF underover = 'UNDER' THEN
          SELECT Population.country, population, malaria_incidence, covid_incidence, life_expectancy
-         FROM Population INNER JOIN (SELECT Malaria.country, malaria_incidence, incidence AS covid_incidence, both_atbirth as life_expectancy
-                                          FROM Malaria 
+         FROM Population INNER JOIN (SELECT MostRecentMalaria.country, malaria_incidence, incidence AS covid_incidence, life_expectancy
+                                          FROM MostRecentMalaria 
                                                 INNER JOIN COVID19_Incidence
-                                                         ON Malaria.country = COVID19_Incidence.country 
-                                                INNER JOIN Life_Expectancy   
-                                                         ON COVID19_Incidence.country = Life_Expectancy.country
-                                                WHERE Malaria.year = "2019") AllComb                         
+                                                         ON MostRecentMalaria.country = COVID19_Incidence.country 
+                                                INNER JOIN MostRecentLifeExpectancy   
+                                                         ON COVID19_Incidence.country = MostRecentLifeExpectancy.country
+                                                WHERE MostRecentLifeExpectancy.sex = "Both sexes"
+                                                AND MostRecentLifeExpectancy.age = 0) AllComb                         
          ON Population.country = AllComb.country
          WHERE Population.population < x
          ORDER BY Population.population DESC;
       ELSE
          SELECT Population.country, population, malaria_incidence, covid_incidence, life_expectancy
-         FROM Population INNER JOIN (SELECT Malaria.country, malaria_incidence, incidence AS covid_incidence, both_atbirth as life_expectancy
-                                          FROM Malaria 
+         FROM Population INNER JOIN (SELECT MostRecentMalaria.country, malaria_incidence, incidence AS covid_incidence, both_atbirth as life_expectancy
+                                          FROM MostRecentMalaria 
                                                 INNER JOIN COVID19_Incidence
-                                                         ON Malaria.country = COVID19_Incidence.country 
-                                                INNER JOIN Life_Expectancy   
-                                                         ON COVID19_Incidence.country = Life_Expectancy.country
-                                                WHERE Malaria.year = "2019") AllComb                         
+                                                         ON MostRecentMalaria.country = COVID19_Incidence.country 
+                                                INNER JOIN MostRecentLifeExpectancy   
+                                                         ON COVID19_Incidence.country = MostRecentLifeExpectancy.country
+                                                WHERE MostRecentLifeExpectancy.sex = "Both sexes"
+                                                AND MostRecentLifeExpectancy.age = 0) AllComb                           
          ON Population.country = AllComb.country
          WHERE Population.population > x
          ORDER BY Population.population ASC;
       END IF;
 END; //
 
+
+--List the country names and the (NORTH HEM/SOUTH HEM) they are in on Earth, along with the total covid case counts and deaths.
+DROP PROCEDURE IF EXISTS RegionCOVID1 //
+CREATE PROCEDURE RegionCOVID1(IN hem VARCHAR(10))
+BEGIN
+      IF hem = 'NORTH HEM' THEN
+         SELECT CountryHemispheres.ns as hemisphere, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
+         FROM COVID192 INNER JOIN CountryHemispheres
+         ON COVID192.country = CountryHemispheres.country
+         WHERE CountryHemispheres.ns = "NORTH"
+         GROUP BY CountryHemispheres.ns;
+      ELSE
+         SELECT CountryHemispheres.ns as hemisphere, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
+         FROM COVID192 INNER JOIN CountryHemispheres
+         ON COVID192.country = CountryHemispheres.country
+         WHERE CountryHemispheres.ns = "SOUTH"
+         GROUP BY CountryHemispheres.ns;
+      END IF;
+END; //
+
+--List the country names and the (EAST/WEST) they are in on Earth, along with the total covid case counts and deaths.
+DROP PROCEDURE IF EXISTS RegionCOVID2 //
+CREATE PROCEDURE RegionCOVID2(IN region1 VARCHAR(20), IN region2 VARCHAR(20))
+BEGIN
+      SELECT region, confirmed, recovered, active, deaths
+      FROM (SELECT Region.region as region, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
+            FROM COVID192 INNER JOIN Region
+            ON COVID192.country = Region.country
+            WHERE region = region1
+            OR region = region2
+            GROUP BY Region.region)t;
+END; //
+
+
+--List the country names and the (EAST/WEST) they are in on Earth, along with the total covid case counts and deaths.
+DROP PROCEDURE IF EXISTS RegionCOVID3 //
+CREATE PROCEDURE RegionCOVID3(IN hem VARCHAR(10))
+BEGIN
+      IF hem = 'EAST' THEN
+         SELECT CountryHemispheres.ew as hemisphere, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
+         FROM COVID192 INNER JOIN CountryHemispheres
+         ON COVID192.country = CountryHemispheres.country
+         WHERE CountryHemispheres.ew = "EAST"
+         GROUP BY CountryHemispheres.ew;
+      ELSE
+         SELECT CountryHemispheres.ew as hemisphere, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
+         FROM COVID192 INNER JOIN CountryHemispheres
+         ON COVID192.country = CountryHemispheres.country
+         WHERE CountryHemispheres.ew = "WEST"
+         GROUP BY CountryHemispheres.ew;
+      END IF;
+END; //
+
+-- Show total population of each hemisphere
+DROP PROCEDURE IF EXISTS GeographicAggregate1 //
+CREATE PROCEDURE GeographicAggregate1()
+BEGIN
+   SELECT hemisphere, population
+   FROM ((SELECT CountryHemispheres.ew as hemisphere, SUM(Population.population) AS population
+         FROM Population INNER JOIN CountryHemispheres
+         ON Population.country = CountryHemispheres.country
+         GROUP BY CountryHemispheres.ew)
+         UNION
+      (SELECT CountryHemispheres.ns as hemisphere, SUM(Population.population) AS population
+         FROM Population INNER JOIN CountryHemispheres
+         ON Population.country = CountryHemispheres.country
+         GROUP BY CountryHemispheres.ns))t;
+END; //
+
+-- Show weighted average democracy index data for each hemisphere
+DROP PROCEDURE IF EXISTS GeographicAggregate2 //
+CREATE PROCEDURE GeographicAggregate2()
+BEGIN
+   WITH hemPop AS ((SELECT CountryHemispheres.ew as hemisphere, SUM(Population.population) AS population
+                  FROM Population INNER JOIN CountryHemispheres
+                  ON Population.country = CountryHemispheres.country
+                  GROUP BY CountryHemispheres.ew)
+               UNION
+               (SELECT CountryHemispheres.ns as hemisphere, SUM(Population.population) AS population
+                  FROM Population INNER JOIN CountryHemispheres
+                  ON Population.country = CountryHemispheres.country
+                  GROUP BY CountryHemispheres.ns))
+   SELECT hemPop.hemisphere, weightedDemocracy/hemPop.population as weightedAverageDemocracy
+   FROM ((SELECT CountryHemispheres.ew as hemisphere,  SUM(Population.population * Democracies.democracy_index) AS weightedDemocracy
+         FROM Population INNER JOIN CountryHemispheres 
+         ON Population.country = CountryHemispheres.country
+         INNER JOIN Democracies
+         ON Democracies.country = CountryHemispheres.country
+         GROUP BY  CountryHemispheres.ew)
+         UNION
+      (SELECT CountryHemispheres.ns as hemisphere, SUM(Population.population * Democracies.democracy_index) AS weightedDemocracy
+         FROM Population INNER JOIN CountryHemispheres
+         ON Population.country = CountryHemispheres.country
+         INNER JOIN Democracies
+         ON Democracies.country = CountryHemispheres.country
+         GROUP BY  CountryHemispheres.ns))t
+   INNER JOIN hemPop  
+   ON hemPop.hemisphere = t.hemisphere;
+END; //
+
+
+-- Show total population of each region
+DROP PROCEDURE IF EXISTS GeographicAggregate3 //
+CREATE PROCEDURE GeographicAggregate3()
+BEGIN
+   SELECT region, population
+   FROM (SELECT Region.region as region, SUM(Population.population) AS population
+         FROM Population INNER JOIN Region
+         ON Population.country = Region.country
+         GROUP BY Region.region)t;   
+END; //
+
+-- Show weighted average democracy index data for each hemisphere
+DROP PROCEDURE IF EXISTS GeographicAggregate4 //
+CREATE PROCEDURE GeographicAggregate4()
+BEGIN
+   WITH regPop AS (SELECT region, population
+                  FROM (SELECT Region.region as region, SUM(Population.population) AS population
+                           FROM Population INNER JOIN Region
+                           ON Population.country = Region.country
+                           GROUP BY Region.region)t)
+   SELECT regPop.region, SUM(weightedDemocracy)/regPop.population as weightedAverageDemocracy
+   FROM  (SELECT Region.region as region, Population.population * Democracies.democracy_index AS weightedDemocracy
+         FROM Population INNER JOIN Region
+         ON Population.country = Region.country
+         INNER JOIN Democracies
+         ON Democracies.country = Region.country)t
+   INNER JOIN regPop  
+   ON regPop.region = t.region
+   GROUP BY t.region;
+
+END; //
+
+
+-- Compare the 30 countries each with the (HIGHEST / LOWEST) democracy scores for total COVID-19
+DROP PROCEDURE IF EXISTS HealthcareVDemocracy1 //
+CREATE PROCEDURE HealthcareVDemocracy1(IN underover VARCHAR(7))
+BEGIN
+   IF underover = 'LOWEST' THEN
+      SELECT Democracies.country, democracy_index, confirmed, recovered, active, deaths
+      FROM COVID19 INNER JOIN Democracies
+      ON Democracies.country = COVID19.country
+      ORDER BY democracy_index ASC
+      LIMIT 30;
+   ELSE
+      SELECT Democracies.country, democracy_index, confirmed, recovered, active, deaths
+      FROM COVID19 INNER JOIN Democracies
+      ON Democracies.country = COVID19.country
+      ORDER BY democracy_index DESC
+      LIMIT 30;
+   END IF;
+END; //
+
+-- Compare the 30 countries each with the (HIGHEST / LOWEST) democracy scores for malaria incidence
+DROP PROCEDURE IF EXISTS HealthcareVDemocracy2 //
+CREATE PROCEDURE HealthcareVDemocracy2(IN underover VARCHAR(7))
+BEGIN
+   IF underover = 'LOWEST' THEN
+      SELECT Democracies.country, democracy_index, malaria_incidence
+      FROM MostRecentMalaria INNER JOIN Democracies
+      ON Democracies.country = MostRecentMalaria.country
+      ORDER BY democracy_index ASC
+      LIMIT 30;
+   ELSE
+      SELECT Democracies.country, democracy_index, malaria_incidence
+      FROM MostRecentMalaria INNER JOIN Democracies
+      ON Democracies.country = MostRecentMalaria.country
+      ORDER BY democracy_index DESC
+      LIMIT 30;
+   END IF;
+END; //
 
 
 
