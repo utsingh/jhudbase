@@ -11,15 +11,18 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item = isset($_POST['threshold3']);
-$underover = isset($_POST['underover3']);
+$item = isset($_POST['threshold2']);
+$underover = isset($_POST['underover2']);
 
 echo "<h2>covidmalaria2</h2>";
 echo "Under/Over: ";
 
 //Determine if any input was actually collected
 if (empty($item)) {
-   echo "empty <br><br>";
+   echo "empty $item<br><br>";
+
+else if (empty($underover)) {
+   echo "empty $underover<br><br>";
 
 } else {
 

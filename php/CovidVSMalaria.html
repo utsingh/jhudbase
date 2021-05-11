@@ -94,19 +94,19 @@ li.dropdown {
     <h3>1. Which are the countries with malaria incidence rates in the world where cumulative COVID19 case counts are (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)? </h3>
     <h3> Example: "UNDER 100 OVER 1" -- (will return all countries where COVID cases are under 100 OR over 1)</h3>
     <form action="CovidMalaria1.php">
-      <label for="underover1">Select Under / Over and input an integer: COVID TOTAL CASE COUNTS </label>
-      <select id="underover1" name="underover1">
+      <label for="underover11">Select Under / Over and input an integer: COVID TOTAL CASE COUNTS </label>
+      <select id="underover11" name="underover11">
         <option value="UNDER">UNDER</option>
         <option value="OVER">OVER</option>
       </select>
-      <input type="text" name="threshold1">
+      <input type="text" name="threshold11">
       <br>OR<br>
-      <label for="underover2">Select Under / Over and input an integer: COVID DEATHS</label>
-      <select id="underover2" name="underover2">
+      <label for="underover12">Select Under / Over and input an integer: COVID DEATHS</label>
+      <select id="underover12" name="underover12">
         <option value="UNDER">UNDER</option>
         <option value="OVER">OVER</option>
       </select>
-      <input type="text" name="threshold2">
+      <input type="text" name="threshold12">
       <br>
       <input type="submit">
     </form>
@@ -116,12 +116,12 @@ li.dropdown {
     <h3>2. What are the COVID-19 incidents for the countries with malaria rates (UNDER/ABOVE) (Threshold amount)?</h3>
     <h3> Example: "UNDER 100" -- (will return all countries where malaria rates are UNDER 100)</h3>
     <form action="CovidMalaria2.php">
-      <label for="underover3">Select Under / Over and input an integer: </label>
-      <select id="underover3" name="underover3">
+      <label for="underover2">Select Under / Over and input an integer: </label>
+      <select id="underover2" name="underover2">
         <option value="UNDER">UNDER</option>
         <option value="OVER">OVER</option>
       </select><br>
-      Threshold: <input type="text" name="threshold3">
+      Threshold: <input type="text" name="threshold2">
       <br>
       <input type="submit">
     </form>
