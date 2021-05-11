@@ -351,7 +351,7 @@ GROUP BY CountryHemispheres.ew;
 
 
 DELIMITER //
-/*
+
 DROP PROCEDURE IF EXISTS Query1 //
 CREATE PROCEDURE Query1(IN c VARCHAR(58))
 BEGIN
@@ -444,7 +444,7 @@ BEGIN
    LIMIT 20;
 
 END; //
-*/
+
 
 
 --Which are the countries with malaria incidence rates in the world where cumulative COVID19 case counts are (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)?
