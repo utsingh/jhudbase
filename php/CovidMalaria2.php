@@ -1,23 +1,5 @@
 
 <head><title>PHP PreparedStatement example</title>
-<script>
-window.onload = function () { 
-   var chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      exportEnabled: true,
-      theme: "light1", // "light1", "light2", "dark1", "dark2"
-      title:{
-         text: "Population"
-      },
-      data: [{
-         type: "line", //change type to column, bar, line, area, pie, etc  
-         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-      }]
-   });
-   chart.render(); 
-}
-</script>
-
 </head>
 <body>
 
@@ -122,6 +104,23 @@ if (empty($item)) {
 $conn->close();
 ?>
 
+<script>
+window.onload = function () { 
+   var chart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true,
+      exportEnabled: true,
+      theme: "light1", // "light1", "light2", "dark1", "dark2"
+      title:{
+         text: "Population"
+      },
+      data: [{
+         type: "line", //change type to column, bar, line, area, pie, etc  
+         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+      }]
+   });
+   chart.render(); 
+}
+</script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <div id="chartContainer" style="width: 45%; height: 300px;display: inline-block;"></div> 
 </body>
