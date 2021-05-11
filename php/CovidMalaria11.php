@@ -53,7 +53,7 @@ if (empty($item1) || empty($item2)) {
             echo "No bids found for the specified item";
 
          } else {
-	 
+	 /*
             //Create table to display results
             echo "<table border=\"1px solid black\">";
             echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
@@ -70,7 +70,7 @@ if (empty($item1) || empty($item2)) {
             } 
 	 
             echo "</table>";
-         
+         */
             while ($row = $result->fetch_row()) {
                array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
             }
