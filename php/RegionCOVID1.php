@@ -69,7 +69,7 @@ if (empty($item)) {
             echo "</table>";
          */
             while ($row = $result->fetch_row()) {
-               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
+               array_push($dataPoints, array( "label"=> $row[1], "y"=> $row[0]));
             }
          
 
