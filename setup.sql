@@ -492,12 +492,14 @@ BEGIN
       FROM COVID19 INNER JOIN Malaria                       
       ON COVID19.country = Malaria.country
       WHERE Malaria.malaria_incidence < x
+      AND  Malaria.year = "2019"
       ORDER BY Malaria.malaria_incidence ASC;
    ELSE
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.recovered AS recovered, COVID19.deaths AS deaths
       FROM COVID19 INNER JOIN Malaria                       
       ON COVID19.country = Malaria.country
       WHERE Malaria.malaria_incidence > x
+      AND  Malaria.year = "2019"
       ORDER BY Malaria.malaria_incidence DESC;
    END IF;
 END; //
