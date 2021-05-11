@@ -26,7 +26,6 @@ ON COVID19_Totals.country = Population.country
 ORDER BY incidence DESC;
 
 /* List the top 10 countries, total cases to date, and the cumulative deaths for countries that have the highest rate of COVID-19 contraction increase in total covid cases over the last month, displayed in decreasing order.*/
-
 DROP VIEW IF EXISTS CovidChange;
 CREATE VIEW CovidChange AS
 SELECT covid19_confirmed_global.country, (covid19_confirmed_global.April_12_2021-covid19_confirmed_global.April_11_2021) - (covid19_recovered_global.April_12_2021-covid19_recovered_global.April_11_2021) - (covid19_deaths_global.April_12_2021-covid19_deaths_global.April_11_2021) as dailyIncrease, (covid19_confirmed_global.April_12_2021-covid19_confirmed_global.March_12_2021) - (covid19_recovered_global.April_12_2021-covid19_recovered_global.March_12_2021) - (covid19_deaths_global.April_12_2021-covid19_deaths_global.March_12_2021) as monthlyIncrease

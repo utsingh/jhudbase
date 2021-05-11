@@ -6,14 +6,14 @@
 
         // prepare the query statement
         //we'll soon see how to upgrade our queries so they aren't plain strings
-        $myQuery = "SELECT * FROM Population;";
+        $myQuery = "SELECT * FROM COVID19_US_Confirmed;";
 
         // execute it, and if non-empty result, output each row of result
         if ($result = mysqli_query($conn, $myQuery)){
             foreach($result as $row){
 	        //to improve the look of the output, we could add html table
 		//tags too, which would add border lines, center the values, etc.
-	    	echo $row["country"]." ".$row["population"]."<br>";
+	    	echo $row["Combined_Key"]." ".$row["04_12_2021"]."<br>";
             }
         } 
 
