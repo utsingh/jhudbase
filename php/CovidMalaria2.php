@@ -1,5 +1,5 @@
 
-<head><title>COVIDMALARIA2</title></head>
+<head><title>PHP PreparedStatement example</title></head>
 <body>
 
 <?php
@@ -11,18 +11,15 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item = isset($_POST['threshold2']);
-$underover = isset($_POST['underover2']);
+$item = $_POST['item'];
+$underover = "UNDER";
 
-echo "<h2>covidmalaria2</h2>";
-echo "Under/Over: ";
+echo "<h2>Bid History</h2>";
+echo "Item number: ";
 
 //Determine if any input was actually collected
 if (empty($item)) {
-   echo "empty $item<br><br>";
-
-else if (empty($underover)) {
-   echo "empty $underover<br><br>";
+   echo "empty <br><br>";
 
 } else {
 
@@ -38,6 +35,7 @@ else if (empty($underover)) {
       //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
       //and the other two are strings, the first argument included should be "sis".
       $stmt->bind_param("ss", $underover, $item);
+
       //Run the actual query
       if ($stmt->execute()) {
 
@@ -47,10 +45,10 @@ else if (empty($underover)) {
          if ($result->num_rows == 0) {
 
             //Result contains no rows at all
-            echo "No data found for the specified item";
+            echo "No bids found for the specified item";
 
          } else {
-	 
+    
             //Create table to display results
             echo "<table border=\"1px solid black\">";
             echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
@@ -66,9 +64,9 @@ else if (empty($underover)) {
                echo "</tr>";
             } 
          
-	 
+    
             echo "</table>";
-         }	 
+         }   
 
          //We are done with the result set returned above, so free it
          $result->free_result();
@@ -76,7 +74,7 @@ else if (empty($underover)) {
       } else {
 
          //Call to execute failed, e.g. because server is no longer reachable,
-	 //or because supplied values are of the wrong type
+    //or because supplied values are of the wrong type
          echo "Execute failed.<br>";
       }
 
