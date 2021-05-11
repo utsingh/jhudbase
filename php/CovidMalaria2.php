@@ -45,7 +45,7 @@ if (empty($item)) {
 
 } else {
 
-   //echo $cars.$item."<br><br>";
+   echo $cars.$item."<br><br>";
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
@@ -89,12 +89,9 @@ if (empty($item)) {
 	 
             echo "</table>";
 
-            //foreach($result as $row){
-            while ($row = $result->fetch_row()) {
-               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
-               //array_push($dataPoints2, array( "label"=> $row["country"], "y"=> $row["confirmed"]));
-               //array_push($dataPoints3, array( "label"=> $row["country"], "y"=> $row["recovered"]));
-               //array_push($dataPoints4, array( "label"=> $row["country"], "y"=> $row["deaths"]));
+            foreach($result as $row){
+               array_push($dataPoints, array( "label"=> $row["country"], "y"=> $row["confirmed"]));
+               echo "pushed".$row["country"].$row["confirmed"].<br>;
             }
          }	 
 
