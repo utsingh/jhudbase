@@ -11,7 +11,7 @@ window.onload = function () {
       },
       data: [{
          type: "line", //change type to column, bar, line, area, pie, etc  
-         dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
+         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
       }]
    });
    chart.render(); 
@@ -84,7 +84,10 @@ if (empty($item)) {
                echo "<td>".$row[3]."</td>";
                echo "<td>".$row[4]."</td>";
                echo "</tr>";
+               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
             } 
+
+
          
 	 
             echo "</table>";
