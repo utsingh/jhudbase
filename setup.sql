@@ -426,7 +426,7 @@ CREATE PROCEDURE TopLifeExpectancy()
 BEGIN
    SELECT country, life_expectancy
    FROM Life_Expectancy 
-   WHERE age = 0
+   WHERE age = 60
    ORDER BY life_expectancy DESC
    LIMIT 20;
 
@@ -437,7 +437,7 @@ CREATE PROCEDURE LowestLifeExpectancy()
 BEGIN
    SELECT country, life_expectancy
    FROM Life_Expectancy 
-   WHERE age = 0
+   WHERE age = 60
    ORDER BY life_expectancy ASC
    LIMIT 20;
 
@@ -513,7 +513,7 @@ BEGIN
                                                 INNER JOIN MostRecentLifeExpectancy   
                                                          ON COVID19_Incidence.country = MostRecentLifeExpectancy.country
                                                 WHERE MostRecentLifeExpectancy.sex = "Both sexes"
-                                                AND MostRecentLifeExpectancy.age = 0) AllComb                         
+                                                AND MostRecentLifeExpectancy.age = 60) AllComb                         
          ON Population.country = AllComb.country
          WHERE Population.population < x
          ORDER BY Population.population DESC;
@@ -526,7 +526,7 @@ BEGIN
                                                 INNER JOIN MostRecentLifeExpectancy   
                                                          ON COVID19_Incidence.country = MostRecentLifeExpectancy.country
                                                 WHERE MostRecentLifeExpectancy.sex = "Both sexes"
-                                                AND MostRecentLifeExpectancy.age = 0) AllComb                           
+                                                AND MostRecentLifeExpectancy.age = 60) AllComb                           
          ON Population.country = AllComb.country
          WHERE Population.population > x
          ORDER BY Population.population ASC;
@@ -711,18 +711,18 @@ CREATE PROCEDURE LifeExpectancy1()
 BEGIN                       
    WITH Male AS (SELECT MostRecentLifeExpectancy.country, MostRecentLifeExpectancy.life_expectancy AS "male_life_expectancy"
                   FROM MostRecentLifeExpectancy 
-                  WHERE age = 0
+                  WHERE age = 60
                   AND sex = "Male"),
       Female AS (SELECT MostRecentLifeExpectancy.country, MostRecentLifeExpectancy.life_expectancy AS "female_life_expectancy"
                   FROM MostRecentLifeExpectancy 
-                  WHERE age = 0
+                  WHERE age = 60
                   AND sex = "Female")
    SELECT Male.country, male_life_expectancy, female_life_expectancy
    FROM Male INNER JOIN Female
    WHERE Male.country = Female.country
    AND Female.female_life_expectancy >= 1.02 * Male.male_life_expectancy;
 END; //
---List the 30 countries with the (HIGHEST/LOWEST) life expectancy at birth along with their malaria rates
+--List the 30 countries with the (HIGHEST/LOWEST) life expectancy at along with their malaria rates
 DROP PROCEDURE IF EXISTS LifeExpectancy2 //
 CREATE PROCEDURE LifeExpectancy2(IN underover VARCHAR(10))
 BEGIN
@@ -730,14 +730,14 @@ BEGIN
          SELECT MostRecentLifeExpectancy.country, MostRecentLifeExpectancy.life_expectancy, COVID19_Incidence.incidence AS 'covid19_incidence'
          FROM COVID19_Incidence INNER JOIN MostRecentLifeExpectancy                     
          ON COVID19_Incidence.country = MostRecentLifeExpectancy.country
-         WHERE MostRecentLifeExpectancy.age = 0
+         WHERE MostRecentLifeExpectancy.age = 60
          ORDER BY MostRecentLifeExpectancy.life_expectancy ASC
          LIMIT 30;
       ELSE
          SELECT MostRecentLifeExpectancy.country, MostRecentLifeExpectancy.life_expectancy, COVID19_Incidence.incidence AS 'covid19_incidence'
          FROM COVID19_Incidence INNER JOIN MostRecentLifeExpectancy                     
          ON COVID19_Incidence.country = MostRecentLifeExpectancy.country
-         WHERE MostRecentLifeExpectancy.age = 0
+         WHERE MostRecentLifeExpectancy.age = 60
          ORDER BY MostRecentLifeExpectancy.life_expectancy DESC
          LIMIT 30;
       END IF;
@@ -745,8 +745,8 @@ END; //
 
 
 -- List the aggregates of COVID cases across (REGION/HEMISPHERE/DEMOCRACY/2% LIFE EXP DIFF/POP SIZE)
-DROP PROCEDURE IF EXISTS COVIDAggregates1 //
-CREATE PROCEDURE COVIDAggregates1(IN agg VARCHAR(15))
+DROP PROCEDURE IF EXISTS DiseaseAggregates1 //
+CREATE PROCEDURE DiseaseAggregates1(IN agg VARCHAR(20))
 BEGIN
       IF agg = 'REGION' THEN
          SELECT Region.region as region, SUM(COVID19.confirmed) AS confirmed, SUM(COVID19.recovered) AS recovered, SUM(COVID19.active) AS active, SUM(COVID19.deaths) AS deaths
@@ -771,9 +771,14 @@ BEGIN
                   FROM Democracies
                   WHERE democracy_index > 6)
                   UNION
-                  (SELECT country,  "Hybrid/Authoritatrian" AS demauth
+                  (SELECT country,  "Hybrid" AS demauth
                   FROM Democracies
-                  WHERE democracy_index <= 6))
+                  WHERE democracy_index <= 6
+                  AND democracy_index > 4)
+                  UNION
+                  (SELECT country,  "Authoritatrian" AS demauth
+                  FROM Democracies
+                  WHERE democracy_index <= 4))
          SELECT DemAuth.demauth as demauth, SUM(COVID19.confirmed) AS confirmed, SUM(COVID19.recovered) AS recovered, SUM(COVID19.active) AS active, SUM(COVID19.deaths) AS deaths
          FROM COVID19 INNER JOIN DemAuth
          ON COVID19.country = DemAuth.country
@@ -782,11 +787,11 @@ BEGIN
          WITH 2Percent AS (
                WITH Male AS (SELECT MostRecentLifeExpectancy.country, MostRecentLifeExpectancy.life_expectancy AS "male_life_expectancy"
                                  FROM MostRecentLifeExpectancy 
-                                 WHERE age = 0
+                                 WHERE age = 60
                                  AND sex = "Male"),
                      Female AS (SELECT MostRecentLifeExpectancy.country, MostRecentLifeExpectancy.life_expectancy AS "female_life_expectancy"
                                  FROM MostRecentLifeExpectancy 
-                                 WHERE age = 0
+                                 WHERE age = 60
                                  AND sex = "Female")
                   SELECT Male.country, male_life_expectancy, female_life_expectancy
                   FROM Male INNER JOIN Female
@@ -819,6 +824,84 @@ BEGIN
 END; //
 
 
+-- List the aggregates of Malaria cases across (REGION/HEMISPHERE/DEMOCRACY/2% LIFE EXP DIFF/POP SIZE)
+DROP PROCEDURE IF EXISTS DiseaseAggregates2 //
+CREATE PROCEDURE DiseaseAggregates2(IN agg VARCHAR(20))
+BEGIN
+      IF agg = 'REGION' THEN
+         SELECT Region.region as region, AVG(MostRecentMalaria.malaria_incidence) AS malaria_incidence
+         FROM MostRecentMalaria INNER JOIN Region
+         ON MostRecentMalaria.country = Region.country
+         GROUP BY Region.region;
+      ELSEIF agg = 'HEMISPHERE' THEN
+         SELECT hemisphere, malaria_incidence
+         FROM ((SELECT CountryHemispheres.ew as hemisphere, AVG(MostRecentMalaria.malaria_incidence) AS malaria_incidence
+                  FROM MostRecentMalaria INNER JOIN CountryHemispheres
+                  ON MostRecentMalaria.country = CountryHemispheres.country
+
+                  GROUP BY CountryHemispheres.ew)
+               UNION
+                  (SELECT CountryHemispheres.ns as hemisphere, AVG(MostRecentMalaria.malaria_incidence) AS malaria_incidence
+                  FROM MostRecentMalaria INNER JOIN CountryHemispheres
+                  ON MostRecentMalaria.country = CountryHemispheres.country
+
+                  GROUP BY CountryHemispheres.ns))t;
+      ELSEIF agg = 'DEMOCRACY' THEN
+         WITH DemAuth AS ((SELECT country, "Democratic" AS demauth
+                  FROM Democracies
+                  WHERE democracy_index > 6)
+                  UNION
+                  (SELECT country,  "Hybrid" AS demauth
+                  FROM Democracies
+                  WHERE democracy_index <= 6
+                  AND democracy_index > 4)
+                  UNION
+                  (SELECT country,  "Authoritatrian" AS demauth
+                  FROM Democracies
+                  WHERE democracy_index <= 4))
+         SELECT DemAuth.demauth as demauth, AVG(MostRecentMalaria.malaria_incidence) AS malaria_incidence
+         FROM MostRecentMalaria INNER JOIN DemAuth
+         ON MostRecentMalaria.country = DemAuth.country
+         GROUP BY DemAuth.demauth;
+      ELSEIF agg = '2% LIFE EXP DIFF' THEN
+         WITH 2Percent AS (
+               WITH Male AS (SELECT MostRecentLifeExpectancy.country, MostRecentLifeExpectancy.life_expectancy AS "male_life_expectancy"
+                                 FROM MostRecentLifeExpectancy 
+                                 WHERE age = 60
+                                 AND sex = "Male"),
+                     Female AS (SELECT MostRecentLifeExpectancy.country, MostRecentLifeExpectancy.life_expectancy AS "female_life_expectancy"
+                                 FROM MostRecentLifeExpectancy 
+                                 WHERE age = 60
+                                 AND sex = "Female")
+                  SELECT Male.country, male_life_expectancy, female_life_expectancy
+                  FROM Male INNER JOIN Female
+                  ON Male.country = Female.country
+                  AND Female.female_life_expectancy >= 1.02 * Male.male_life_expectancy)
+         SELECT 2Percent.country as country, AVG(MostRecentMalaria.malaria_incidence) AS malaria_incidence
+         FROM MostRecentMalaria INNER JOIN 2Percent
+         ON MostRecentMalaria.country = 2Percent.country
+         GROUP BY 2Percent.country;
+      ELSE
+         WITH PopSize AS ((SELECT country, "Small, < 1 million" AS popSize
+                  FROM Population
+                  WHERE population < 1000000)
+                  UNION
+                  (SELECT country, "Medium, 1 to 10 million" AS popSize
+                  FROM Population
+                  WHERE population >= 1000000
+                  AND population < 10000000)
+                  UNION
+                  (SELECT country, "Large, > 10 million" AS popSize
+                  FROM Population
+                  WHERE population > 10000000))
+         SELECT PopSize.popSize as popSize, AVG(MostRecentMalaria.malaria_incidence) AS malaria_incidence
+         FROM MostRecentMalaria INNER JOIN PopSize
+         ON MostRecentMalaria.country = PopSize.country
+         GROUP BY PopSize.popSize;
+      END IF;
+END; //
+
+
 --List the top 20 countries  (LARGEST INCREASE/LARGEST DECREASE) in malaria incidence over (year X > 2000) along with their current active COVID cases and life expectancy change over that time period
 DROP PROCEDURE IF EXISTS DiseasesOverTime1 //
 CREATE PROCEDURE DiseasesOverTime1(IN underover VARCHAR(20), IN x NUMERIC(9,4))
@@ -834,7 +917,7 @@ BEGIN
             LifeExpectancyChange AS (WITH oldLifeExpectancy AS (SELECT Life_Expectancy.country as country, life_expectancy, sex, age
                                                    FROM Life_Expectancy 
                                                    WHERE Life_Expectancy.sex = "Both sexes"
-                                                   AND Life_Expectancy.age = 0
+                                                   AND Life_Expectancy.age = 60
                                                    AND YEAR(Life_Expectancy.year) = x)
                                  SELECT oldLifeExpectancy.country as country, (MostRecentLifeExpectancy.life_expectancy - oldLifeExpectancy.life_expectancy) AS lifeExpectancyChange
                                  FROM oldLifeExpectancy INNER JOIN MostRecentLifeExpectancy
@@ -857,7 +940,7 @@ BEGIN
             LifeExpectancyChange AS (WITH oldLifeExpectancy AS (SELECT Life_Expectancy.country as country, life_expectancy, sex, age
                                                    FROM Life_Expectancy 
                                                    WHERE Life_Expectancy.sex = "Both sexes"
-                                                   AND Life_Expectancy.age = 0
+                                                   AND Life_Expectancy.age = 60
                                                    AND YEAR(Life_Expectancy.year) = x)
                                  SELECT oldLifeExpectancy.country as country, (MostRecentLifeExpectancy.life_expectancy - oldLifeExpectancy.life_expectancy) AS lifeExpectancyChange
                                  FROM oldLifeExpectancy INNER JOIN MostRecentLifeExpectancy
@@ -888,7 +971,7 @@ BEGIN
             LifeExpectancyChange AS (WITH oldLifeExpectancy AS (SELECT Life_Expectancy.country as country, life_expectancy, sex, age
                                                    FROM Life_Expectancy 
                                                    WHERE Life_Expectancy.sex = "Both sexes"
-                                                   AND Life_Expectancy.age = 0
+                                                   AND Life_Expectancy.age = 60
                                                    AND YEAR(Life_Expectancy.year) = x)
                                  SELECT oldLifeExpectancy.country as country, (MostRecentLifeExpectancy.life_expectancy - oldLifeExpectancy.life_expectancy) AS lifeExpectancyChange
                                  FROM oldLifeExpectancy INNER JOIN MostRecentLifeExpectancy
@@ -911,7 +994,7 @@ BEGIN
             LifeExpectancyChange AS (WITH oldLifeExpectancy AS (SELECT Life_Expectancy.country as country, life_expectancy, sex, age
                                                    FROM Life_Expectancy 
                                                    WHERE Life_Expectancy.sex = "Both sexes"
-                                                   AND Life_Expectancy.age = 0
+                                                   AND Life_Expectancy.age = 60
                                                    AND YEAR(Life_Expectancy.year) = x)
                                  SELECT oldLifeExpectancy.country as country, (MostRecentLifeExpectancy.life_expectancy - oldLifeExpectancy.life_expectancy) AS lifeExpectancyChange
                                  FROM oldLifeExpectancy INNER JOIN MostRecentLifeExpectancy
@@ -963,7 +1046,7 @@ BEGIN
    ON Solved.country = MostRecentLifeExpectancy.country
    INNER JOIN Population 
    ON Solved.country = Population.country
-   WHERE MostRecentLifeExpectancy.sex = "Both sexes" AND MostRecentLifeExpectancy.age = 0;
+   WHERE MostRecentLifeExpectancy.sex = "Both sexes" AND MostRecentLifeExpectancy.age = 60;
 END; //
 
 
@@ -972,12 +1055,12 @@ DROP PROCEDURE IF EXISTS COVIDCrisisHandling2 //
 CREATE PROCEDURE COVIDCrisisHandling2(IN underover VARCHAR(20))
 BEGIN
    IF underover = 'HIGHEST' THEN
-      SELECT * 
+      SELECT CovidChange.country, CovidChange.monthlyIncrease
       FROM CovidChange
       ORDER BY CovidChange.monthlyIncrease DESC
       LIMIT 20;
    ELSE
-      SELECT * 
+      SELECT CovidChange.country, CovidChange.monthlyIncrease
       FROM CovidChange
       ORDER BY CovidChange.monthlyIncrease ASC
       LIMIT 20;
@@ -985,8 +1068,8 @@ BEGIN
 END; //
 
 -- List the countries where the rate of change of the difference in daily case counts is (NEGATIVE/POSITIVE) 
-DROP PROCEDURE IF EXISTS COVIDCrisisHandling2 //
-CREATE PROCEDURE COVIDCrisisHandling2(IN underover VARCHAR(20))
+DROP PROCEDURE IF EXISTS COVIDCrisisHandling3 //
+CREATE PROCEDURE COVIDCrisisHandling3(IN underover VARCHAR(20))
 BEGIN
    IF underover = 'NEGATIVE' THEN
       SELECT * 
