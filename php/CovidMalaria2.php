@@ -1,23 +1,5 @@
 
 <head><title>PHP PreparedStatement example</title>
-<script>
-window.onload = function () { 
-   var chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      exportEnabled: true,
-      theme: "light1", // "light1", "light2", "dark1", "dark2"
-      title:{
-         text: "Population"
-      },
-      data: [{
-         type: "line", //change type to column, bar, line, area, pie, etc  
-         dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
-      }]
-   });
-   chart.render(); 
-}
-</script>
-
 </head>
 <body>
 
@@ -26,8 +8,8 @@ include 'open.php';
 
 //Override the PHP configuration file to display all errors
 //This is useful during development but generally disabled before release
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', true);
+//ini_set('error_reporting', E_ALL);
+//ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
 $item = $_POST['item'];
@@ -46,7 +28,7 @@ if (empty($item)) {
 
 } else {
 
-   //echo $cars.$item."<br><br>";
+   echo $cars.$item."<br><br>";
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
@@ -71,7 +53,7 @@ if (empty($item)) {
             echo "No bids found for the specified item";
 
          } else {
-	 
+	 /*
             //Create table to display results
             echo "<table border=\"1px solid black\">";
             echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
@@ -85,18 +67,18 @@ if (empty($item)) {
                echo "<td>".$row[3]."</td>";
                echo "<td>".$row[4]."</td>";
                echo "</tr>";
+               
             } 
-         
+
 	 
             echo "</table>";
 
-            //foreach($result as $row){
+         */
             while ($row = $result->fetch_row()) {
                array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
-               //array_push($dataPoints2, array( "label"=> $row["country"], "y"=> $row["confirmed"]));
-               //array_push($dataPoints3, array( "label"=> $row["country"], "y"=> $row["recovered"]));
-               //array_push($dataPoints4, array( "label"=> $row["country"], "y"=> $row["deaths"]));
             }
+         
+
          }	 
 
          //We are done with the result set returned above, so free it
@@ -127,6 +109,23 @@ if (empty($item)) {
 $conn->close();
 ?>
 
+<script>
+window.onload = function () { 
+   var chart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true,
+      exportEnabled: true,
+      theme: "light1", // "light1", "light2", "dark1", "dark2"
+      title:{
+         text: "Population"
+      },
+      data: [{
+         type: "line", //change type to column, bar, line, area, pie, etc  
+         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+      }]
+   });
+   chart.render(); 
+}
+</script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<div id="chartContainer" style="width: 45%; height: 300px;display: inline-block;"></div> 
+<div id="chartContainer" style="width: 100%;"></div> 
 </body>
