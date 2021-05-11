@@ -37,6 +37,9 @@ window.onload = function () {
 		title:{
 			text: "Top Democracy Index Countries"
 		},
+		axisX:{
+			interval: 1
+		},
 		data: [{
 			type: "line", //change type to column, bar, line, area, pie, etc  
 			dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
