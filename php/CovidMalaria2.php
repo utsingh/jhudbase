@@ -102,9 +102,9 @@ if (empty($item)) {
                //array_push($dataPoints4, array( "label"=> $row["country"], "y"=> $row["deaths"]));
             }*/
 
-            echo "<pre>";
-            print_r($result);
-            echo "</pre>";
+            foreach ($result as $key=>$index){
+    echo "$key => $index <br>";
+}
          }	 
 
          //We are done with the result set returned above, so free it
