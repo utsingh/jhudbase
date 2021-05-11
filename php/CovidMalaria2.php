@@ -11,8 +11,8 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item = $_POST['item'];
-$under = "UNDER";
+$item = $_POST['threshold3'];
+$underover = $_POST['underover3'];
 
 echo "<h2>covidmalaria2</h2>";
 echo "Under/Over: ";
@@ -34,7 +34,7 @@ if (empty($item)) {
       //the variables that follow: 's' means string, 'i' means integer, 'd' means
       //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
       //and the other two are strings, the first argument included should be "sis".
-      $stmt->bind_param("ss" ,$under, $item);
+      $stmt->bind_param("ss" ,$underover, $item);
       //Run the actual query
       if ($stmt->execute()) {
 
@@ -50,7 +50,7 @@ if (empty($item)) {
 	 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
-            echo "<tr><th> buyerNum </th> <th> bidTime </th> <th> amount </th></tr>";
+            echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
 
             //Report result set by visiting each row in it
             while ($row = $result->fetch_row()) {
@@ -58,6 +58,8 @@ if (empty($item)) {
                echo "<td>".$row[0]."</td>";
                echo "<td>".$row[1]."</td>";
                echo "<td>".$row[2]."</td>";
+               echo "<td>".$row[3]."</td>";
+               echo "<td>".$row[4]."</td>";
                echo "</tr>";
             } 
          

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Overviews</title>
+<title>COVID19 VS Malaria</title>
 <style>
   ul {
   list-style-type: none;
@@ -80,51 +80,51 @@ li.dropdown {
 </ul>
 
 
-    <h1>Overviews</h1>
+    <h1>COVID-19 vs Malaria</h1>
     <h3>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h3>
 
-    <hr>
+    <hr><br>
   <!-- List of Overviews -->
-    <h3>1. The Top Malaria Countries</h3>
-    <form action="oTopMalaria.php" method="post">
+ <!--   <h3>1.  (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)?</h3>
+    <form action="CovidMalaria1.php" method="post">
       <input type="submit" value="Top Malaria Countries">
     </form>
+-->
 
-    <h3>2. The Lowest Malaria Countries</h3>
-    <form action="oLowestMalaria.php" method="post">
-      <input type="submit" value="Lowest Malaria Countries">
+    <h3>1. Which are the countries with malaria incidence rates in the world where cumulative COVID19 case counts are (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)? </h3>
+    <h3> Example: "UNDER 100 OVER 1" -- (will return all countries where COVID cases are under 100 OR over 1)</h3>
+    <form action="CovidMalaria1.php">
+      <label for="underover1">Select Under / Over and input an integer: COVID TOTAL CASE COUNTS </label>
+      <select id="underover1" name="underover1">
+        <option value="UNDER">UNDER</option>
+        <option value="OVER">OVER</option>
+      </select>
+      <input type="text" name="threshold1">
+      <br>OR<br>
+      <label for="underover2">Select Under / Over and input an integer: COVID DEATHS</label>
+      <select id="underover2" name="underover2">
+        <option value="UNDER">UNDER</option>
+        <option value="OVER">OVER</option>
+      </select>
+      <input type="text" name="threshold2">
+      <br>
+      <input type="submit">
     </form>
 
-    <h3>3. The Top Population Countries</h3>
-    <form action="oTopPopulation.php" method="post">
-      <input type="submit" value="Top Population Countries">
-    </form>
+<br><br>
 
-    <h3>4. The Lowest Population Countries</h3>
-    <form action="oLowestPopulation.php" method="post">
-      <input type="submit" value="Lowest Population Countries">
+    <h3>2. What are the COVID-19 incidents for the countries with malaria rates (UNDER/ABOVE) (Threshold amount)?</h3>
+    <h3> Example: "UNDER 100" -- (will return all countries where malaria rates are UNDER 100)</h3>
+    <form action="CovidMalaria2.php">
+      <label for="underover3">Select Under / Over and input an integer: </label>
+      <select id="underover3" name="underover3">
+        <option value="UNDER">UNDER</option>
+        <option value="OVER">OVER</option>
+      </select><br>
+      Threshold: <input type="text" name="threshold3">
+      <br>
+      <input type="submit">
     </form>
-
-    <h3>5. The Top Democracy Index Countries</h3>
-    <form action="oTopDemocracy.php" method="post">
-      <input type="submit" value="Top Democracy Countries">
-    </form>
-
-    <h3>6. The Lowest Democracy Index Countries</h3>
-    <form action="oLowestDemocracy.php" method="post">
-      <input type="submit" value="Lowest Democracy Countries">
-    </form>
-
-    <h3>7. The Top Life-Expectancy Countries</h3>
-    <form action="oTopLifeExpectancy.php" method="post">
-      <input type="submit" value="Top Life-Expectancy Countries">
-    </form>
-
-    <h3>8. The Lowest Life-Expectancy Countries</h3>
-    <form action="oLowestLifeExpectancy.php" method="post">
-      <input type="submit" value="Lowest Life-Expectancy Countries">
-    </form>
-
 
   </body>
 </html>
