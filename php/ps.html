@@ -6,6 +6,11 @@
 	<h3>2. What are the COVID-19 incidents for the countries with malaria rates (UNDER/ABOVE) (Threshold amount)?</h3>
     <h3> Example: "UNDER 100" -- (will return all countries where malaria rates are UNDER 100)</h3>
 	<form action="CovidMalaria2.php" method="post">
+		<label for="cars">Choose a car:</label>
+		  <select id="cars" name="cars">
+		    <option value="UNDER">Under</option>
+		    <option value="OVER">Over</option>
+		  </select>
 		Threshold: <input type="text" name="item">
 		<input type="submit">
 	</form>

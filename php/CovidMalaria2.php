@@ -12,10 +12,10 @@ ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
 $item = $_POST['item'];
-$underover = "UNDER";
+$underover = $_POST['cars'];
 
-echo "<h2>Bid History</h2>";
-echo "Item number: ";
+//echo "<h2>Bid History</h2>";
+//echo "Item number: ";
 
 //Determine if any input was actually collected
 if (empty($item)) {
