@@ -16,10 +16,7 @@ $item = $_POST['item'];
 $underover = isset($_POST['cars']);
 
 //construct an array in which we'll store our data
-$dataPoints1 = array();
-$dataPoints2 = array();
-$dataPoints3 = array();
-$dataPoints4 = array();
+$dataPoints = array();
 
 //echo "<h2>Bid History</h2>";
 //echo "Item number: ";
@@ -62,17 +59,14 @@ if (empty($item)) {
 
             //Report result set by visiting each row in it
             while ($row = $result->fetch_row()) {
-               /*echo "<tr>";
+               echo "<tr>";
                echo "<td>".$row[0]."</td>";
                echo "<td>".$row[1]."</td>";
                echo "<td>".$row[2]."</td>";
                echo "<td>".$row[3]."</td>";
                echo "<td>".$row[4]."</td>";
-               echo "</tr>";*/
-               array_push($dataPoints1, array( "label"=> $row[0], "y"=> $row[1]));
-               array_push($dataPoints2, array( "label"=> $row[0], "y"=> $row[2]));
-               array_push($dataPoints3, array( "label"=> $row[0], "y"=> $row[3]));
-               array_push($dataPoints4, array( "label"=> $row[0], "y"=> $row[4]));
+               echo "</tr>";
+               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
             } 
 
 
@@ -128,8 +122,5 @@ window.onload = function () {
 }
 </script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
-<div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div> 
-<div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div> 
-<div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div> 
+<div id="chartContainer" style="width: 45%; height: 300px;display: inline-block;"></div> 
 </body>
