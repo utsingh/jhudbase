@@ -1,4 +1,3 @@
-
 <head><title>PHP PreparedStatement example</title>
 </head>
 <body>
@@ -56,7 +55,6 @@ if (empty($item)) {
             //Create table to display results
             echo "<table border=\"1px solid black\">";
             echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
-
             //Report result set by visiting each row in it
             while ($row = $result->fetch_row()) {
                echo "<tr>";
@@ -68,10 +66,8 @@ if (empty($item)) {
                echo "</tr>";
                
             } 
-
 	 
             echo "</table>";
-
          */
             while ($row = $result->fetch_row()) {
                array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
