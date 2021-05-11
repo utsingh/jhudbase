@@ -238,8 +238,8 @@ FROM (SELECT country, age, sex, life_expectancy, MAX(year) AS year
 ORDER BY country, age DESC;
 
 /*
-DROP VIEW IF EXISTS COVID192;
-CREATE VIEW COVID192 AS
+DROP VIEW IF EXISTS COVID19;
+CREATE VIEW COVID19 AS
 WITH covid19_confirmed_global_sorted AS (SELECT t.country, confirmed, covid19_confirmed_global.dataDate FROM covid19_confirmed_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_confirmed_global GROUP BY country)t ON t.country = covid19_confirmed_global.country AND t.dataDate = covid19_confirmed_global.dataDate),
      covid19_recovered_global_sorted AS (SELECT t.country, recovered FROM covid19_recovered_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_recovered_global GROUP BY country)t ON t.country = covid19_recovered_global.country AND t.dataDate = covid19_recovered_global.dataDate),
      covid19_deaths_global_sorted AS (SELECT t.country, deaths FROM covid19_deaths_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_deaths_global GROUP BY country)t ON t.country = covid19_deaths_global.country AND t.dataDate = covid19_deaths_global.dataDate)
@@ -258,9 +258,9 @@ SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.con
                 ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
                 INNER JOIN covid19_deaths_global 
                 ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
-                LEFT JOIN COVID192 
-                ON covid19_confirmed_global.country = COVID192.country
-                WHERE covid19_confirmed_global.dataDate = DATE_SUB(COVID192.dataDate, INTERVAL 1 MONTH);
+                LEFT JOIN COVID19 
+                ON covid19_confirmed_global.country = COVID19.country
+                WHERE covid19_confirmed_global.dataDate = DATE_SUB(COVID19.dataDate, INTERVAL 1 MONTH);
 
 DROP VIEW IF EXISTS daily;
 CREATE VIEW daily AS
@@ -270,31 +270,31 @@ SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.con
                 ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
                 INNER JOIN covid19_deaths_global 
                 ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
-                LEFT JOIN COVID192
-                ON covid19_confirmed_global.country = COVID192.country
-                WHERE covid19_confirmed_global.dataDate = DATE_SUB(COVID192.dataDate, INTERVAL 1 DAY);
+                LEFT JOIN COVID19
+                ON covid19_confirmed_global.country = COVID19.country
+                WHERE covid19_confirmed_global.dataDate = DATE_SUB(COVID19.dataDate, INTERVAL 1 DAY);
 
 
 DROP VIEW IF EXISTS montlyIncrease;
 CREATE VIEW montlyIncrease AS
-SELECT COVID192.country, (COVID192.active - monthly.activeMonthly) as monthlyIncrease
-FROM COVID192 INNER JOIN monthly
-ON COVID192.country = monthly.country;
+SELECT COVID19.country, (COVID19.active - monthly.activeMonthly) as monthlyIncrease
+FROM COVID19 INNER JOIN monthly
+ON COVID19.country = monthly.country;
 
 DROP VIEW IF EXISTS dailyIncrease;
 CREATE VIEW dailyIncrease AS
-SELECT COVID192.country, (COVID192.active - daily.activeDaily) as dailyIncrease
-FROM COVID192 INNER JOIN daily
-ON COVID192.country = daily.country;
+SELECT COVID19.country, (COVID19.active - daily.activeDaily) as dailyIncrease
+FROM COVID19 INNER JOIN daily
+ON COVID19.country = daily.country;
 
 
 DROP VIEW IF EXISTS CovidChange2;
 CREATE VIEW CovidChange2 AS
-SELECT COVID192.country, dailyIncrease.dailyIncrease, montlyIncrease.monthlyIncrease
-FROM COVID192 INNER JOIN dailyIncrease
-ON COVID192.country = dailyIncrease.country
+SELECT COVID19.country, dailyIncrease.dailyIncrease, montlyIncrease.monthlyIncrease
+FROM COVID19 INNER JOIN dailyIncrease
+ON COVID19.country = dailyIncrease.country
 INNER JOIN montlyIncrease
-ON COVID192.country = montlyIncrease.country;
+ON COVID19.country = montlyIncrease.country;
 */
 
 /* Countries divided into their hemispheres */
@@ -539,15 +539,15 @@ DROP PROCEDURE IF EXISTS RegionCOVID1 //
 CREATE PROCEDURE RegionCOVID1(IN hem VARCHAR(10))
 BEGIN
       IF hem = 'NORTH HEM' THEN
-         SELECT CountryHemispheres.ns as hemisphere, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
-         FROM COVID192 INNER JOIN CountryHemispheres
-         ON COVID192.country = CountryHemispheres.country
+         SELECT CountryHemispheres.ns as hemisphere, SUM(COVID19.confirmed) AS confirmed, SUM(COVID19.recovered) AS recovered, SUM(COVID19.active) AS active, SUM(COVID19.deaths) AS deaths
+         FROM COVID19 INNER JOIN CountryHemispheres
+         ON COVID19.country = CountryHemispheres.country
          WHERE CountryHemispheres.ns = "NORTH"
          GROUP BY CountryHemispheres.ns;
       ELSE
-         SELECT CountryHemispheres.ns as hemisphere, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
-         FROM COVID192 INNER JOIN CountryHemispheres
-         ON COVID192.country = CountryHemispheres.country
+         SELECT CountryHemispheres.ns as hemisphere, SUM(COVID19.confirmed) AS confirmed, SUM(COVID19.recovered) AS recovered, SUM(COVID19.active) AS active, SUM(COVID19.deaths) AS deaths
+         FROM COVID19 INNER JOIN CountryHemispheres
+         ON COVID19.country = CountryHemispheres.country
          WHERE CountryHemispheres.ns = "SOUTH"
          GROUP BY CountryHemispheres.ns;
       END IF;
@@ -558,9 +558,9 @@ DROP PROCEDURE IF EXISTS RegionCOVID2 //
 CREATE PROCEDURE RegionCOVID2(IN region1 VARCHAR(20), IN region2 VARCHAR(20))
 BEGIN
       SELECT region, confirmed, recovered, active, deaths
-      FROM (SELECT Region.region as region, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
-            FROM COVID192 INNER JOIN Region
-            ON COVID192.country = Region.country
+      FROM (SELECT Region.region as region, SUM(COVID19.confirmed) AS confirmed, SUM(COVID19.recovered) AS recovered, SUM(COVID19.active) AS active, SUM(COVID19.deaths) AS deaths
+            FROM COVID19 INNER JOIN Region
+            ON COVID19.country = Region.country
             WHERE region = region1
             OR region = region2
             GROUP BY Region.region)t;
@@ -572,15 +572,15 @@ DROP PROCEDURE IF EXISTS RegionCOVID3 //
 CREATE PROCEDURE RegionCOVID3(IN hem VARCHAR(10))
 BEGIN
       IF hem = 'EAST' THEN
-         SELECT CountryHemispheres.ew as hemisphere, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
-         FROM COVID192 INNER JOIN CountryHemispheres
-         ON COVID192.country = CountryHemispheres.country
+         SELECT CountryHemispheres.ew as hemisphere, SUM(COVID19.confirmed) AS confirmed, SUM(COVID19.recovered) AS recovered, SUM(COVID19.active) AS active, SUM(COVID19.deaths) AS deaths
+         FROM COVID19 INNER JOIN CountryHemispheres
+         ON COVID19.country = CountryHemispheres.country
          WHERE CountryHemispheres.ew = "EAST"
          GROUP BY CountryHemispheres.ew;
       ELSE
-         SELECT CountryHemispheres.ew as hemisphere, SUM(COVID192.confirmed) AS confirmed, SUM(COVID192.recovered) AS recovered, SUM(COVID192.active) AS active, SUM(COVID192.deaths) AS deaths
-         FROM COVID192 INNER JOIN CountryHemispheres
-         ON COVID192.country = CountryHemispheres.country
+         SELECT CountryHemispheres.ew as hemisphere, SUM(COVID19.confirmed) AS confirmed, SUM(COVID19.recovered) AS recovered, SUM(COVID19.active) AS active, SUM(COVID19.deaths) AS deaths
+         FROM COVID19 INNER JOIN CountryHemispheres
+         ON COVID19.country = CountryHemispheres.country
          WHERE CountryHemispheres.ew = "WEST"
          GROUP BY CountryHemispheres.ew;
       END IF;
