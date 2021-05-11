@@ -365,20 +365,18 @@ DROP PROCEDURE IF EXISTS TopMalaria //
 CREATE PROCEDURE TopMalaria()
 BEGIN
    SELECT country, malaria_incidence
-   FROM Malaria 
-   WHERE YEAR(Malaria.year) = 2019
-   ORDER BY Malaria.malaria_incidence DESC
+   FROM MostRecentMalaria 
+   ORDER BY MostRecentMalaria.malaria_incidence DESC
    LIMIT 20;
 
 END; //
 
-DROP PROCEDURE IF EXISTS LowestMalaria //
+DROP PROCEDURE IF EXISTS LowstMalaria //
 CREATE PROCEDURE LowestMalaria()
 BEGIN
    SELECT country, malaria_incidence
-   FROM Malaria 
-   WHERE YEAR(Malaria.year) = 2019
-   ORDER BY Malaria.malaria_incidence ASC
+   FROM MostRecentMalaria
+   ORDER BY MostRecentMalaria.malaria_incidence ASC
    LIMIT 20;
 
 END; //
@@ -457,6 +455,7 @@ BEGIN
       ON COVID19.country = Malaria.country
       WHERE COVID19.confirmed < x1
       OR COVID19.deaths < x2
+      AND Malaria.year = "2019"
       ORDER BY COVID19.confirmed ASC, COVID19.deaths ASC;
    ELSEIF underover1 = 'OVER' AND underover2 = 'UNDER' THEN
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.deaths AS deaths
@@ -464,6 +463,7 @@ BEGIN
       ON COVID19.country = Malaria.country
       WHERE COVID19.confirmed > x1
       OR COVID19.deaths < x2
+      AND Malaria.year = "2019"
       ORDER BY COVID19.confirmed ASC, COVID19.deaths DESC;
    ELSEIF underover1 = 'UNDER' AND underover2 = 'OVER' THEN
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.deaths AS deaths
@@ -471,6 +471,7 @@ BEGIN
       ON COVID19.country = Malaria.country
       WHERE COVID19.confirmed < x1
       OR COVID19.deaths > x2
+      AND Malaria.year = "2019"
       ORDER BY COVID19.confirmed DESC, COVID19.deaths ASC;
    ELSE
       SELECT COVID19.country, malaria_incidence, COVID19.confirmed AS confirmed, COVID19.deaths AS deaths
@@ -478,6 +479,7 @@ BEGIN
       ON COVID19.country = Malaria.country
       WHERE COVID19.confirmed > x1
       OR COVID19.deaths > x2
+      AND Malaria.year = "2019"
       ORDER BY COVID19.confirmed DESC, COVID19.deaths DESC;
    END IF;
 END; //
@@ -515,7 +517,8 @@ BEGIN
                                                 INNER JOIN COVID19_Incidence
                                                          ON Malaria.country = COVID19_Incidence.country 
                                                 INNER JOIN Life_Expectancy   
-                                                         ON COVID19_Incidence.country = Life_Expectancy.country) AllComb                         
+                                                         ON COVID19_Incidence.country = Life_Expectancy.country
+                                                WHERE Malaria.year = "2019") AllComb                         
          ON Population.country = AllComb.country
          WHERE Population.population < x
          ORDER BY Population.population DESC;
@@ -526,7 +529,8 @@ BEGIN
                                                 INNER JOIN COVID19_Incidence
                                                          ON Malaria.country = COVID19_Incidence.country 
                                                 INNER JOIN Life_Expectancy   
-                                                         ON COVID19_Incidence.country = Life_Expectancy.country) AllComb                         
+                                                         ON COVID19_Incidence.country = Life_Expectancy.country
+                                                WHERE Malaria.year = "2019") AllComb                         
          ON Population.country = AllComb.country
          WHERE Population.population > x
          ORDER BY Population.population ASC;
