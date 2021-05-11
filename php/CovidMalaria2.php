@@ -45,7 +45,7 @@ if (empty($item)) {
 
 } else {
 
-   echo $cars.$item."<br><br>";
+   //echo $cars.$item."<br><br>";
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
@@ -70,7 +70,7 @@ if (empty($item)) {
             echo "No bids found for the specified item";
 
          } else {
-	 /*
+	 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
             echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
@@ -87,7 +87,7 @@ if (empty($item)) {
             } 
          
 	 
-            echo "</table>";*/
+            echo "</table>";
 
             //foreach($result as $row){
             while ($row = $result->fetch_row()) {
