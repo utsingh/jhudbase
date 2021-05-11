@@ -48,7 +48,7 @@ if (empty($item)) {
             echo "No bids found for the specified item";
 
          } else {
-    
+	 
             //Create table to display results
             echo "<table border=\"1px solid black\">";
             echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
@@ -64,9 +64,9 @@ if (empty($item)) {
                echo "</tr>";
             } 
          
-    
+	 
             echo "</table>";
-         }   
+         }	 
 
          //We are done with the result set returned above, so free it
          $result->free_result();
@@ -74,7 +74,7 @@ if (empty($item)) {
       } else {
 
          //Call to execute failed, e.g. because server is no longer reachable,
-    //or because supplied values are of the wrong type
+	 //or because supplied values are of the wrong type
          echo "Execute failed.<br>";
       }
 
