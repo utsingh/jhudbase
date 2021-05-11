@@ -371,7 +371,7 @@ BEGIN
 
 END; //
 
-DROP PROCEDURE IF EXISTS LowstMalaria //
+DROP PROCEDURE IF EXISTS LowestMalaria //
 CREATE PROCEDURE LowestMalaria()
 BEGIN
    SELECT country, malaria_incidence
@@ -745,8 +745,8 @@ END; //
 
 
 -- List the aggregates of COVID cases across (REGION/HEMISPHERE/DEMOCRACY/2% LIFE EXP DIFF/POP SIZE)
-DROP PROCEDURE IF EXISTS RegionCOVID1 //
-CREATE PROCEDURE RegionCOVID1(IN agg VARCHAR(15))
+DROP PROCEDURE IF EXISTS COVIDAggregates1 //
+CREATE PROCEDURE COVIDAggregates1(IN agg VARCHAR(15))
 BEGIN
       IF agg = 'REGION' THEN
          SELECT Region.region as region, SUM(COVID19.confirmed) AS confirmed, SUM(COVID19.recovered) AS recovered, SUM(COVID19.active) AS active, SUM(COVID19.deaths) AS deaths
@@ -930,7 +930,7 @@ END; //
 
 
 
---Which countries solved (less than X cases) COVID crises in under (N DAYS) and display their democracy, life expectancy, and population size?
+-- Which countries solved (less than X cases) COVID crises in under (N DAYS) and display their democracy, life expectancy, and population size?
 DROP PROCEDURE IF EXISTS COVIDCrisisHandling1 //
 CREATE PROCEDURE COVIDCrisisHandling1(IN x1 NUMERIC(9,4), IN x2 NUMERIC(9,4))
 BEGIN
@@ -966,6 +966,42 @@ BEGIN
    WHERE MostRecentLifeExpectancy.sex = "Both sexes" AND MostRecentLifeExpectancy.age = 0;
 END; //
 
+
+-- Graph the top 20 countries, total cases to date, and the cumulative deaths for countries that have the (HIGHEST/LOWEST) rate of COVID-19 contraction increase in total covid cases over the last month
+DROP PROCEDURE IF EXISTS COVIDCrisisHandling2 //
+CREATE PROCEDURE COVIDCrisisHandling2(IN underover VARCHAR(20))
+BEGIN
+   IF underover = 'HIGHEST' THEN
+      SELECT * 
+      FROM CovidChange
+      ORDER BY CovidChange.monthlyIncrease DESC
+      LIMIT 20;
+   ELSE
+      SELECT * 
+      FROM CovidChange
+      ORDER BY CovidChange.monthlyIncrease ASC
+      LIMIT 20;
+   END IF;
+END; //
+
+-- List the countries where the rate of change of the difference in daily case counts is (NEGATIVE/POSITIVE) 
+DROP PROCEDURE IF EXISTS COVIDCrisisHandling2 //
+CREATE PROCEDURE COVIDCrisisHandling2(IN underover VARCHAR(20))
+BEGIN
+   IF underover = 'NEGATIVE' THEN
+      SELECT * 
+      FROM CovidChange
+      WHERE CovidChange.dailyIncrease > 0 
+      ORDER BY CovidChange.dailyIncrease DESC
+      LIMIT 20;
+   ELSE
+      SELECT * 
+      FROM CovidChange
+      WHERE CovidChange.dailyIncrease < 0 
+      ORDER BY CovidChange.dailyIncrease DESC
+      LIMIT 20;
+   END IF;
+END; //
 
 
 
