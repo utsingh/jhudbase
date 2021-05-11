@@ -519,7 +519,7 @@ BEGIN
          ORDER BY Population.population DESC;
       ELSE
          SELECT Population.country, population, malaria_incidence, covid_incidence, life_expectancy
-         FROM Population INNER JOIN (SELECT MostRecentMalaria.country, malaria_incidence, incidence AS covid_incidence, both_atbirth as life_expectancy
+         FROM Population INNER JOIN (SELECT MostRecentMalaria.country, malaria_incidence, incidence AS covid_incidence, life_expectancy
                                           FROM MostRecentMalaria 
                                                 INNER JOIN COVID19_Incidence
                                                          ON MostRecentMalaria.country = COVID19_Incidence.country 
