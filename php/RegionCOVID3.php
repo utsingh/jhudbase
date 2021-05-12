@@ -29,7 +29,7 @@ if (empty($item)) {
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL RegionCOVID1(?)")) {
+   if ($stmt = $conn->prepare("CALL RegionCOVID3(?)")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of
@@ -110,7 +110,7 @@ window.onload = function () {
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
       title:{
-         text: "Regional COVID1: NORTH/SOUTH Hemisphere"
+         text: "Regional COVID3: EAST/WEST COVID Total Cases"
       },
       data: [{
          type: "bar", //change type to column, bar, line, area, pie, etc  

@@ -123,5 +123,16 @@
 	</form><br>
 	
 
+	<h3>3. List the countries, their populations, and if they’re (EAST/WEST) of the GMT-0 meridian, along with the total covid case counts and deaths.</h3>
+    <h3> Example: "EAST" -- (will return all countries data in EAST HEMISPHERE)</h3>
+	<form action="RegionCOVID3.php" method="post">
+		<label for="rcovid3">NORTH / SOUTH HEMISPHERE: </label>
+		  <select id="rcovid3" name="rcovid3">
+		    <option value="EAST">EAST</option>
+		    <option value="WEST">WEST</option>
+		  </select>
+		<input type="submit">
+	</form>
+
    </body>
 </html>
