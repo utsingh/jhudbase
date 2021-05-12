@@ -1,4 +1,4 @@
-<head><title>INSERTS</title>
+<head><title>Population</title>
 </head>
 <body>
 
@@ -13,14 +13,17 @@ include 'open.php';
 //Collect the posted value in a variable called $item
 $item1 = $_POST['item11'];
 $item2 = $_POST['item12'];
-$item3 = $POST['item13'];
+$item3 = $_POST['item13'];
+
 
 //construct an array in which we'll store our data
 $dataPoints = array();
 
+//echo "<h2>Bid History</h2>";
+//echo "Item number: ";
 
 //Determine if any input was actually collected
-if (empty($item1)) {
+if (empty($item)) {
    echo "empty <br><br>";
 
 } else {
@@ -36,7 +39,7 @@ if (empty($item1)) {
       //the variables that follow: 's' means string, 'i' means integer, 'd' means
       //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
       //and the other two are strings, the first argument included should be "sis".
-      $stmt->bind_param("sss", $item1, $item2, $item3);
+      $stmt->bind_param("sss", $item1, $item2,$item3);
 
       //Run the actual query
       if ($stmt->execute()) {
@@ -47,10 +50,32 @@ if (empty($item1)) {
          if ($result->num_rows == 0) {
 
             //Result contains no rows at all
-            echo "INSERTED SUCCESSFULLY";
+            echo "Inserts";
 
          } else {
-            echo "INSERTED SUCCESSFULLY";
+	 /*
+            //Create table to display results
+            echo "<table border=\"1px solid black\">";
+            echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
+            //Report result set by visiting each row in it
+            while ($row = $result->fetch_row()) {
+               echo "<tr>";
+               echo "<td>".$row[0]."</td>";
+               echo "<td>".$row[1]."</td>";
+               echo "<td>".$row[2]."</td>";
+               echo "<td>".$row[3]."</td>";
+               echo "<td>".$row[4]."</td>";
+               echo "</tr>";
+               
+            } 
+	 
+            echo "</table>";
+         */
+            while ($row = $result->fetch_row()) {
+              echo "Inserts";
+            }
+         
+
          }	 
 
          //We are done with the result set returned above, so free it
@@ -80,4 +105,5 @@ if (empty($item1)) {
 //Close the connection created in open.php
 $conn->close();
 ?>
+
 </body>
