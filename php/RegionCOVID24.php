@@ -11,8 +11,8 @@ include 'open.php';
 //ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item = $_POST['cars'];
-$underover = isset($_POST['trucks']);
+$item = $_POST['rcovid241'];
+$underover = isset($_POST['rcovid242']);
 
 //construct an array in which we'll store our data
 $dataPoints = array();
