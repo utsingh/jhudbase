@@ -12,9 +12,9 @@ include 'open.php';
 
 //Collect the posted value in a variable called $item
 $item1 = $_POST['item1'];
-$underover1 = isset($_POST['cars1']);
+$underover1 = $_POST['cars1'];
 $item2 = $_POST['item2'];
-$underover2 = isset($_POST['cars2']);
+$underover2 = $_POST['cars2'];
 
 //construct an array in which we'll store our data
 $dataPoints = array();

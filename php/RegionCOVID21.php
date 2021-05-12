@@ -1,4 +1,4 @@
-<head><title>Region Covid 2</title>
+<head><title>Regional COVID2</title>
 </head>
 <body>
 
@@ -51,10 +51,10 @@ if (empty($item) || empty($underover)) {
             echo "No bids found for the specified item";
 
          } else {
-	 /*
+    /*
             //Create table to display results
             echo "<table border=\"1px solid black\">";
-            echo "<tr><th> country </th> <th> confirmed </th><th> recovered </th><th>active</th><th> deaths </th></tr>";
+            echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
             //Report result set by visiting each row in it
             while ($row = $result->fetch_row()) {
                echo "<tr>";
@@ -66,15 +66,15 @@ if (empty($item) || empty($underover)) {
                echo "</tr>";
                
             } 
-	 
+    
             echo "</table>";
-         
+         */
             while ($row = $result->fetch_row()) {
-               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[1]));
+               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[4]));
             }
          
 
-         }	 
+         }   
 
          //We are done with the result set returned above, so free it
          $result->free_result();
@@ -82,7 +82,7 @@ if (empty($item) || empty($underover)) {
       } else {
 
          //Call to execute failed, e.g. because server is no longer reachable,
-	 //or because supplied values are of the wrong type
+    //or because supplied values are of the wrong type
          echo "Execute failed.<br>";
       }
 
@@ -111,7 +111,7 @@ window.onload = function () {
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
       title:{
-         text: "Regional COVID 2: CONFIRMED"
+         text: "Regional COVID 2: confirmed cases"
       },
       data: [{
          type: "line", //change type to column, bar, line, area, pie, etc  

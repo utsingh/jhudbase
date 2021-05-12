@@ -12,7 +12,7 @@ include 'open.php';
 
 //Collect the posted value in a variable called $item
 $item = $_POST['item'];
-$underover = isset($_POST['cars']);
+$underover = $_POST['cars'];
 
 //construct an array in which we'll store our data
 $dataPoints = array();
@@ -21,7 +21,7 @@ $dataPoints = array();
 //echo "Item number: ";
 
 //Determine if any input was actually collected
-if (empty($item)) {
+if (empty($item) || empty($underover)) {
    echo "empty <br><br>";
 
 } else {
