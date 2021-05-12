@@ -1,0 +1,33 @@
+Afghanistan,38928346
+Angola,32866272
+Austria,9006398
+Bangladesh,164689383
+Belize,397628
+Bermuda,62278
+Cabo Verde,555987
+Colombia,50882891
+Dominican Republic,10847910
+Egypt,102334404
+Eritrea,3546421
+Ethiopia,114963588
+Finland,5540720
+Gabon,2225734
+Haiti,11402528
+Jordan,10203134
+Kenya,53771296
+Lesotho,2142249
+Liberia,5057681
+Moldova,4033963
+Mongolia,3278290
+Montenegro,628066
+Morocco,36910560
+Norway,5421241
+Paraguay,7132538
+Poland,37846611
+Saint Lucia,183627
+Saudi Arabia,34813871
+Sudan,43849260
+Syria,17500658
+Tonga,105695
+United States,331002651
+Venezuela,28435940
