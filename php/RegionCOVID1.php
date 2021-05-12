@@ -121,5 +121,5 @@ window.onload = function () {
 }
 </script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<div id="chartContainer" style="width: 100%;"></div> 
+<div id="chartContainer" style="width: 50%;"></div> 
 </body>
