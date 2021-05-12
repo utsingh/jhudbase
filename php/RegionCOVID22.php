@@ -1,4 +1,4 @@
-<head><title>Region Covid 2</title>
+<head><title>Regional COVID2</title>
 </head>
 <body>
 
@@ -70,7 +70,7 @@ if (empty($item) || empty($underover)) {
             echo "</table>";
          */
             while ($row = $result->fetch_row()) {
-               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[2]));
+               array_push($dataPoints, array( "label"=> $row[0], "y"=> $row[4]));
             }
          
 
@@ -111,7 +111,7 @@ window.onload = function () {
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
       title:{
-         text: "Regional COVID 2: Recovered"
+         text: "Regional COVID 2: recovered cases"
       },
       data: [{
          type: "line", //change type to column, bar, line, area, pie, etc  

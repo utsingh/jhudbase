@@ -1,4 +1,4 @@
-<head><title>Region Covid 2</title>
+<head><title>Regional COVID2</title>
 </head>
 <body>
 
@@ -12,7 +12,7 @@ include 'open.php';
 
 //Collect the posted value in a variable called $item
 $item = $_POST['rcovid241'];
-$underover = isset($_POST['rcovid242']);
+$underover = $_POST['rcovid242'];
 
 //construct an array in which we'll store our data
 $dataPoints = array();
@@ -111,7 +111,7 @@ window.onload = function () {
       exportEnabled: true,
       theme: "light1", // "light1", "light2", "dark1", "dark2"
       title:{
-         text: "Regional COVID 2: Deaths"
+         text: "Regional COVID 2: deaths cases"
       },
       data: [{
          type: "line", //change type to column, bar, line, area, pie, etc  
