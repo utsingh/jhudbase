@@ -20,7 +20,7 @@ $dataPoints = array();
 
 
 //Determine if any input was actually collected
-if (empty($item1) || empty($item2) || empty($item3)) {
+if (empty($item1)) {
    echo "empty <br><br>";
 
 } else {
