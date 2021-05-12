@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HOME</title>
+<style>
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Menu -->
+<ul>
+  <li><a href="kgorman4_usingh5.html">Home</a></li>
+  
+  <!--<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Overviews</a>
+    <div class="dropdown-content">
+      <a href="oTopMalaria.php">Top Malaria</a>
+      <a href="#">Lowest Malaria</a>
+    </div>
+  </li>-->
+  <li><a href="Overviews.html">Overviews</a></li>
+  <li><a href="CovidVSMalaria.html">COVID VS Malaria</a></li>
+  <li><a href="Population.html">Population</a></li>
+  <li><a href="RegionalCovid.html">Regional COVID-19</a></li>
+  <li><a href="GeographicAggregates.html">Geographic Aggregates</a></li>
+  <li><a href="HealthcareVSDemocracy.html">Healthcare vs Democracy</a></li>
+  <li><a href="LifeExpectancy.html">Life Expectancy</a></li>
+  <li><a href="DiseaseAggregates.html">Disease Aggregates</a></li>
+  <li><a href="diseaseovertime.html">Disease Over Time</a></li>
+  <li><a href="crises.html">COVID Crisis Handling</a></li>
+  <li><a href="Inserts.html">INSERTS</a></li>
+  <li><a href="Deletes.html">DELETES</a></li>
+
+</ul>
+	<h1>INSERTS</h1>
+    <h3>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h3>
+
+    <hr><br>
+
+
+	<h3>1. Countries(Varchar country, Decimal latitude, Decimal longitude)</h3>
+    <h3> Example: InsertCountries('AAAA', 0,0)</h3>
+
+	<form action="insert1.php" method="post">
+		country: <input type="text" name="item11">
+    latitude: <input type="text" name="item12">
+    longitude: <input type="text" name="item13">
+		<input type="submit">
+	</form>
+	<br/><br/>
+
+  <h3>2. covid19_confirmed_global(Varchar country, Date dataDate, Int confirmed)</h3>
+    <h3> Example: Insertcovid19_confirmed_global('AAAA', '2021-9-9',0)</h3>
+
+  <form action="insert2.php" method="post">
+    country: <input type="text" name="item21">
+    date: <input type="text" name="item22">
+    confirmed cases: <input type="text" name="item23">
+    <input type="submit">
+  </form>
+  <br/><br/>
+
+    <h3>3. covid19_deaths_global(Varchar country, Date dataDate, Int deaths)</h3>
+    <h3> Example: Insertcovid19_deaths_global('AAAA', '2021-9-9',0)</h3>
+
+  <form action="insert3.php" method="post">
+    country: <input type="text" name="item31">
+    date: <input type="text" name="item32">
+    death cases: <input type="text" name="item33">
+    <input type="submit">
+  </form>
+  <br/><br/>
+
+    <h3>4. covid19_recovered_global(Varchar country, Date dataDate, Int recovered)</h3>
+    <h3> Example: Insertcovid19_recovered_global('AAAA', '2021-9-9',0)</h3>
+
+  <form action="insert4.php" method="post">
+    country: <input type="text" name="item41">
+    date: <input type="text" name="item42">
+    recovered cases: <input type="text" name="item43">
+    <input type="submit">
+  </form>
+  <br/><br/>
+
+    <h3>5. Democracies(Varchar country, Decimal democracy_index)</h3>
+    <h3> Example: InsertDemocracies('AAAA', 0)</h3>
+
+  <form action="insert5.php" method="post">
+    country: <input type="text" name="item51">
+    democracy index: <input type="text" name="item52">
+    <input type="submit">
+  </form>
+  <br/><br/>
+
+    <h3>6. Life_Expectancy(Varchar country, Year year, Decimal age, Varchar sex, Decimal life_expectancy)</h3>
+    <h3> Example: InsertLife_Expectancy('AAAA', 2020,0, 'Male', 0)</h3>
+
+  <form action="insert6.php" method="post">
+    country: <input type="text" name="item61">
+    year: <input type="text" name="item62">
+    age: <input type="text" name="item63">
+    sex: <input type="text" name="item64">
+    life expectancy: <input type="text" name="item65">
+    <input type="submit">
+  </form>
+  <br/><br/>
+
+    <h3>7. Malaria(Varchar country, Year year, Decimal malaria_incidence)</h3>
+    <h3> Example: InsertMalaria('AAAA', 2022, 0)</h3>
+
+  <form action="insert7.php" method="post">
+    country: <input type="text" name="item71">
+    year: <input type="text" name="item72">
+    malaria incidence: <input type="text" name="item73">
+    <input type="submit">
+  </form>
+  <br/><br/>
+
+    <h3>8. Population(Varchar country, Int population)</h3>
+    <h3> Example: InsertPopulation('AAAA', 0)</h3>
+
+  <form action="insert8.php" method="post">
+    country: <input type="text" name="item81">
+    population: <input type="text" name="item82">
+    <input type="submit">
+  </form>
+  <br/><br/>
+
+    <h3>9. Region(Varchar country, Varchar region)</h3>
+    <h3> Example: InsertRegion('AAAA', 'Asia & Australasia')</h3>
+
+  <form action="insert9.php" method="post">
+    country: <input type="text" name="item91">
+    region: <input type="text" name="item92">
+    <input type="submit">
+  </form>
+  <br/><br/>
+
+   </body>
+</html>
