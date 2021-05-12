@@ -50,7 +50,7 @@ window.onload = function () {
 </script>
 </head>
 <body>
-	<div id="chartContainer" style="width: 400%;"></div>
+	<div id="chartContainer" style="width: 500%;"></div>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>

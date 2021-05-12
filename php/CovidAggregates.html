@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Life Expectancy</title>
+<title>Disease Aggregates</title>
 <style>
   ul {
   list-style-type: none;
@@ -80,45 +80,54 @@ li.dropdown {
 </ul>
 
 
-    <h1>Life Expectancy</h1>
+    <h1>Disease Aggregates</h1>
     <h3>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h3>
 
     <hr>
-  <!-- List of Overviews -->
-    <h3>1. List the countries where the female life expectancy is at least 2% greater than male life expectancies.</h3>
-    Male Life Expectancy
-    <form action="lifeExpectancy11.php" method="post">
-      <input type="submit" value="Male Life Expectancy">
-    </form>
-    Female Life Expectancy
-    <form action="lifeExpectancy12.php" method="post">
-      <input type="submit" value="Male Life Expectancy">
-    </form>
 
 
-
-    <h3>2. List the 30 countries with the (HIGHEST/LOWEST) life expectancy at birth along with their malaria rates</h3>
-    <h3> Example: "HIGHEST " </h3>
-	Life Expectancy
-	<form action="lifeExpectancy21.php" method="post">
-		<label for="life21">Choose Highest / Lowest: </label>
-		  <select id="life21" name="life21">
-		    <option value="HIGHEST">HIGHEST</option>
-		    <option value="LOWEST">LOWEST</option>
+    <h3>1. List the aggregates of COVID cases across</h3>
+    <h3> Example: (REGION/HEMISPHERE/DEMOCRACY/2% LIFE EXP DIFF/POP SIZE) </h3>
+	COVID Confirmed
+	<form action="disease11.php" method="post">
+		<label for="disease11">Choose Region: </label>
+		  <select id="disease11" name="disease11">
+		    <option value="REGION">REGION</option>
+		    <option value="HEMISPHERE">HEMISPHERE</option>
+        <option value="DEMOCRACY">DEMOCRACY</option>
+        <option value="2% LIFE EXP DIFF">2% LIFE EXP DIFF</option>
+        <option value="POP SIZE">POP SIZE</option>
 		  </select>
 		<input type="submit">
 	</form>
-	COVID19 Incidence
-	<form action="lifeExpectancy22.php" method="post">
-		<label for="life22">Choose Highest / Lowest: </label>
-		  <select id="life22" name="life22">
-		    <option value="HIGHEST">HIGHEST</option>
-		    <option value="LOWEST">LOWEST</option>
+	COVID19 Deaths
+	<form action="disease12.php" method="post">
+		<label for="disease12">Choose Highest / Lowest: </label>
+		  <select id="disease12" name="disease12">
+        <option value="REGION">REGION</option>
+        <option value="HEMISPHERE">HEMISPHERE</option>
+        <option value="DEMOCRACY">DEMOCRACY</option>
+        <option value="2% LIFE EXP DIFF">2% LIFE EXP DIFF</option>
+        <option value="POP SIZE">POP SIZE</option>
 		  </select>
 		<input type="submit">
 	</form>
-
-    
+<br><br>
+  <h3>2. List the aggregates of Malaria cases across</h3>
+    <h3> Example: (REGION/HEMISPHERE/DEMOCRACY/2% LIFE EXP DIFF/POP SIZE) </h3>
+  Malaria Incidence
+  <form action="disease21.php" method="post">
+    <label for="disease21">Choose Region: </label>
+      <select id="disease21" name="disease21">
+        <option value="REGION">REGION</option>
+        <option value="HEMISPHERE">HEMISPHERE</option>
+        <option value="DEMOCRACY">DEMOCRACY</option>
+        <option value="2% LIFE EXP DIFF">2% LIFE EXP DIFF</option>
+        <option value="POP SIZE">POP SIZE</option>
+      </select>
+    <input type="submit">
+  </form>
+  
 
   </body>
 </html>
