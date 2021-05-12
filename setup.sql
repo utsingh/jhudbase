@@ -140,7 +140,6 @@ ON covid19_recovered_global_sorted.country = covid19_deaths_global_sorted.countr
 
 
 DROP VIEW IF EXISTS CovidChange;
-
 CREATE VIEW CovidChange AS
 WITH monthly AS (
                 SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths as active
@@ -167,25 +166,7 @@ FROM COVID19 INNER JOIN monthly
 ON COVID19.country = monthly.country 
 INNER JOIN daily 
 ON COVID19.country = daily.country;
-/*
-CREATE VIEW COVID19 AS
-SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.confirmed as confirmed, covid19_deaths_global.deaths as deaths, covid19_recovered_global.recovered as recovered, covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths as active
-FROM covid19_confirmed_global 
-INNER JOIN covid19_recovered_global
-ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
-INNER JOIN covid19_deaths_global 
-ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
-WHERE covid19_confirmed_global.dataDate = "2021-04-12";
-*/
 
-/* Make a view of the countries and their total COVID-19 cases, in the decreasing order of cumulative total cases to date */
-/*
-DROP VIEW IF EXISTS COVID19_Totals;
-CREATE VIEW COVID19_Totals AS
-SELECT country, deaths+recovered+active AS total
-FROM COVID19
-ORDER BY total DESC;
-*/
 /* Make a view of the global COVID data by country per 1000 of the population. (To match up with Malaria data). */
 DROP VIEW IF EXISTS COVID19_Incidence;
 CREATE VIEW COVID19_Incidence as
@@ -194,32 +175,6 @@ FROM COVID19 INNER JOIN Population
 ON COVID19.country = Population.country
 ORDER BY incidence DESC;
 
-/* List the top 10 countries, total cases to date, and the cumulative deaths for countries that have the highest rate of COVID-19 contraction increase in total covid cases over the last month, displayed in decreasing order.*/
-/*
-DROP VIEW IF EXISTS CovidChange;
-CREATE VIEW CovidChange AS
-WITH monthly AS (
-                SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths as active
-                FROM covid19_confirmed_global 
-                INNER JOIN covid19_recovered_global
-                ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
-                INNER JOIN covid19_deaths_global 
-                ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
-                WHERE covid19_confirmed_global.dataDate = "2021-03-12"),
-     daily AS (
-                SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths as active
-                FROM covid19_confirmed_global 
-                INNER JOIN covid19_recovered_global
-                ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
-                INNER JOIN covid19_deaths_global 
-                ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
-                WHERE covid19_confirmed_global.dataDate = "2021-04-11")
-SELECT COVID19.country, (COVID19.active - daily.active) as dailyIncrease, (COVID19.active - monthly.active) as monthlyIncrease
-FROM COVID19 INNER JOIN monthly
-ON COVID19.country = monthly.country 
-INNER JOIN daily 
-ON COVID19.country = daily.country;
-*/
 
 
 DROP VIEW IF EXISTS MostRecentMalaria;
@@ -237,65 +192,6 @@ FROM (SELECT country, age, sex, life_expectancy, MAX(year) AS year
       GROUP BY country, age, sex) t
 ORDER BY country, age DESC;
 
-/*
-DROP VIEW IF EXISTS COVID19;
-CREATE VIEW COVID19 AS
-WITH covid19_confirmed_global_sorted AS (SELECT t.country, confirmed, covid19_confirmed_global.dataDate FROM covid19_confirmed_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_confirmed_global GROUP BY country)t ON t.country = covid19_confirmed_global.country AND t.dataDate = covid19_confirmed_global.dataDate),
-     covid19_recovered_global_sorted AS (SELECT t.country, recovered FROM covid19_recovered_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_recovered_global GROUP BY country)t ON t.country = covid19_recovered_global.country AND t.dataDate = covid19_recovered_global.dataDate),
-     covid19_deaths_global_sorted AS (SELECT t.country, deaths FROM covid19_deaths_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_deaths_global GROUP BY country)t ON t.country = covid19_deaths_global.country AND t.dataDate = covid19_deaths_global.dataDate)
-SELECT covid19_confirmed_global_sorted.country as country, covid19_confirmed_global_sorted.confirmed as confirmed, covid19_deaths_global_sorted.deaths as deaths, covid19_recovered_global_sorted.recovered as recovered, covid19_confirmed_global_sorted.confirmed - covid19_recovered_global_sorted.recovered - covid19_deaths_global_sorted.deaths as active, covid19_confirmed_global_sorted.dataDate
-FROM covid19_confirmed_global_sorted 
-INNER JOIN covid19_recovered_global_sorted
-ON covid19_confirmed_global_sorted.country = covid19_recovered_global_sorted.country 
-INNER JOIN covid19_deaths_global_sorted 
-ON covid19_recovered_global_sorted.country = covid19_deaths_global_sorted.country; 
-
-DROP VIEW IF EXISTS monthly;
-CREATE VIEW monthly AS
-SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths as activeMonthly
-                FROM covid19_confirmed_global 
-                INNER JOIN covid19_recovered_global
-                ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
-                INNER JOIN covid19_deaths_global 
-                ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
-                LEFT JOIN COVID19 
-                ON covid19_confirmed_global.country = COVID19.country
-                WHERE covid19_confirmed_global.dataDate = DATE_SUB(COVID19.dataDate, INTERVAL 1 MONTH);
-
-DROP VIEW IF EXISTS daily;
-CREATE VIEW daily AS
-SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths as activeDaily
-                FROM covid19_confirmed_global 
-                INNER JOIN covid19_recovered_global
-                ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
-                INNER JOIN covid19_deaths_global 
-                ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
-                LEFT JOIN COVID19
-                ON covid19_confirmed_global.country = COVID19.country
-                WHERE covid19_confirmed_global.dataDate = DATE_SUB(COVID19.dataDate, INTERVAL 1 DAY);
-
-
-DROP VIEW IF EXISTS montlyIncrease;
-CREATE VIEW montlyIncrease AS
-SELECT COVID19.country, (COVID19.active - monthly.activeMonthly) as monthlyIncrease
-FROM COVID19 INNER JOIN monthly
-ON COVID19.country = monthly.country;
-
-DROP VIEW IF EXISTS dailyIncrease;
-CREATE VIEW dailyIncrease AS
-SELECT COVID19.country, (COVID19.active - daily.activeDaily) as dailyIncrease
-FROM COVID19 INNER JOIN daily
-ON COVID19.country = daily.country;
-
-
-DROP VIEW IF EXISTS CovidChange2;
-CREATE VIEW CovidChange2 AS
-SELECT COVID19.country, dailyIncrease.dailyIncrease, montlyIncrease.monthlyIncrease
-FROM COVID19 INNER JOIN dailyIncrease
-ON COVID19.country = dailyIncrease.country
-INNER JOIN montlyIncrease
-ON COVID19.country = montlyIncrease.country;
-*/
 
 /* Countries divided into their hemispheres */
 DROP VIEW IF EXISTS CountryHemispheres;
@@ -352,13 +248,125 @@ GROUP BY CountryHemispheres.ew;
 
 DELIMITER //
 
-DROP PROCEDURE IF EXISTS Query1 //
-CREATE PROCEDURE Query1(IN c VARCHAR(58))
+DROP PROCEDURE IF EXISTS ResetViews //
+CREATE PROCEDURE ResetViews()
 BEGIN
-   SELECT year, malaria_incidence
-   FROM Malaria 
-   WHERE country = c;
 
+   /* Make a view of the countries and their active, recovered, and death totals for COVID-19 */
+   DROP VIEW IF EXISTS COVID19;
+   CREATE VIEW COVID19 AS
+   WITH covid19_confirmed_global_sorted AS (SELECT t.country, confirmed, covid19_confirmed_global.dataDate FROM covid19_confirmed_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_confirmed_global GROUP BY country)t ON t.country = covid19_confirmed_global.country AND t.dataDate = covid19_confirmed_global.dataDate),
+      covid19_recovered_global_sorted AS (SELECT t.country, recovered FROM covid19_recovered_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_recovered_global GROUP BY country)t ON t.country = covid19_recovered_global.country AND t.dataDate = covid19_recovered_global.dataDate),
+      covid19_deaths_global_sorted AS (SELECT t.country, deaths FROM covid19_deaths_global INNER JOIN (SELECT country, MAX(dataDate) AS dataDate FROM covid19_deaths_global GROUP BY country)t ON t.country = covid19_deaths_global.country AND t.dataDate = covid19_deaths_global.dataDate)
+   SELECT covid19_confirmed_global_sorted.country as country, covid19_confirmed_global_sorted.confirmed as confirmed, covid19_deaths_global_sorted.deaths as deaths, covid19_recovered_global_sorted.recovered as recovered, covid19_confirmed_global_sorted.confirmed - covid19_recovered_global_sorted.recovered - covid19_deaths_global_sorted.deaths as active, covid19_confirmed_global_sorted.dataDate
+   FROM covid19_confirmed_global_sorted 
+   INNER JOIN covid19_recovered_global_sorted
+   ON covid19_confirmed_global_sorted.country = covid19_recovered_global_sorted.country 
+   INNER JOIN covid19_deaths_global_sorted 
+   ON covid19_recovered_global_sorted.country = covid19_deaths_global_sorted.country; 
+
+
+
+   DROP VIEW IF EXISTS CovidChange;
+   CREATE VIEW CovidChange AS
+   WITH monthly AS (
+                  SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths as active
+                  FROM covid19_confirmed_global 
+                  INNER JOIN covid19_recovered_global
+                  ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
+                  INNER JOIN covid19_deaths_global 
+                  ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
+                  LEFT JOIN COVID19
+                  ON covid19_confirmed_global.country = COVID19.country
+                  WHERE covid19_confirmed_global.dataDate = DATE_SUB(COVID19.dataDate, INTERVAL 1 MONTH)),
+      daily AS (
+                  SELECT covid19_confirmed_global.country as country, covid19_confirmed_global.confirmed - covid19_recovered_global.recovered - covid19_deaths_global.deaths as active
+                  FROM covid19_confirmed_global 
+                  INNER JOIN covid19_recovered_global
+                  ON covid19_confirmed_global.country = covid19_recovered_global.country AND covid19_confirmed_global.dataDate = covid19_recovered_global.dataDate
+                  INNER JOIN covid19_deaths_global 
+                  ON covid19_recovered_global.country = covid19_deaths_global.country AND covid19_confirmed_global.dataDate = covid19_deaths_global.dataDate
+                  LEFT JOIN COVID19
+                  ON covid19_confirmed_global.country = COVID19.country
+                  WHERE covid19_confirmed_global.dataDate = DATE_SUB(COVID19.dataDate, INTERVAL 1 DAY))
+   SELECT COVID19.country, (COVID19.active - daily.active) as dailyIncrease, (COVID19.active - monthly.active) as monthlyIncrease
+   FROM COVID19 INNER JOIN monthly
+   ON COVID19.country = monthly.country 
+   INNER JOIN daily 
+   ON COVID19.country = daily.country;
+
+   DROP VIEW IF EXISTS COVID19_Incidence;
+   CREATE VIEW COVID19_Incidence as
+   SELECT COVID19.country, 1000*COVID19.confirmed/Population.population as incidence
+   FROM COVID19 INNER JOIN Population
+   ON COVID19.country = Population.country
+   ORDER BY incidence DESC;
+
+   DROP VIEW IF EXISTS MostRecentMalaria;
+   CREATE VIEW MostRecentMalaria AS
+   SELECT country, malaria_incidence
+   FROM (SELECT country, malaria_incidence, MAX(year) AS year
+         FROM Malaria
+         GROUP BY country) t;
+
+   DROP VIEW IF EXISTS MostRecentLifeExpectancy;
+   CREATE VIEW MostRecentLifeExpectancy AS
+   SELECT country, age, sex, life_expectancy
+   FROM (SELECT country, age, sex, life_expectancy, MAX(year) AS year
+         FROM Life_Expectancy
+         GROUP BY country, age, sex) t
+   ORDER BY country, age DESC;
+
+   DROP VIEW IF EXISTS CountryHemispheres;
+   CREATE VIEW CountryHemispheres as
+   WITH EastWestCountries as (
+                           (SELECT country, 'East' as ew
+                           FROM Countries               
+                           WHERE longitude > 0)
+                           
+                           UNION
+                           
+                           (SELECT country, 'West' as ew
+                           FROM Countries               
+                           WHERE longitude <= 0)),
+      NorthSouthCountries as (
+                           (SELECT country, 'North' as ns
+                           FROM Countries               
+                           WHERE latitude > 0)
+                           
+                           UNION
+                           
+                           (SELECT country, 'South' as ns
+                           FROM Countries               
+                           WHERE latitude <= 0))
+   SELECT NorthSouthCountries.country, ns, ew
+   FROM NorthSouthCountries INNER JOIN EastWestCountries
+   ON NorthSouthCountries.country = EastWestCountries.country;
+
+
+   /* List the country names and the North/South hemisphere they are in on Earth, along with the total covid case counts and deaths */
+   DROP VIEW IF EXISTS NorthSouthCovid;
+   CREATE VIEW NorthSouthCovid as
+   SELECT CountryHemispheres.country, CountryHemispheres.ns, COVID19.confirmed, COVID19.deaths
+   FROM CountryHemispheres INNER JOIN COVID19
+                                 ON CountryHemispheres.country = COVID19.country;
+                                 
+                                 
+   /* List the countries, their populations, and if they’re east and west of the GMT-0 meridian, along with the total covid case counts and deaths */
+   DROP VIEW IF EXISTS EastWestCovid;
+   CREATE VIEW EastWestCovid as
+   SELECT CountryHemispheres.country, CountryHemispheres.ew, COVID19.confirmed, COVID19.deaths
+   FROM CountryHemispheres INNER JOIN COVID19
+                                 ON CountryHemispheres.country = COVID19.country;
+                                 
+                                 
+   /* List the aggregates of COVID cases and cumulative population in all Eastern countries and all Western countries, along with the count of countries in each bloc. */                            
+   DROP VIEW IF EXISTS EastWestAgg;
+   CREATE VIEW EastWestAgg as
+   SELECT CountryHemispheres.ew, SUM(COVID19.confirmed) AS confirmed, COUNT(COVID19.country) AS numCountries
+   FROM COVID19 INNER JOIN CountryHemispheres
+   ON COVID19.country = CountryHemispheres.country
+   GROUP BY CountryHemispheres.ew;
 END; //
 
 DROP PROCEDURE IF EXISTS TopMalaria //
@@ -1009,10 +1017,6 @@ BEGIN
       END IF;
 END; //
 
-
-
-
-
 -- Which countries solved (less than X cases) COVID crises in under (N DAYS) and display their democracy, life expectancy, and population size?
 DROP PROCEDURE IF EXISTS COVIDCrisisHandling1 //
 CREATE PROCEDURE COVIDCrisisHandling1(IN x1 NUMERIC(9,4), IN x2 NUMERIC(9,4))
@@ -1088,5 +1092,139 @@ END; //
 
 
 
+
+--inserts
+DROP PROCEDURE IF EXISTS InsertCountries //
+CREATE PROCEDURE InsertCountries(IN con VARCHAR(58),IN lat NUMERIC(10,6),IN lon NUMERIC(10,6))
+BEGIN
+   INSERT INTO Countries(country,latitude,longitude) VALUES (con, lat, lon);
+   CALL ResetViews();
+END; //
+
+
+DROP PROCEDURE IF EXISTS InsertPopulation //
+CREATE PROCEDURE InsertPopulation(IN con VARCHAR(58),IN pop INTEGER)
+BEGIN
+   INSERT INTO Population(country,population) VALUES (con, pop);
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS InsertRegion //
+CREATE PROCEDURE InsertRegion(IN con VARCHAR(58),IN reg VARCHAR(100))
+BEGIN
+   INSERT INTO Region(country,region) VALUES (con, red);
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS InsertDemocracies //
+CREATE PROCEDURE InsertDemocracies(IN con VARCHAR(58),IN dem NUMERIC(5,2))
+BEGIN
+   INSERT INTO Democracies(country,democracy_index) VALUES (con, dem);
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS InsertLife_Expectancy //
+CREATE PROCEDURE InsertLife_Expectancy(IN con VARCHAR(24),IN y YEAR,IN a NUMERIC(2),IN s VARCHAR(10),IN life_expectancy NUMERIC(5,2))
+BEGIN
+   INSERT INTO Life_Expectancy(country,year,age,sex,life_expectancy) VALUES (con, y, a, s, life_expectancy);
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS InsertMalaria //
+CREATE PROCEDURE InsertMalaria(IN con VARCHAR(24),IN y YEAR,IN m NUMERIC(9,4))
+BEGIN
+   INSERT INTO Malaria(country,year,malaria_incidence) VALUES (con, y, m);
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS Insertcovid19_confirmed_global //
+CREATE PROCEDURE Insertcovid19_confirmed_global(IN con VARCHAR(58),IN d DATE,IN c INTEGER)
+BEGIN
+   INSERT INTO covid19_confirmed_global(country,dataDate,confirmed) VALUES (con, d, c);
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS Insertcovid19_deaths_global //
+CREATE PROCEDURE Insertcovid19_deaths_global(IN con VARCHAR(58),IN dataD DATE,IN d INTEGER)
+BEGIN
+   INSERT INTO covid19_deaths_global(country,dataDate,deaths) VALUES (con, dataD, d);
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS Insertcovid19_recovered_global //
+CREATE PROCEDURE Insertcovid19_recovered_global(IN con VARCHAR(58),IN d DATE,IN r INTEGER)
+BEGIN
+   INSERT INTO covid19_recovered_global(country,dataDate,recovered) VALUES (con, d, r);
+   CALL ResetViews();
+END; //
+
+
+
+
+DROP PROCEDURE IF EXISTS DeleteCountries //
+CREATE PROCEDURE DeleteCountries(IN con VARCHAR(58))
+BEGIN
+   DELETE FROM Countries WHERE country=con;
+   CALL ResetViews();
+END; //
+
+
+DROP PROCEDURE IF EXISTS DeleteRegion //
+CREATE PROCEDURE DeleteRegion(IN con VARCHAR(58))
+BEGIN
+   DELETE FROM Region WHERE country=con;
+   CALL ResetViews();
+END; //
+
+
+DROP PROCEDURE IF EXISTS DeleteDemocracies //
+CREATE PROCEDURE DeleteDemocracies(IN con VARCHAR(58))
+BEGIN
+   DELETE FROM Democracies WHERE country=con;
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS DeletePopulation //
+CREATE PROCEDURE DeletePopulation(IN con VARCHAR(58))
+BEGIN
+   DELETE FROM Population WHERE country=con;
+   CALL ResetViews();
+END; //
+
+
+DROP PROCEDURE IF EXISTS DeleteLife_Expectancy //
+CREATE PROCEDURE DeleteLife_Expectancy(IN con VARCHAR(58),IN y YEAR,IN a NUMERIC(2), IN s VARCHAR(10))
+BEGIN
+   DELETE FROM Life_Expectancy WHERE country=con AND year=y AND age=a AND sex=s;
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS DeleteMalaria //
+CREATE PROCEDURE DeleteMalaria(IN con VARCHAR(58),IN y YEAR)
+BEGIN
+   DELETE FROM Malaria WHERE country=con AND year=y;
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS Deletecovid19_confirmed_global //
+CREATE PROCEDURE Deletecovid19_confirmed_global(IN con VARCHAR(58),IN d DATE)
+BEGIN
+   DELETE FROM covid19_confirmed_global WHERE country=con AND dataDate=d;
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS Deletecovid19_recovered_global //
+CREATE PROCEDURE Deletecovid19_recovered_global(IN con VARCHAR(58),IN d DATE)
+BEGIN
+   DELETE FROM covid19_recovered_global WHERE country=con AND dataDate=d;
+   CALL ResetViews();
+END; //
+
+DROP PROCEDURE IF EXISTS Deletecovid19_deaths_global //
+CREATE PROCEDURE Deletecovid19_deaths_global(IN con VARCHAR(58),IN d DATE)
+BEGIN
+   DELETE FROM covid19_deaths_global WHERE country=con AND dataDate=d;
+   CALL ResetViews();
+END; //
 
 DELIMITER ;
