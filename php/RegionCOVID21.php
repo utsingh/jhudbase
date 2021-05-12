@@ -21,7 +21,7 @@ $dataPoints = array();
 //echo "Item number: ";
 
 //Determine if any input was actually collected
-if (empty($item)) {
+if (empty($item) || empty($underover)) {
    echo "empty <br><br>";
 
 } else {
