@@ -11,10 +11,8 @@ include 'open.php';
 //ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item1 = $_POST['item11'];
-$item2 = $_POST['item12'];
-$item3 = $_POST['item13'];
-
+$item1 = $_POST['item41'];
+$item2 = $_POST['item42'];
 
 //construct an array in which we'll store our data
 $dataPoints = array();
@@ -32,7 +30,7 @@ if (empty($item1)) {
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL InsertCountries(?,?,?);")) {
+   if ($stmt = $conn->prepare("CALL Deletecovid19_recovered_global(?,?);")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of
@@ -50,7 +48,7 @@ if (empty($item1)) {
          if ($result->num_rows == 0) {
 
             //Result contains no rows at all
-            echo "Inserted";
+            echo "Deleted!";
 
          } else {
 	 /*
@@ -72,7 +70,7 @@ if (empty($item1)) {
             echo "</table>";
          */
             while ($row = $result->fetch_row()) {
-              echo "Inserted";
+              echo "Deleted!";
             }
          
 

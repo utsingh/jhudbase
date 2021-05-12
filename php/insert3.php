@@ -11,9 +11,9 @@ include 'open.php';
 //ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item1 = $_POST['item11'];
-$item2 = $_POST['item12'];
-$item3 = $_POST['item13'];
+$item1 = $_POST['item31'];
+$item2 = $_POST['item32'];
+$item3 = $_POST['item33'];
 
 
 //construct an array in which we'll store our data
@@ -32,7 +32,7 @@ if (empty($item1)) {
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL InsertCountries(?,?,?);")) {
+   if ($stmt = $conn->prepare("CALL Insertcovid19_deaths_global(?,?,?);")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of

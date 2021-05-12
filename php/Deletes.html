@@ -83,66 +83,62 @@ li.dropdown {
   <li><a href="Deletes.html">DELETES</a></li>
 
 </ul>
-	<h1>INSERTS</h1>
+	<h1>DELETES</h1>
     <h3>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h3>
 
     <hr><br>
 
 
-	<h3>1. Countries(Varchar country, Decimal latitude, Decimal longitude)</h3>
-    <h3> Example: InsertCountries('AAAA', 0,0)</h3>
+	<h3>1. Countries(Varchar country)</h3>
+    <h3> Example: DeleteCountries('AAAA')</h3>
 
-	<form action="insert1.php" method="post">
+	<form action="delete1.php" method="post">
 		country: <input type="text" name="item11">
-    latitude: <input type="text" name="item12">
-    longitude: <input type="text" name="item13">
 		<input type="submit">
 	</form>
 	<br/><br/>
 
-  <h3>2. covid19_confirmed_global(Varchar country, Date dataDate, Int confirmed)</h3>
-    <h3> Example: Insertcovid19_confirmed_global('AAAA', '2021-9-9',0)</h3>
+  <h3>2. covid19_confirmed_global(Varchar country, Date dataDate)</h3>
+    <h3> Example: Deletecovid19_confirmed_global('AAAA', '2021-9-9')</h3>
 
-  <form action="insert2.php" method="post">
+  <form action="delete2.php" method="post">
     country: <input type="text" name="item21">
     date: <input type="text" name="item22">
-    confirmed cases: <input type="text" name="item23">
     <input type="submit">
   </form>
   <br/><br/>
 
-    <h3>3. covid19_deaths_global(Varchar country, Date dataDate, Int deaths)</h3>
-    <h3> Example: Insertcovid19_deaths_global('AAAA', '2021-9-9',0)</h3>
+    <h3>3. covid19_deaths_global(Varchar country, Date dataDate)</h3>
+    <h3> Example: Deletecovid19_deaths_global('AAAA', '2021-9-9')</h3>
 
-  <form action="insert3.php" method="post">
+  <form action="delete3.php" method="post">
     country: <input type="text" name="item31">
     date: <input type="text" name="item32">
-    death cases: <input type="text" name="item33">
     <input type="submit">
   </form>
   <br/><br/>
 
-    <h3>4. covid19_recovered_global(Varchar country, Date dataDate, Int recovered)</h3>
-    <h3> Example: Insertcovid19_recovered_global('AAAA', '2021-9-9',0)</h3>
+    <h3>4. covid19_recovered_global(Varchar country, Date dataDate)</h3>
+    <h3> Example: Deletecovid19_recovered_global('AAAA', '2021-9-9')</h3>
 
-  <form action="insert4.php" method="post">
+  <form action="delete4.php" method="post">
     country: <input type="text" name="item41">
     date: <input type="text" name="item42">
-    recovered cases: <input type="text" name="item43">
     <input type="submit">
   </form>
   <br/><br/>
 
-    <h3>5. Democracies(Varchar country, Decimal democracy_index)</h3>
-    <h3> Example: InsertDemocracies('AAAA', 0)</h3>
+    <h3>5. Democracies(Varchar country)</h3>
+    <h3> Example:DeleteDemocracies('AAAA')</h3>
 
-  <form action="insert5.php" method="post">
+  <form action="delete5.php" method="post">
     country: <input type="text" name="item51">
-    democracy index: <input type="text" name="item52">
     <input type="submit">
   </form>
   <br/><br/>
+
 <!--
+
     <h3>6. Life_Expectancy(Varchar country, Year year, Decimal age, Varchar sex, Decimal life_expectancy)</h3>
     <h3> Example: InsertLife_Expectancy('AAAA', 2020,0, 'Male', 0)</h3>
 

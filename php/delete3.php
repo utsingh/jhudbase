@@ -11,10 +11,8 @@ include 'open.php';
 //ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item1 = $_POST['item11'];
-$item2 = $_POST['item12'];
-$item3 = $_POST['item13'];
-
+$item1 = $_POST['item31'];
+$item2 = $_POST['item32'];
 
 //construct an array in which we'll store our data
 $dataPoints = array();
@@ -32,7 +30,7 @@ if (empty($item1)) {
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL InsertCountries(?,?,?);")) {
+   if ($stmt = $conn->prepare("CALL Deletecovid19_deaths_global(?,?);")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of
@@ -50,10 +48,10 @@ if (empty($item1)) {
          if ($result->num_rows == 0) {
 
             //Result contains no rows at all
-            echo "Inserted";
+            echo "Deleted!";
 
          } else {
-	 /*
+    /*
             //Create table to display results
             echo "<table border=\"1px solid black\">";
             echo "<tr><th> country </th> <th> malaria_incidence </th> <th> confirmed </th><th> recovered </th><th> deaths </th></tr>";
@@ -68,15 +66,15 @@ if (empty($item1)) {
                echo "</tr>";
                
             } 
-	 
+    
             echo "</table>";
          */
             while ($row = $result->fetch_row()) {
-              echo "Inserted";
+              echo "Deleted!";
             }
          
 
-         }	 
+         }   
 
          //We are done with the result set returned above, so free it
          $result->free_result();
@@ -84,7 +82,7 @@ if (empty($item1)) {
       } else {
 
          //Call to execute failed, e.g. because server is no longer reachable,
-	 //or because supplied values are of the wrong type
+    //or because supplied values are of the wrong type
          echo "Execute failed.<br>";
       }
 

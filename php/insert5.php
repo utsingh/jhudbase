@@ -11,9 +11,8 @@ include 'open.php';
 //ini_set('display_errors', true);
 
 //Collect the posted value in a variable called $item
-$item1 = $_POST['item11'];
-$item2 = $_POST['item12'];
-$item3 = $_POST['item13'];
+$item1 = $_POST['item51'];
+$item2 = $_POST['item52'];
 
 
 //construct an array in which we'll store our data
@@ -32,14 +31,14 @@ if (empty($item1)) {
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL InsertCountries(?,?,?);")) {
+   if ($stmt = $conn->prepare("CALL InsertDemocracies(?,?);")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of
       //the variables that follow: 's' means string, 'i' means integer, 'd' means
       //double. E.g., for a statment with 3 ?'s, where middle parameter is an integer
       //and the other two are strings, the first argument included should be "sis".
-      $stmt->bind_param("sss", $item1, $item2,$item3);
+      $stmt->bind_param("ss", $item1, $item2);
 
       //Run the actual query
       if ($stmt->execute()) {
