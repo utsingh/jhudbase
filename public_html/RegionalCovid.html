@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HOME</title>
+<style>
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Menu -->
+<ul>
+  <li><a href="kgorman4_usingh5.html">Home</a></li>
+  
+  <!--<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Overviews</a>
+    <div class="dropdown-content">
+      <a href="oTopMalaria.php">Top Malaria</a>
+      <a href="#">Lowest Malaria</a>
+    </div>
+  </li>-->
+  <li><a href="Overviews.html">Overviews</a></li>
+  <li><a href="CovidVSMalaria.html">COVID VS Malaria</a></li>
+  <li><a href="Population.html">Population</a></li>
+  <li><a href="RegionalCovid.html">Regional COVID-19</a></li>
+  <li><a href="GeographicAggregates.html">Geographic Aggregates</a></li>
+  <li><a href="HealthcareVSDemocracy.html">Healthcare vs Democracy</a></li>
+  <li><a href="LifeExpectancy.html">Life Expectancy</a></li>
+  <li><a href="DiseaseAggregates.html">Disease Aggregates</a></li>
+  <li><a href="diseaseovertime.html">Disease Over Time</a></li>
+  <li><a href="crises.html">COVID Crisis Handling</a></li>
+  <li><a href="Inserts.html">INSERTS</a></li>
+  <li><a href="Deletes.html">DELETES</a></li>
+
+</ul>
+	<h1>Regional COVID19</h1>
+    <h3>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h3>
+
+    <hr><br>
+
+	<h3>1. List the country names and the (NORTH HEM/SOUTH HEM) they are in on Earth, along with the total covid case counts and deaths.</h3>
+    <h3> Example: "NORTH HEM" -- (will return all countries data in NORTH HEMISPHERE)</h3>
+	<form action="RegionCOVID1.php" method="post">
+		<label for="rcovid1">NORTH / SOUTH HEMISPHERE: </label>
+		  <select id="rcovid1" name="rcovid1">
+		    <option value="NORTH HEM">NORTH HEM</option>
+		    <option value="SOUTH HEM">SOUTH HEM</option>
+		  </select>
+		<input type="submit">
+	</form>
+
+	<h3>2. List the country names and the (SELECT TWO → Asia & Australasia, Eastern Europe, Latin America & the Caribbean, Middle East & North Africa, North America, Sub-Saharan Africa, Western Europe) they are in on Earth, along with the total covid case counts and deaths.</h3>
+    <h3> Example: "North America", "Western Europe"</h3>
+	COVID Confirmed
+	<form action="RegionCOVID21.php" method="post">
+		<label for="rcovid211">Select Region 1: </label>
+		  <select id="rcovid211" name="rcovid211">
+		    <option value="Asia & Australasia">Asia & Australasia</option>
+		    <option value="Eastern Europe">Eastern Europe</option>
+		    <option value="Latin America & the Caribbean">Latin America & the Caribbean</option>
+		    <option value="Middle East & North Africa">Middle East & North Africa</option>
+		    <option value="North America">North America</option>
+		    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+		    <option value="Western Europe">Western Europe</option>
+		  </select>
+<br>Select Region 2: 
+		  <label for="rcovid212">Select Regions: </label>
+		  <select id="rcovid212" name="rcovid212">
+		    <option value="Asia & Australasia">Asia & Australasia</option>
+		    <option value="Eastern Europe">Eastern Europe</option>
+		    <option value="Latin America & the Caribbean">Latin America & the Caribbean</option>
+		    <option value="Middle East & North Africa">Middle East & North Africa</option>
+		    <option value="North America">North America</option>
+		    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+		    <option value="Western Europe">Western Europe</option>
+		  </select>
+		<input type="submit">
+	</form><br>
+
+	COVID Recovered
+	<form action="RegionCOVID22.php" method="post">
+		<label for="rcovid221">Select Region 1: </label>
+		  <select id="rcovid221" name="rcovid221">
+		    <option value="Asia & Australasia">Asia & Australasia</option>
+		    <option value="Eastern Europe">Eastern Europe</option>
+		    <option value="Latin America & the Caribbean">Latin America & the Caribbean</option>
+		    <option value="Middle East & North Africa">Middle East & North Africa</option>
+		    <option value="North America">North America</option>
+		    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+		    <option value="Western Europe">Western Europe</option>
+		  </select>
+<br>Select Region 2: 
+		  <label for="rcovid222">Select Regions: </label>
+		  <select id="rcovid222" name="rcovid222">
+		    <option value="Asia & Australasia">Asia & Australasia</option>
+		    <option value="Eastern Europe">Eastern Europe</option>
+		    <option value="Latin America & the Caribbean">Latin America & the Caribbean</option>
+		    <option value="Middle East & North Africa">Middle East & North Africa</option>
+		    <option value="North America">North America</option>
+		    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+		    <option value="Western Europe">Western Europe</option>
+		  </select>
+		<input type="submit">
+	</form><br>
+
+	COVID Active
+	<form action="RegionCOVID23.php" method="post">
+		<label for="rcovid231">Select Region 1: </label>
+		  <select id="rcovid231" name="rcovid231">
+		    <option value="Asia & Australasia">Asia & Australasia</option>
+		    <option value="Eastern Europe">Eastern Europe</option>
+		    <option value="Latin America & the Caribbean">Latin America & the Caribbean</option>
+		    <option value="Middle East & North Africa">Middle East & North Africa</option>
+		    <option value="North America">North America</option>
+		    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+		    <option value="Western Europe">Western Europe</option>
+		  </select>
+<br>Select Region 2: 
+		  <label for="rcovid232">Select Regions: </label>
+		  <select id="rcovid232" name="rcovid232">
+		    <option value="Asia & Australasia">Asia & Australasia</option>
+		    <option value="Eastern Europe">Eastern Europe</option>
+		    <option value="Latin America & the Caribbean">Latin America & the Caribbean</option>
+		    <option value="Middle East & North Africa">Middle East & North Africa</option>
+		    <option value="North America">North America</option>
+		    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+		    <option value="Western Europe">Western Europe</option>
+		  </select>
+		<input type="submit">
+	</form><br>
+
+	COVID Deaths
+	<form action="RegionCOVID24.php" method="post">
+		<label for="rcovid241">Select Region 1: </label>
+		  <select id="rcovid241" name="rcovid241">
+		    <option value="Asia & Australasia">Asia & Australasia</option>
+		    <option value="Eastern Europe">Eastern Europe</option>
+		    <option value="Latin America & the Caribbean">Latin America & the Caribbean</option>
+		    <option value="Middle East & North Africa">Middle East & North Africa</option>
+		    <option value="North America">North America</option>
+		    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+		    <option value="Western Europe">Western Europe</option>
+		  </select>
+<br>Select Region 2: 
+		  <label for="rcovid242">Select Regions: </label>
+		  <select id="rcovid242" name="rcovid242">
+		    <option value="Asia & Australasia">Asia & Australasia</option>
+		    <option value="Eastern Europe">Eastern Europe</option>
+		    <option value="Latin America & the Caribbean">Latin America & the Caribbean</option>
+		    <option value="Middle East & North Africa">Middle East & North Africa</option>
+		    <option value="North America">North America</option>
+		    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+		    <option value="Western Europe">Western Europe</option>
+		  </select>
+		<input type="submit">
+	</form><br>
+	
+
+	<h3>3. List the countries, their populations, and if they’re (EAST/WEST) of the GMT-0 meridian, along with the total covid case counts and deaths.</h3>
+    <h3> Example: "EAST" -- (will return all countries data in EAST HEMISPHERE)</h3>
+	<form action="RegionCOVID3.php" method="post">
+		<label for="rcovid3">EAST / WEST: </label>
+		  <select id="rcovid3" name="rcovid3">
+		    <option value="EAST">EAST</option>
+		    <option value="WEST">WEST</option>
+		  </select>
+		<input type="submit">
+	</form>
+
+   </body>
+</html>

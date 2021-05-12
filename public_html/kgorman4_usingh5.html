@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HOME</title>
+<style>
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Menu -->
+<ul>
+  <li><a href="kgorman4_usingh5.html">Home</a></li>
+  
+  <!--<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Overviews</a>
+    <div class="dropdown-content">
+      <a href="oTopMalaria.php">Top Malaria</a>
+      <a href="#">Lowest Malaria</a>
+    </div>
+  </li>-->
+  <li><a href="Overviews.html">Overviews</a></li>
+  <li><a href="CovidVSMalaria.html">COVID VS Malaria</a></li>
+  <li><a href="Population.html">Population</a></li>
+  <li><a href="RegionalCovid.html">Regional COVID-19</a></li>
+  <li><a href="GeographicAggregates.html">Geographic Aggregates</a></li>
+  <li><a href="HealthcareVSDemocracy.html">Healthcare vs Democracy</a></li>
+  <li><a href="LifeExpectancy.html">Life Expectancy</a></li>
+  <li><a href="DiseaseAggregates.html">Disease Aggregates</a></li>
+  <li><a href="diseaseovertime.html">Disease Over Time</a></li>
+  <li><a href="crises.html">COVID Crisis Handling</a></li>
+  <li><a href="Inserts.html">INSERTS</a></li>
+  <li><a href="Deletes.html">DELETES</a></li>
+
+</ul>
+
+<h1>EN.601.315.SP21 Databases Final Project</h1>
+<h2>Team Members: KEVIN GORMAN (KGORMAN4), UTKARSH SINGH (USINGH5)</h2>
+<hr>
+<h3>Queries</h3>
+
+Make a view of the countries and their active, recovered, and death totals for COVID-19.<br>
+Make a view of the countries and their total COVID-19 cases, in the decreasing order of cumulative total cases to date.<br>
+Make a view of the global COVID data by country per 1000 of the population. (To match up with Malaria data).<br>
+View of most recent malaria<br>
+View of most recent life expectancy<br>
+Countries divided into their X. (graph)<br>
+north/south Hemispheres<br>
+east/west hemispheres<br><br>
+Regions (add regions and democracy index to separate table) <br>
+Democracy index<br>
+http://statisticstimes.com/ranking/democracy-index.php <br><br>
+Overviews<br>
+TopMalaria<br>
+LowestMalaria<br>
+TopPopulation<br>
+LowestPopulation<br>
+TopDemocracy<br>
+LowestDemocracy<br>
+TopLifeExpectancy<br>
+LowestLifeExpectancy<br><br>
+Malaria vs COVID19<br>
+Which are the countries with malaria incidence rates in the world where cumulative COVID19 case counts are (UNDER/OVER) (X amount) or deaths are (UNDER/OVER) (X amount)? <br>
+What are the COVID-19 incidents for the countries with malaria rates (UNDER/ABOVE) (X amount)?<br><br>
+Population<br>
+What are the COVID-19 incidents, malaria incidences, and life expectancy for (UNDER/OVER) (X amount) of people?<br><br>
+Regional COVID<br>
+List the country names and the (NORTH HEM/SOUTH HEM) they are in on Earth, along with the total covid case counts and deaths.<br>
+List the country names and the (SELECT TWO → Asia & Australasia, Eastern Europe, Latin America & the Caribbean, Middle East & North Africa, North America, Sub-Saharan Africa, Western Europe) they are in on Earth, along with the total covid case counts and deaths.<br>
+List the countries, their populations, and if they’re (EAST/WEST) of the GMT-0 meridian, along with the total covid case counts and deaths.<br><br>
+Geographic Aggregates<br>
+Show total population of each hemisphere<br>
+GeographicAggregate1()<br>
+Show weighted average democracy index data for each hemisphere<br>
+GeographicAggregate2()<br>
+Show total population of each hemisphere<br>
+GeographicAggregate3()<br>
+Show weighted average democracy index data for each hemisphere<br>
+GeographicAggregate4()<br><br>
+Healthcare vs Democrocy<br>
+Compare the 30 countries each with the (HIGHEST / LOWEST) democracy scores for total COVID-19<br><br>
+HealthcareVDemocracy1('HIGHEST')<br>
+Compare the 30 countries each with the (HIGHEST / LOWEST) democracy scores for malaria incidence <br>
+HealthcareVDemocracy2('HIGHEST')<br><br>
+Life expectancy <br>
+List the countries where the female life expectancy is at least 2% greater than male life expectancies.<br>
+LifeExpectancy1()<br>
+List the 30 countries with the (HIGHEST/LOWEST) life expectancy at birth along with their malaria rates<br>
+LifeExpectancy2('REGION')<br><br>
+Disease Aggregates<br>
+List the aggregates of COVID cases across (REGION/HEMISPHERE/DEMOCRACY/2% LIFE EXP DIFF/POP SIZE)<br>
+DiseaseAggregates1('REGION')<br>
+List the aggregates of Malaria cases across (REGION/HEMISPHERE/DEMOCRACY/2% LIFE EXP DIFF/POP SIZE)<br>
+DiseaseAggregates2('REGION')<br><br>
+Diseases Over Time<br>
+List the top 20 countries  (LARGEST INCREASE/LARGEST DECREASE) in malaria incidence over (year X > 2000) along with their current active COVID cases and life expectancy change over that time period<br>
+DiseasesOverTime1('LARGEST INCREASE')<br>
+List the top 20 countries  (LARGEST INCREASE/LARGEST DECREASE) in life expectancy since (year X > 2000) along with their current active COVID cases and life expectancy change over that time period<br>
+DiseasesOverTime2('LARGEST INCREASE', 2010)<br><br>
+COVID Crisis Handling<br>
+Which countries solved (less than X cases) COVID crises in under (N DAYS) and display their democracy, life expectancy, and population size?<br>
+COVIDCrisisHandling1(10000, 100)<br>
+Graph the top 20 countries, total cases to date, and the cumulative deaths for countries that have the (HIGHEST/LOWEST) rate of COVID-19 contraction increase in total covid cases over the last month<br>
+COVIDCrisisHandling2('HIGHEST')<br>
+List the countries where the rate of change of the difference in daily case counts is (NEGATIVE/POSITIVE) <br>
+COVIDCrisisHandling3('NEGATIVE')<br><br>
+Inserts<br>
+Countries(Varchar country, Decimal latitude, Decimal longitude)<br>
+InsertCountries('AAAA', 0,0)<br>
+covid19_confirmed_global(Varchar country, Date dataDate, Int confirmed)<br>
+Insertcovid19_confirmed_global('AAAA', '2021-9-9',0)<br>
+covid19_deaths_global(Varchar country, Date dataDate, Int deaths)<br>
+Insertcovid19_deaths_global('AAAA', '2021-9-9',0)<br>
+covid19_recovered_global(Varchar country, Date dataDate, Int recovered)<br>
+Insertcovid19_recovered_global('AAAA', '2021-9-9',0)<br>
+Democracies(Varchar country, Decimal democracy_index)<br>
+InsertDemocracies('AAAA', 0)<br>
+Life_Expectancy(Varchar country, Year year, Decimal age, Varchar sex, Decimal life_expectancy)<br>
+InsertLife_Expectancy('AAAA', 2020,0, 'Male', 0)<br>
+Malaria(Varchar country, Year year, Decimal malaria_incidence)<br>
+InsertMalaria('AAAA', 2022, 0)<br>
+Population(Varchar country, Int population)<br>
+InsertPopulation('AAAA', 0)<br>
+Region(Varchar country, Varchar region)<br>
+InsertRegion('AAAA', 'Asia & Australasia')<br><br>
+Deletes<br>
+Countries(Varchar country)<br>
+DeleteCountries('AAAA')<br>
+covid19_confirmed_global(Varchar country, Date dataDate)<br>
+Deletecovid19_confirmed_global('AAAA', '2021-9-9')<br>
+covid19_deaths_global(Varchar country, Date dataDate)<br>
+Deletecovid19_deaths_global('AAAA', '2021-9-9')<br>
+covid19_recovered_global(Varchar country, Date dataDate)<br>
+Deletecovid19_recovered_global('AAAA', '2021-9-9')<br>
+Democracies(Varchar country)<br>
+DeleteDemocracies('AAAA')<br>
+Life_Expectancy(Varchar country, Year year, Decimal age, Varchar sex)<br>
+DeleteLife_Expectancy('AAAA', 2020,0, 'Male')<br>
+Malaria(Varchar country, Year year)<br>
+DeleteMalaria('AAAA', 2020)<br>
+Population(Varchar country)<br>
+DeletePopulation('AAAA')<br>
+
+
+
+
+</body>
+</html>

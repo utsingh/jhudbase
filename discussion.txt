@@ -1,0 +1,35 @@
+﻿Members - Kevin Gorman (kgorman4), Utkarsh Singh (usingh5)
+
+
+Modifications - Many modifications were made. To start, almost all of the data was restructured. A time column was added to the three COVID-19 datasets, life expecancies, and malaria, and all of them were restructured to contain a new column that condensed the overall number of columns down to one where things like date identifiers are now a part of a new ‘date’ primary key column instead of each date having it’s own column. For life expectancy this included age, sex, and year the data was collected, and malarial now has a column for the year the data was collected that all serve as primary keys. Also, a democracy table was made that contains a democracy index score that are higher for more democratic countries and lower for authoritarian ones, and this introduced some new really interesting queries. Finally, a region table was added that contained the region of the world that each country was a part of. We previously did geographical queries based on hemisphere which didn’t make a lot of sense.
+
+
+These new modifications lead to a bunch of new queries. Several time-series queries were made to evaluate how changes in one health-indicator might impact others, which were interesting to see. Also, new aggregate calculations were made using the continent data, as well as country size, life-expectancy disparities, level of democracy, and hemisphere aggregations were made to view the malaria and COVID-19 data conditioned on these different variables. Geographical aggregates were also introduced to see which regions of the world were most democratic which were really interesting. In general, the new data allowed us add so many combinations of comparisons that we had 47 stored procedures, discluding additional views that needed to be created.
+
+
+Process - See process.txt
+
+
+Successes - We are very happy with the final aggregated queries. These condense a massive amount of data into understandable forms with actionable information, and it was satisfying to write several dozen lines of code to get that to work. 
+
+
+The data processing was super in-depth for this as well. Many days and a ton of hours went into getting it formatted nicely in a way that made the queries run smoothly and allow for limitless different directions we could go with the project. Very methodical detail was needed like using an NLP library for comparing similar strings for getting countries that were equivalent but spelled differently to match and things like that. 
+
+
+Known Issues - a description of places in the implementation of your project, if any, where you did not fully succeed (are there bugs? are there unimplemented features?)
+
+
+The last two pages of the app that we were unable to implement just the front end for. We wrote the backend for them, go ahead and test them if you want, but we ran out of time for the front end. We ended up doing way more queries than we initially thought, though, and we bit off more than we could chew, which was a good lesson.
+
+
+The second set of queries on COVIDvs MALARIA for which the queries are working but the charts are not loading. The Table in the frontend is populated which has been commented out but that much works perfectly. There is some bug related to projecting that particular page onto the charts.
+
+
+
+
+
+
+Extensions - beyond fixing any known issues mentioned above, what additional functionality do you most wish you had time to add to your project? Describe at least two new features.
+1. We really wanted to add multiple line plots to the same charts for a more integrated comparison but as per our research and documentation available on CanvasJS that is not possible.
+2. The axis could also be inverted for the countries list where the values are on the x axis and countries on the y axis such that it can be an infinite scroll.
+3. We wanted to replace CanvasJS with ChartJS for these advanced functionality.

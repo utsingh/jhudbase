@@ -1,0 +1,1 @@
+There are no irregularities in the setup procedure. setup.sql or setup-small.sql are the only files needed to set up, and celanup.sql is the only file needed to clean up. All of the front-end documents are in the ‘public_html’ directory. 
