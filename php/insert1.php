@@ -29,7 +29,7 @@ if (empty($item1)) {
 
    //Prepare a statement that we can later execute. The ?'s are placeholders for
    //parameters whose values we will set before we run the query.
-   if ($stmt = $conn->prepare("CALL InsertCountries(?,?,?)")) {
+   if ($stmt = $conn->prepare("CALL InsertCountries(?,?,?);")) {
 
       //Attach the ? in prepared statements to variables (even if those variables
       //don't hold the values we want yet).  First parameter is a list of types of
