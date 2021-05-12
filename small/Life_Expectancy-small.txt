@@ -1,0 +1,792 @@
+Afghanistan,2019,60,Both sexes,63.21
+Afghanistan,2019,60,Male,63.29
+Afghanistan,2019,60,Female,63.16
+Afghanistan,2019,0,Both sexes,15.21
+Afghanistan,2019,0,Male,15.39
+Afghanistan,2019,0,Female,15.06
+Afghanistan,2015,60,Both sexes,61.65
+Afghanistan,2015,60,Male,61.04
+Afghanistan,2015,60,Female,62.35
+Afghanistan,2015,0,Both sexes,15.59
+Afghanistan,2015,0,Male,15.68
+Afghanistan,2015,0,Female,15.52
+Afghanistan,2010,60,Both sexes,59.94
+Afghanistan,2010,60,Male,59.6
+Afghanistan,2010,60,Female,60.3
+Afghanistan,2010,0,Both sexes,15.12
+Afghanistan,2010,0,Male,15.07
+Afghanistan,2010,0,Female,15.17
+Afghanistan,2000,60,Both sexes,54.99
+Afghanistan,2000,60,Male,54.57
+Afghanistan,2000,60,Female,55.42
+Afghanistan,2000,0,Both sexes,13.92
+Afghanistan,2000,0,Male,13.63
+Afghanistan,2000,0,Female,14.21
+Angola,2019,60,Both sexes,63.06
+Angola,2019,60,Male,60.7
+Angola,2019,60,Female,65.52
+Angola,2019,0,Both sexes,16.98
+Angola,2019,0,Male,15.38
+Angola,2019,0,Female,18.55
+Angola,2015,60,Both sexes,61.72
+Angola,2015,60,Male,59.13
+Angola,2015,60,Female,64.5
+Angola,2015,0,Both sexes,16.71
+Angola,2015,0,Male,14.99
+Angola,2015,0,Female,18.42
+Angola,2010,60,Both sexes,58.07
+Angola,2010,60,Male,55.78
+Angola,2010,60,Female,60.53
+Angola,2010,0,Both sexes,15.97
+Angola,2010,0,Male,14.37
+Angola,2010,0,Female,17.54
+Angola,2000,60,Both sexes,49.3
+Angola,2000,60,Male,46.77
+Angola,2000,60,Female,52.12
+Angola,2000,0,Both sexes,14.42
+Angola,2000,0,Male,12.82
+Angola,2000,0,Female,16.01
+Austria,2019,60,Both sexes,81.65
+Austria,2019,60,Male,79.44
+Austria,2019,60,Female,83.78
+Austria,2019,0,Both sexes,24.09
+Austria,2019,0,Male,22.43
+Austria,2019,0,Female,25.6
+Austria,2015,60,Both sexes,80.98
+Austria,2015,60,Male,78.6
+Austria,2015,60,Female,83.29
+Austria,2015,0,Both sexes,23.59
+Austria,2015,0,Male,21.8
+Austria,2015,0,Female,25.21
+Austria,2010,60,Both sexes,80.39
+Austria,2010,60,Male,77.65
+Austria,2010,60,Female,82.99
+Austria,2010,0,Both sexes,23.43
+Austria,2010,0,Male,21.44
+Austria,2010,0,Female,25.16
+Austria,2000,60,Both sexes,78.17
+Austria,2000,60,Male,75.09
+Austria,2000,60,Female,80.98
+Austria,2000,0,Both sexes,21.95
+Austria,2000,0,Male,19.73
+Austria,2000,0,Female,23.69
+Bangladesh,2019,60,Both sexes,74.25
+Bangladesh,2019,60,Male,72.99
+Bangladesh,2019,60,Female,75.64
+Bangladesh,2019,0,Both sexes,20.86
+Bangladesh,2019,0,Male,20.26
+Bangladesh,2019,0,Female,21.53
+Bangladesh,2015,60,Both sexes,73.58
+Bangladesh,2015,60,Male,72.5
+Bangladesh,2015,60,Female,74.79
+Bangladesh,2015,0,Both sexes,20.9
+Bangladesh,2015,0,Male,20.49
+Bangladesh,2015,0,Female,21.37
+Bangladesh,2010,60,Both sexes,70.29
+Bangladesh,2010,60,Male,68.63
+Bangladesh,2010,60,Female,72.22
+Bangladesh,2010,0,Both sexes,19.02
+Bangladesh,2010,0,Male,18.06
+Bangladesh,2010,0,Female,20.14
+Bangladesh,2000,60,Both sexes,65.59
+Bangladesh,2000,60,Male,64.07
+Bangladesh,2000,60,Female,67.36
+Bangladesh,2000,0,Both sexes,17.84
+Bangladesh,2000,0,Male,17.11
+Bangladesh,2000,0,Female,18.7
+Belize,2019,60,Both sexes,74.41
+Belize,2019,60,Male,71.36
+Belize,2019,60,Female,77.77
+Belize,2019,0,Both sexes,21.53
+Belize,2019,0,Male,20.32
+Belize,2019,0,Female,22.93
+Belize,2015,60,Both sexes,74.05
+Belize,2015,60,Male,71.14
+Belize,2015,60,Female,77.29
+Belize,2015,0,Both sexes,21.47
+Belize,2015,0,Male,20.4
+Belize,2015,0,Female,22.75
+Belize,2010,60,Both sexes,73.39
+Belize,2010,60,Male,70.89
+Belize,2010,60,Female,76.12
+Belize,2010,0,Both sexes,21.3
+Belize,2010,0,Male,20.56
+Belize,2010,0,Female,22.15
+Belize,2000,60,Both sexes,70.34
+Belize,2000,60,Male,67.18
+Belize,2000,60,Female,74.02
+Belize,2000,0,Both sexes,18.74
+Belize,2000,0,Male,17.02
+Belize,2000,0,Female,20.73
+Cabo Verde,2019,60,Both sexes,74.03
+Cabo Verde,2019,60,Male,69.9
+Cabo Verde,2019,60,Female,77.94
+Cabo Verde,2019,0,Both sexes,19.66
+Cabo Verde,2019,0,Male,16.82
+Cabo Verde,2019,0,Female,21.77
+Cabo Verde,2015,60,Both sexes,74.88
+Cabo Verde,2015,60,Male,72.18
+Cabo Verde,2015,60,Female,77.59
+Cabo Verde,2015,0,Both sexes,21.69
+Cabo Verde,2015,0,Male,21.03
+Cabo Verde,2015,0,Female,22.12
+Cabo Verde,2010,60,Both sexes,74.12
+Cabo Verde,2010,60,Male,70.83
+Cabo Verde,2010,60,Female,77.27
+Cabo Verde,2010,0,Both sexes,22.07
+Cabo Verde,2010,0,Male,20.85
+Cabo Verde,2010,0,Female,22.88
+Cabo Verde,2000,60,Both sexes,70.97
+Cabo Verde,2000,60,Male,66.89
+Cabo Verde,2000,60,Female,74.61
+Cabo Verde,2000,0,Both sexes,20.36
+Cabo Verde,2000,0,Male,18.17
+Cabo Verde,2000,0,Female,22.25
+Colombia,2019,60,Both sexes,79.31
+Colombia,2019,60,Male,76.69
+Colombia,2019,60,Female,81.87
+Colombia,2019,0,Both sexes,23.96
+Colombia,2019,0,Male,22.48
+Colombia,2019,0,Female,25.27
+Colombia,2015,60,Both sexes,78.35
+Colombia,2015,60,Male,75.63
+Colombia,2015,60,Female,81.01
+Colombia,2015,0,Both sexes,23.42
+Colombia,2015,0,Male,21.0
+Colombia,2015,0,Female,24.68
+Colombia,2010,60,Both sexes,77.09
+Colombia,2010,60,Male,74.0
+Colombia,2010,60,Female,80.15
+Colombia,2010,0,Both sexes,23.03
+Colombia,2010,0,Male,21.64
+Colombia,2010,0,Female,24.27
+Colombia,2000,60,Both sexes,73.75
+Colombia,2000,60,Male,69.71
+Colombia,2000,60,Female,77.85
+Colombia,2000,0,Both sexes,21.74
+Colombia,2000,0,Male,20.29
+Colombia,2000,0,Female,23.06
+Dominican Republic,2019,60,Both sexes,72.84
+Dominican Republic,2019,60,Male,69.76
+Dominican Republic,2019,60,Female,76.19
+Dominican Republic,2019,0,Both sexes,20.65
+Dominican Republic,2019,0,Male,18.99
+Dominican Republic,2019,0,Female,22.36
+Dominican Republic,2015,60,Both sexes,71.75
+Dominican Republic,2015,60,Male,68.62
+Dominican Republic,2015,60,Female,75.2
+Dominican Republic,2015,0,Both sexes,20.24
+Dominican Republic,2015,0,Male,18.55
+Dominican Republic,2015,0,Female,22.02
+Dominican Republic,2010,60,Both sexes,73.17
+Dominican Republic,2010,60,Male,70.43
+Dominican Republic,2010,60,Female,76.14
+Dominican Republic,2010,0,Both sexes,21.38
+Dominican Republic,2010,0,Male,19.98
+Dominican Republic,2010,0,Female,22.85
+Dominican Republic,2000,60,Both sexes,73.22
+Dominican Republic,2000,60,Male,70.22
+Dominican Republic,2000,60,Female,76.66
+Dominican Republic,2000,0,Both sexes,22.42
+Dominican Republic,2000,0,Male,20.74
+Dominican Republic,2000,0,Female,24.38
+Egypt,2019,60,Both sexes,71.82
+Egypt,2019,60,Male,69.59
+Egypt,2019,60,Female,74.14
+Egypt,2019,0,Both sexes,17.83
+Egypt,2019,0,Male,16.49
+Egypt,2019,0,Female,19.11
+Egypt,2015,60,Both sexes,70.49
+Egypt,2015,60,Male,68.22
+Egypt,2015,60,Female,72.89
+Egypt,2015,0,Both sexes,17.03
+Egypt,2015,0,Male,15.73
+Egypt,2015,0,Female,18.26
+Egypt,2010,60,Both sexes,70.2
+Egypt,2010,60,Male,67.82
+Egypt,2010,60,Female,72.69
+Egypt,2010,0,Both sexes,17.75
+Egypt,2010,0,Male,16.31
+Egypt,2010,0,Female,19.07
+Egypt,2000,60,Both sexes,69.82
+Egypt,2000,60,Male,67.29
+Egypt,2000,60,Female,72.42
+Egypt,2000,0,Both sexes,18.46
+Egypt,2000,0,Male,16.77
+Egypt,2000,0,Female,19.99
+Eritrea,2019,60,Both sexes,64.08
+Eritrea,2019,60,Male,61.3
+Eritrea,2019,60,Female,67.07
+Eritrea,2019,0,Both sexes,15.5
+Eritrea,2019,0,Male,14.13
+Eritrea,2019,0,Female,16.82
+Eritrea,2015,60,Both sexes,62.29
+Eritrea,2015,60,Male,59.4
+Eritrea,2015,60,Female,65.45
+Eritrea,2015,0,Both sexes,15.08
+Eritrea,2015,0,Male,13.58
+Eritrea,2015,0,Female,16.55
+Eritrea,2010,60,Both sexes,60.7
+Eritrea,2010,60,Male,57.78
+Eritrea,2010,60,Female,63.97
+Eritrea,2010,0,Both sexes,14.53
+Eritrea,2010,0,Male,12.9
+Eritrea,2010,0,Female,16.22
+Eritrea,2000,60,Both sexes,54.51
+Eritrea,2000,60,Male,51.16
+Eritrea,2000,60,Female,58.48
+Eritrea,2000,0,Both sexes,13.51
+Eritrea,2000,0,Male,11.7
+Eritrea,2000,0,Female,15.56
+Ethiopia,2019,60,Both sexes,68.7
+Ethiopia,2019,60,Male,66.9
+Ethiopia,2019,60,Female,70.52
+Ethiopia,2019,0,Both sexes,18.45
+Ethiopia,2019,0,Male,17.44
+Ethiopia,2019,0,Female,19.4
+Ethiopia,2015,60,Both sexes,66.82
+Ethiopia,2015,60,Male,65.04
+Ethiopia,2015,60,Female,68.64
+Ethiopia,2015,0,Both sexes,18.08
+Ethiopia,2015,0,Male,17.04
+Ethiopia,2015,0,Female,19.09
+Ethiopia,2010,60,Both sexes,62.92
+Ethiopia,2010,60,Male,61.33
+Ethiopia,2010,60,Female,64.55
+Ethiopia,2010,0,Both sexes,17.28
+Ethiopia,2010,0,Male,16.29
+Ethiopia,2010,0,Female,18.29
+Ethiopia,2000,60,Both sexes,50.58
+Ethiopia,2000,60,Male,49.52
+Ethiopia,2000,60,Female,51.7
+Ethiopia,2000,0,Both sexes,14.15
+Ethiopia,2000,0,Male,13.42
+Ethiopia,2000,0,Female,14.91
+Finland,2019,60,Both sexes,81.61
+Finland,2019,60,Male,79.16
+Finland,2019,60,Female,84.04
+Finland,2019,0,Both sexes,24.16
+Finland,2019,0,Male,22.36
+Finland,2019,0,Female,25.81
+Finland,2015,60,Both sexes,81.21
+Finland,2015,60,Male,78.53
+Finland,2015,60,Female,83.85
+Finland,2015,0,Both sexes,23.91
+Finland,2015,0,Male,21.95
+Finland,2015,0,Female,25.68
+Finland,2010,60,Both sexes,79.88
+Finland,2010,60,Male,76.68
+Finland,2010,60,Female,83.04
+Finland,2010,0,Both sexes,23.29
+Finland,2010,0,Male,21.03
+Finland,2010,0,Female,25.28
+Finland,2000,60,Both sexes,77.6
+Finland,2000,60,Male,74.13
+Finland,2000,60,Female,80.91
+Finland,2000,0,Both sexes,21.6
+Finland,2000,0,Male,19.17
+Finland,2000,0,Female,23.56
+Gabon,2019,60,Both sexes,66.47
+Gabon,2019,60,Male,63.59
+Gabon,2019,60,Female,69.73
+Gabon,2019,0,Both sexes,17.17
+Gabon,2019,0,Male,15.15
+Gabon,2019,0,Female,19.25
+Gabon,2015,60,Both sexes,64.93
+Gabon,2015,60,Male,62.11
+Gabon,2015,60,Female,68.09
+Gabon,2015,0,Both sexes,16.91
+Gabon,2015,0,Male,14.87
+Gabon,2015,0,Female,18.98
+Gabon,2010,60,Both sexes,62.16
+Gabon,2010,60,Male,60.12
+Gabon,2010,60,Female,64.25
+Gabon,2010,0,Both sexes,16.36
+Gabon,2010,0,Male,14.43
+Gabon,2010,0,Female,18.23
+Gabon,2000,60,Both sexes,58.1
+Gabon,2000,60,Male,56.15
+Gabon,2000,60,Female,60.1
+Gabon,2000,0,Both sexes,15.23
+Gabon,2000,0,Male,13.41
+Gabon,2000,0,Female,16.96
+Haiti,2019,60,Both sexes,64.05
+Haiti,2019,60,Male,63.34
+Haiti,2019,60,Female,64.76
+Haiti,2019,0,Both sexes,16.77
+Haiti,2019,0,Male,16.5
+Haiti,2019,0,Female,17.01
+Haiti,2015,60,Both sexes,62.61
+Haiti,2015,60,Male,62.09
+Haiti,2015,60,Female,63.13
+Haiti,2015,0,Both sexes,16.47
+Haiti,2015,0,Male,16.25
+Haiti,2015,0,Female,16.66
+Haiti,2010,60,Both sexes,31.28
+Haiti,2010,60,Male,27.97
+Haiti,2010,60,Female,35.37
+Haiti,2010,0,Both sexes,11.46
+Haiti,2010,0,Male,10.86
+Haiti,2010,0,Female,12.01
+Haiti,2000,60,Both sexes,57.05
+Haiti,2000,60,Male,56.97
+Haiti,2000,60,Female,57.18
+Haiti,2000,0,Both sexes,15.77
+Haiti,2000,0,Male,15.59
+Haiti,2000,0,Female,15.92
+Jordan,2019,60,Both sexes,77.87
+Jordan,2019,60,Male,77.02
+Jordan,2019,60,Female,78.78
+Jordan,2019,0,Both sexes,21.81
+Jordan,2019,0,Male,21.56
+Jordan,2019,0,Female,22.07
+Jordan,2015,60,Both sexes,77.82
+Jordan,2015,60,Male,76.95
+Jordan,2015,60,Female,78.77
+Jordan,2015,0,Both sexes,21.79
+Jordan,2015,0,Male,21.51
+Jordan,2015,0,Female,22.1
+Jordan,2010,60,Both sexes,76.59
+Jordan,2010,60,Male,75.59
+Jordan,2010,60,Female,77.62
+Jordan,2010,0,Both sexes,20.99
+Jordan,2010,0,Male,20.53
+Jordan,2010,0,Female,21.44
+Jordan,2000,60,Both sexes,72.65
+Jordan,2000,60,Male,73.06
+Jordan,2000,60,Female,72.48
+Jordan,2000,0,Both sexes,18.61
+Jordan,2000,0,Male,19.54
+Jordan,2000,0,Female,17.95
+Kenya,2019,60,Both sexes,66.09
+Kenya,2019,60,Male,63.7
+Kenya,2019,60,Female,68.44
+Kenya,2019,0,Both sexes,17.64
+Kenya,2019,0,Male,15.99
+Kenya,2019,0,Female,19.09
+Kenya,2015,60,Both sexes,64.17
+Kenya,2015,60,Male,61.71
+Kenya,2015,60,Female,66.62
+Kenya,2015,0,Both sexes,17.32
+Kenya,2015,0,Male,15.59
+Kenya,2015,0,Female,18.82
+Kenya,2010,60,Both sexes,61.18
+Kenya,2010,60,Male,59.23
+Kenya,2010,60,Female,63.07
+Kenya,2010,0,Both sexes,16.79
+Kenya,2010,0,Male,14.87
+Kenya,2010,0,Female,18.48
+Kenya,2000,60,Both sexes,53.87
+Kenya,2000,60,Male,52.85
+Kenya,2000,60,Female,54.91
+Kenya,2000,0,Both sexes,16.33
+Kenya,2000,0,Male,14.52
+Kenya,2000,0,Female,18.1
+Lesotho,2019,60,Both sexes,50.75
+Lesotho,2019,60,Male,47.66
+Lesotho,2019,60,Female,54.24
+Lesotho,2019,0,Both sexes,13.43
+Lesotho,2019,0,Male,11.22
+Lesotho,2019,0,Female,15.24
+Lesotho,2015,60,Both sexes,47.67
+Lesotho,2015,60,Male,45.07
+Lesotho,2015,60,Female,50.58
+Lesotho,2015,0,Both sexes,12.7
+Lesotho,2015,0,Male,10.67
+Lesotho,2015,0,Female,14.42
+Lesotho,2010,60,Both sexes,47.38
+Lesotho,2010,60,Male,44.5
+Lesotho,2010,60,Female,50.69
+Lesotho,2010,0,Both sexes,12.77
+Lesotho,2010,0,Male,10.57
+Lesotho,2010,0,Female,14.7
+Lesotho,2000,60,Both sexes,47.82
+Lesotho,2000,60,Male,45.53
+Lesotho,2000,60,Female,50.68
+Lesotho,2000,0,Both sexes,13.95
+Lesotho,2000,0,Male,10.99
+Lesotho,2000,0,Female,16.65
+Liberia,2019,60,Both sexes,64.08
+Liberia,2019,60,Male,63.15
+Liberia,2019,60,Female,65.0
+Liberia,2019,0,Both sexes,17.75
+Liberia,2019,0,Male,17.43
+Liberia,2019,0,Female,18.02
+Liberia,2015,60,Both sexes,61.17
+Liberia,2015,60,Male,60.65
+Liberia,2015,60,Female,61.68
+Liberia,2015,0,Both sexes,17.06
+Liberia,2015,0,Male,16.8
+Liberia,2015,0,Female,17.28
+Liberia,2010,60,Both sexes,60.7
+Liberia,2010,60,Male,60.07
+Liberia,2010,60,Female,61.32
+Liberia,2010,0,Both sexes,16.71
+Liberia,2010,0,Male,16.34
+Liberia,2010,0,Female,17.03
+Liberia,2000,60,Both sexes,53.77
+Liberia,2000,60,Male,52.89
+Liberia,2000,60,Female,54.67
+Liberia,2000,0,Both sexes,15.79
+Liberia,2000,0,Male,15.33
+Liberia,2000,0,Female,16.25
+Mongolia,2019,60,Both sexes,68.1
+Mongolia,2019,60,Male,63.82
+Mongolia,2019,60,Female,72.76
+Mongolia,2019,0,Both sexes,16.41
+Mongolia,2019,0,Male,14.16
+Mongolia,2019,0,Female,18.51
+Mongolia,2015,60,Both sexes,67.61
+Mongolia,2015,60,Male,63.45
+Mongolia,2015,60,Female,72.13
+Mongolia,2015,0,Both sexes,16.5
+Mongolia,2015,0,Male,14.5
+Mongolia,2015,0,Female,18.35
+Mongolia,2010,60,Both sexes,65.05
+Mongolia,2010,60,Male,61.09
+Mongolia,2010,60,Female,69.47
+Mongolia,2010,0,Both sexes,15.09
+Mongolia,2010,0,Male,13.27
+Mongolia,2010,0,Female,16.86
+Mongolia,2000,60,Both sexes,60.52
+Mongolia,2000,60,Male,57.34
+Mongolia,2000,60,Female,64.11
+Mongolia,2000,0,Both sexes,13.42
+Mongolia,2000,0,Male,12.0
+Mongolia,2000,0,Female,14.91
+Montenegro,2019,60,Both sexes,75.88
+Montenegro,2019,60,Male,73.15
+Montenegro,2019,60,Female,78.65
+Montenegro,2019,0,Both sexes,19.44
+Montenegro,2019,0,Male,17.44
+Montenegro,2019,0,Female,21.32
+Montenegro,2015,60,Both sexes,75.27
+Montenegro,2015,60,Male,72.83
+Montenegro,2015,60,Female,77.73
+Montenegro,2015,0,Both sexes,18.99
+Montenegro,2015,0,Male,17.25
+Montenegro,2015,0,Female,20.59
+Montenegro,2010,60,Both sexes,74.69
+Montenegro,2010,60,Male,72.27
+Montenegro,2010,60,Female,77.12
+Montenegro,2010,0,Both sexes,18.97
+Montenegro,2010,0,Male,17.47
+Montenegro,2010,0,Female,20.3
+Montenegro,2000,60,Both sexes,73.56
+Montenegro,2000,60,Male,70.88
+Montenegro,2000,60,Female,76.27
+Montenegro,2000,0,Both sexes,19.21
+Montenegro,2000,0,Male,17.65
+Montenegro,2000,0,Female,20.61
+Morocco,2019,60,Both sexes,72.99
+Morocco,2019,60,Male,71.68
+Morocco,2019,60,Female,74.31
+Morocco,2019,0,Both sexes,18.67
+Morocco,2019,0,Male,17.74
+Morocco,2019,0,Female,19.59
+Morocco,2015,60,Both sexes,72.46
+Morocco,2015,60,Male,71.37
+Morocco,2015,60,Female,73.55
+Morocco,2015,0,Both sexes,18.54
+Morocco,2015,0,Male,17.87
+Morocco,2015,0,Female,19.18
+Morocco,2010,60,Both sexes,71.6
+Morocco,2010,60,Male,71.07
+Morocco,2010,60,Female,72.27
+Morocco,2010,0,Both sexes,18.72
+Morocco,2010,0,Male,18.85
+Morocco,2010,0,Female,18.76
+Morocco,2000,60,Both sexes,69.35
+Morocco,2000,60,Male,68.06
+Morocco,2000,60,Female,70.59
+Morocco,2000,0,Both sexes,18.41
+Morocco,2000,0,Male,17.79
+Morocco,2000,0,Female,18.95
+Norway,2019,60,Both sexes,82.62
+Norway,2019,60,Male,81.08
+Norway,2019,60,Female,84.13
+Norway,2019,0,Both sexes,24.66
+Norway,2019,0,Male,23.47
+Norway,2019,0,Female,25.76
+Norway,2015,60,Both sexes,82.01
+Norway,2015,60,Male,80.26
+Norway,2015,60,Female,83.71
+Norway,2015,0,Both sexes,24.2
+Norway,2015,0,Male,22.84
+Norway,2015,0,Female,25.44
+Norway,2010,60,Both sexes,80.87
+Norway,2010,60,Male,78.83
+Norway,2010,60,Female,82.85
+Norway,2010,0,Both sexes,23.5
+Norway,2010,0,Male,21.89
+Norway,2010,0,Female,24.96
+Norway,2000,60,Both sexes,78.53
+Norway,2000,60,Male,75.86
+Norway,2000,60,Female,81.15
+Norway,2000,0,Both sexes,21.97
+Norway,2000,0,Male,19.98
+Norway,2000,0,Female,23.74
+Paraguay,2019,60,Both sexes,75.81
+Paraguay,2019,60,Male,73.08
+Paraguay,2019,60,Female,78.85
+Paraguay,2019,0,Both sexes,21.78
+Paraguay,2019,0,Male,20.15
+Paraguay,2019,0,Female,23.5
+Paraguay,2015,60,Both sexes,75.56
+Paraguay,2015,60,Male,72.83
+Paraguay,2015,60,Female,78.6
+Paraguay,2015,0,Both sexes,21.81
+Paraguay,2015,0,Male,20.25
+Paraguay,2015,0,Female,23.46
+Paraguay,2010,60,Both sexes,74.99
+Paraguay,2010,60,Male,72.47
+Paraguay,2010,60,Female,77.73
+Paraguay,2010,0,Both sexes,21.57
+Paraguay,2010,0,Male,20.17
+Paraguay,2010,0,Female,23.0
+Paraguay,2000,60,Both sexes,74.8
+Paraguay,2000,60,Male,72.57
+Paraguay,2000,60,Female,77.14
+Paraguay,2000,0,Both sexes,22.02
+Paraguay,2000,0,Male,20.72
+Paraguay,2000,0,Female,23.27
+Poland,2019,60,Both sexes,78.27
+Poland,2019,60,Male,74.53
+Poland,2019,60,Female,81.93
+Poland,2019,0,Both sexes,22.13
+Poland,2019,0,Male,19.52
+Poland,2019,0,Female,24.33
+Poland,2015,60,Both sexes,77.29
+Poland,2015,60,Male,73.36
+Poland,2015,60,Female,81.15
+Poland,2015,0,Both sexes,21.5
+Poland,2015,0,Male,18.83
+Poland,2015,0,Female,23.73
+Poland,2010,60,Both sexes,76.25
+Poland,2010,60,Male,72.08
+Poland,2010,60,Female,80.37
+Poland,2010,0,Both sexes,20.99
+Poland,2010,0,Male,18.24
+Poland,2010,0,Female,23.26
+Poland,2000,60,Both sexes,73.7
+Poland,2000,60,Male,69.51
+Poland,2000,60,Female,77.88
+Poland,2000,0,Both sexes,19.2
+Poland,2000,0,Male,16.53
+Poland,2000,0,Female,21.39
+Moldova,2019,60,Both sexes,73.26
+Moldova,2019,60,Male,69.26
+Moldova,2019,60,Female,77.12
+Moldova,2019,0,Both sexes,19.02
+Moldova,2019,0,Male,16.63
+Moldova,2019,0,Female,20.92
+Moldova,2015,60,Both sexes,71.13
+Moldova,2015,60,Male,67.19
+Moldova,2015,60,Female,75.05
+Moldova,2015,0,Both sexes,17.76
+Moldova,2015,0,Male,15.58
+Moldova,2015,0,Female,19.53
+Moldova,2010,60,Both sexes,68.81
+Moldova,2010,60,Male,64.62
+Moldova,2010,60,Female,73.11
+Moldova,2010,0,Both sexes,16.53
+Moldova,2010,0,Male,14.51
+Moldova,2010,0,Female,18.18
+Moldova,2000,60,Both sexes,66.87
+Moldova,2000,60,Male,63.15
+Moldova,2000,60,Female,70.53
+Moldova,2000,0,Both sexes,15.77
+Moldova,2000,0,Male,13.0
+Moldova,2000,0,Female,17.16
+Macedonia,2019,60,Both sexes,74.82
+Macedonia,2019,60,Male,72.84
+Macedonia,2019,60,Female,76.87
+Macedonia,2019,0,Both sexes,18.33
+Macedonia,2019,0,Male,16.97
+Macedonia,2019,0,Female,19.64
+Macedonia,2015,60,Both sexes,73.73
+Macedonia,2015,60,Male,71.67
+Macedonia,2015,60,Female,75.87
+Macedonia,2015,0,Both sexes,17.9
+Macedonia,2015,0,Male,16.57
+Macedonia,2015,0,Female,19.18
+Macedonia,2010,60,Both sexes,73.11
+Macedonia,2010,60,Male,70.92
+Macedonia,2010,60,Female,75.4
+Macedonia,2010,0,Both sexes,17.46
+Macedonia,2010,0,Male,16.11
+Macedonia,2010,0,Female,18.75
+Macedonia,2000,60,Both sexes,71.11
+Macedonia,2000,60,Male,68.86
+Macedonia,2000,60,Female,73.48
+Macedonia,2000,0,Both sexes,16.44
+Macedonia,2000,0,Male,15.17
+Macedonia,2000,0,Female,17.67
+Saint Lucia,2019,60,Both sexes,74.33
+Saint Lucia,2019,60,Male,71.3
+Saint Lucia,2019,60,Female,77.71
+Saint Lucia,2019,0,Both sexes,20.91
+Saint Lucia,2019,0,Male,19.16
+Saint Lucia,2019,0,Female,22.91
+Saint Lucia,2015,60,Both sexes,75.01
+Saint Lucia,2015,60,Male,71.82
+Saint Lucia,2015,60,Female,78.52
+Saint Lucia,2015,0,Both sexes,21.69
+Saint Lucia,2015,0,Male,19.8
+Saint Lucia,2015,0,Female,23.78
+Saint Lucia,2010,60,Both sexes,75.2
+Saint Lucia,2010,60,Male,71.86
+Saint Lucia,2010,60,Female,78.87
+Saint Lucia,2010,0,Both sexes,22.02
+Saint Lucia,2010,0,Male,19.92
+Saint Lucia,2010,0,Female,24.29
+Saint Lucia,2000,60,Both sexes,73.21
+Saint Lucia,2000,60,Male,70.31
+Saint Lucia,2000,60,Female,76.32
+Saint Lucia,2000,0,Both sexes,20.03
+Saint Lucia,2000,0,Male,18.5
+Saint Lucia,2000,0,Female,21.66
+Saudi Arabia,2019,60,Both sexes,74.31
+Saudi Arabia,2019,60,Male,73.11
+Saudi Arabia,2019,60,Female,76.15
+Saudi Arabia,2019,0,Both sexes,19.9
+Saudi Arabia,2019,0,Male,19.25
+Saudi Arabia,2019,0,Female,20.77
+Saudi Arabia,2015,60,Both sexes,73.15
+Saudi Arabia,2015,60,Male,71.73
+Saudi Arabia,2015,60,Female,75.25
+Saudi Arabia,2015,0,Both sexes,19.22
+Saudi Arabia,2015,0,Male,18.43
+Saudi Arabia,2015,0,Female,20.26
+Saudi Arabia,2010,60,Both sexes,71.76
+Saudi Arabia,2010,60,Male,70.39
+Saudi Arabia,2010,60,Female,73.67
+Saudi Arabia,2010,0,Both sexes,18.3
+Saudi Arabia,2010,0,Male,17.44
+Saudi Arabia,2010,0,Female,19.33
+Saudi Arabia,2000,60,Both sexes,70.52
+Saudi Arabia,2000,60,Male,69.59
+Saudi Arabia,2000,60,Female,71.62
+Saudi Arabia,2000,0,Both sexes,17.5
+Saudi Arabia,2000,0,Male,16.9
+Saudi Arabia,2000,0,Female,18.18
+Sudan,2019,60,Both sexes,69.15
+Sudan,2019,60,Male,67.55
+Sudan,2019,60,Female,70.76
+Sudan,2019,0,Both sexes,18.64
+Sudan,2019,0,Male,17.83
+Sudan,2019,0,Female,19.41
+Sudan,2015,60,Both sexes,67.94
+Sudan,2015,60,Male,66.19
+Sudan,2015,60,Female,69.71
+Sudan,2015,0,Both sexes,18.52
+Sudan,2015,0,Male,17.69
+Sudan,2015,0,Female,19.32
+Sudan,2010,60,Both sexes,66.56
+Sudan,2010,60,Male,64.74
+Sudan,2010,60,Female,68.41
+Sudan,2010,0,Both sexes,18.21
+Sudan,2010,0,Male,17.31
+Sudan,2010,0,Female,19.07
+Sudan,2000,60,Both sexes,62.47
+Sudan,2000,60,Male,60.36
+Sudan,2000,60,Female,64.67
+Sudan,2000,0,Both sexes,17.27
+Sudan,2000,0,Male,16.19
+Sudan,2000,0,Female,18.33
+Syria,2019,60,Both sexes,72.67
+Syria,2019,60,Male,71.18
+Syria,2019,60,Female,74.26
+Syria,2019,0,Both sexes,18.72
+Syria,2019,0,Male,18.22
+Syria,2019,0,Female,19.28
+Syria,2015,60,Both sexes,64.4
+Syria,2015,60,Male,60.88
+Syria,2015,60,Female,68.37
+Syria,2015,0,Both sexes,16.23
+Syria,2015,0,Male,15.49
+Syria,2015,0,Female,16.99
+Syria,2010,60,Both sexes,74.35
+Syria,2010,60,Male,73.2
+Syria,2010,60,Female,75.63
+Syria,2010,0,Both sexes,19.21
+Syria,2010,0,Male,18.89
+Syria,2010,0,Female,19.63
+Syria,2000,60,Both sexes,71.46
+Syria,2000,60,Male,70.35
+Syria,2000,60,Female,72.71
+Syria,2000,0,Both sexes,17.63
+Syria,2000,0,Male,17.41
+Syria,2000,0,Female,17.98
+Tonga,2019,60,Both sexes,72.57
+Tonga,2019,60,Male,69.81
+Tonga,2019,60,Female,75.61
+Tonga,2019,0,Both sexes,19.03
+Tonga,2019,0,Male,17.04
+Tonga,2019,0,Female,21.16
+Tonga,2015,60,Both sexes,72.33
+Tonga,2015,60,Male,69.45
+Tonga,2015,60,Female,75.54
+Tonga,2015,0,Both sexes,18.89
+Tonga,2015,0,Male,16.82
+Tonga,2015,0,Female,21.14
+Tonga,2010,60,Both sexes,72.22
+Tonga,2010,60,Male,69.14
+Tonga,2010,60,Female,75.5
+Tonga,2010,0,Both sexes,18.93
+Tonga,2010,0,Male,16.66
+Tonga,2010,0,Female,21.21
+Tonga,2000,60,Both sexes,70.92
+Tonga,2000,60,Male,68.04
+Tonga,2000,60,Female,74.2
+Tonga,2000,0,Both sexes,17.99
+Tonga,2000,0,Male,15.5
+Tonga,2000,0,Female,20.79
+United States,2019,60,Both sexes,78.5
+United States,2019,60,Male,76.28
+United States,2019,60,Female,80.73
+United States,2019,0,Both sexes,23.13
+United States,2019,0,Male,21.78
+United States,2019,0,Female,24.38
+United States,2015,60,Both sexes,78.56
+United States,2015,60,Male,76.31
+United States,2015,60,Female,80.8
+United States,2015,0,Both sexes,23.11
+United States,2015,0,Male,21.72
+United States,2015,0,Female,24.37
+United States,2010,60,Both sexes,78.56
+United States,2010,60,Male,76.27
+United States,2010,60,Female,80.8
+United States,2010,0,Both sexes,22.96
+United States,2010,0,Male,21.54
+United States,2010,0,Female,24.21
+United States,2000,60,Both sexes,76.69
+United States,2000,60,Male,74.12
+United States,2000,60,Female,79.17
+United States,2000,0,Both sexes,21.41
+United States,2000,0,Male,19.77
+United States,2000,0,Female,22.8
+Venezuela,2019,60,Both sexes,73.95
+Venezuela,2019,60,Male,69.91
+Venezuela,2019,60,Female,78.17
+Venezuela,2019,0,Both sexes,21.69
+Venezuela,2019,0,Male,19.67
+Venezuela,2019,0,Female,23.6
+Venezuela,2015,60,Both sexes,74.66
+Venezuela,2015,60,Male,70.59
+Venezuela,2015,60,Female,78.97
+Venezuela,2015,0,Both sexes,21.84
+Venezuela,2015,0,Male,19.89
+Venezuela,2015,0,Female,23.69
+Venezuela,2010,60,Both sexes,74.79
+Venezuela,2010,60,Male,70.82
+Venezuela,2010,60,Female,78.99
+Venezuela,2010,0,Both sexes,21.89
+Venezuela,2010,0,Male,20.03
+Venezuela,2010,0,Female,23.64
+Venezuela,2000,60,Both sexes,74.09
+Venezuela,2000,60,Male,70.51
+Venezuela,2000,60,Female,77.88
+Venezuela,2000,0,Both sexes,21.26
+Venezuela,2000,0,Male,19.55
+Venezuela,2000,0,Female,22.88

@@ -25,8 +25,8 @@ def covid():
                     outfile.write(country + "," + header[i].rstrip("\n") + "," + el.rstrip("\n") + "\n")
 
 def filterCountries(fn):
-    filterDF = pd.read_csv(fn)
-    countriesDF = pd.read_csv(os.path.join("processed", "Countries.csv"))
+    filterDF = pd.read_csv("{}.csv".format(fn), names=['country', 'x', 'y'])
+    countriesDF = pd.read_csv(os.path.join("small", "Countries.csv"), names=['country', 'latitude', 'longitude'])
 
     filterCountries = filterDF["country"].tolist()
     realCountries= countriesDF["country"].tolist()
@@ -35,12 +35,12 @@ def filterCountries(fn):
 
     filterDF = filterDF[~filterDF['country'].isin(popDiff)]
 
-    filterDF.to_csv(fn, index = False)
+    filterDF.to_csv("{}-small.txt".format(fn), index = False)
 
 
 def filterCountriesVerifier(fn):
-    filterDF = pd.read_csv(fn)
-    countriesDF = pd.read_csv(os.path.join("processed", "Countries.csv"))
+    filterDF = pd.read_csv(fn, names=['country', 'x'])
+    countriesDF = pd.read_csv(os.path.join("small", "Countries.csv"), names=['country', 'latitude', 'longitude'])
 
     filterCountries = filterDF["country"].tolist()
     realCountries= countriesDF["country"].tolist()
@@ -53,5 +53,5 @@ def filterCountriesVerifier(fn):
         print(country, difflib.get_close_matches(country, countryDiff), difflib.get_close_matches(country.split()[0], countryDiff), "\n")
 
 # covid()
-filterCountries(os.path.join("original", "regions.csv"))
+filterCountries(os.path.join("small", "democracies"))
     

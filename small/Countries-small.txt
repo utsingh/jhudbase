@@ -1,0 +1,50 @@
+Montenegro,42.4397,19.2661
+Eritrea,15.3333,38.9167
+Mongolia,47.9203,106.9172
+Canada Nova Scotia,44.682,-63.7443
+Canada Repatriated Travellers,43.7417,-79.3733
+Norway,59.9111,10.7528
+Saint Lucia,14.0167,-60.9833
+Saint Kitts And Nevis,17.2983,-62.7342
+Isle Of Man,54.15,-4.4819
+China Hebei,39.549,116.1306
+United Kingdom Cayman Islands,19.3133,-81.2546
+Tonga,-21.1347,-175.2083
+United States,40.6943,-73.9249
+Canada Prince Edward Island,46.5107,-63.4168
+Saudi Arabia,24.65,46.71
+China Xinjiang,41.1129,85.2401
+Haiti,18.5425,-72.3386
+Venezuela,10.5,-66.9333
+Afghanistan,34.5328,69.1658
+Gabon,0.3901,9.4544
+Liberia,6.3106,-10.8047
+Poland,52.2167,21.0333
+Morocco,33.5992,-7.62
+China Hong Kong,22.3,114.2
+Kenya,-1.2864,36.8172
+Lesotho,-29.31,27.48
+Austria,48.2083,16.3731
+Canada Northwest Territories,64.8255,-124.8457
+Belize,17.25,-88.7675
+Sudan,15.6031,32.5265
+Colombia,4.6126,-74.0705
+Bermuda,32.2942,-64.7839
+Denmark Greenland,71.7069,-42.6043
+Moldova,47.0056,28.8575
+United Kingdom MAINLAND,55.3781,-3.436
+Ethiopia,9.0272,38.7369
+Cabo Verde,14.9177,-23.5092
+Jordan,31.95,35.9333
+Paraguay,-25.3,-57.6333
+China Shanxi,37.5777,112.2922
+Finland,60.1756,24.9342
+Syria,36.2,37.15
+United Kingdom Gibraltar,36.1408,-5.3536
+China Sichuan,30.6171,102.7103
+Angola,-8.8383,13.2344
+Bangladesh,23.7161,90.3961
+Egypt,30.0561,31.2394
+Macedonia,41.9833,21.4333
+Dominican Republic,18.4764,-69.8933
+China Tianjin,39.3054,117.323

@@ -1,0 +1,400 @@
+Afghanistan,2019,14.48
+Afghanistan,2018,22.55
+Afghanistan,2017,20.54
+Afghanistan,2016,23.52
+Afghanistan,2015,13.38
+Afghanistan,2014,9.88
+Afghanistan,2013,7.28
+Afghanistan,2012,9.19
+Afghanistan,2011,15.61
+Afghanistan,2010,12.91
+Afghanistan,2009,12.54
+Afghanistan,2008,17.84
+Afghanistan,2007,21.67
+Afghanistan,2006,20.53
+Afghanistan,2005,27.08
+Afghanistan,2004,37.64
+Afghanistan,2003,68.41
+Afghanistan,2002,79.86
+Afghanistan,2001,79.25
+Afghanistan,2000,82.41
+Angola,2019,235.2
+Angola,2018,227.4
+Angola,2017,216.3
+Angola,2016,205.5
+Angola,2015,189.0
+Angola,2014,179.2
+Angola,2013,172.0
+Angola,2012,165.5
+Angola,2011,166.4
+Angola,2010,175.9
+Angola,2009,193.8
+Angola,2008,227.9
+Angola,2007,272.4
+Angola,2006,302.0
+Angola,2005,317.9
+Angola,2004,317.0
+Angola,2003,312.8
+Angola,2002,309.7
+Angola,2001,325.6
+Angola,2000,321.8
+Bangladesh,2019,1.21
+Bangladesh,2018,0.73
+Bangladesh,2017,2.02
+Bangladesh,2016,1.93
+Bangladesh,2015,2.76
+Bangladesh,2014,3.3
+Bangladesh,2013,1.54
+Bangladesh,2012,2.2
+Bangladesh,2011,3.95
+Bangladesh,2010,4.33
+Bangladesh,2009,8.17
+Bangladesh,2008,7.8
+Bangladesh,2007,4.89
+Bangladesh,2006,4.52
+Bangladesh,2005,5.75
+Bangladesh,2004,5.75
+Bangladesh,2003,5.75
+Bangladesh,2002,5.75
+Bangladesh,2001,5.75
+Bangladesh,2000,5.75
+Belize,2019,0.0
+Belize,2018,0.011000000000000001
+Belize,2017,0.027000000000000003
+Belize,2016,0.016
+Belize,2015,0.036000000000000004
+Belize,2014,0.078
+Belize,2013,0.084
+Belize,2012,0.14
+Belize,2011,0.32
+Belize,2010,0.67
+Belize,2009,1.18
+Belize,2008,2.55
+Belize,2007,4.1
+Belize,2006,4.2
+Belize,2005,7.91
+Belize,2004,5.6
+Belize,2003,5.83
+Belize,2002,6.26
+Belize,2001,6.6
+Belize,2000,8.71
+Cabo Verde,2019,0.0
+Cabo Verde,2018,0.013999999999999999
+Cabo Verde,2017,3.03
+Cabo Verde,2016,0.35
+Cabo Verde,2015,0.051
+Cabo Verde,2014,0.19
+Cabo Verde,2013,0.17
+Cabo Verde,2012,0.008
+Cabo Verde,2011,0.054000000000000006
+Cabo Verde,2010,0.37
+Cabo Verde,2009,0.51
+Cabo Verde,2008,0.28
+Cabo Verde,2007,0.15
+Cabo Verde,2006,0.66
+Cabo Verde,2005,0.56
+Cabo Verde,2004,0.38
+Cabo Verde,2003,0.58
+Cabo Verde,2002,0.66
+Cabo Verde,2001,0.94
+Cabo Verde,2000,1.29
+Colombia,2019,10.7
+Colombia,2018,8.5
+Colombia,2017,6.82
+Colombia,2016,10.83
+Colombia,2015,6.33
+Colombia,2014,5.48
+Colombia,2013,7.02
+Colombia,2012,8.25
+Colombia,2011,8.32
+Colombia,2010,16.43
+Colombia,2009,11.16
+Colombia,2008,11.41
+Colombia,2007,18.34
+Colombia,2006,17.3
+Colombia,2005,17.68
+Colombia,2004,21.2
+Colombia,2003,27.68
+Colombia,2002,32.2
+Colombia,2001,37.37
+Colombia,2000,24.02
+Dominican Republic,2019,0.27
+Dominican Republic,2018,0.13
+Dominican Republic,2017,0.085
+Dominican Republic,2016,0.15
+Dominican Republic,2015,0.14
+Dominican Republic,2014,0.1
+Dominican Republic,2013,0.14
+Dominican Republic,2012,0.23
+Dominican Republic,2011,0.39
+Dominican Republic,2010,0.6
+Dominican Republic,2009,0.4
+Dominican Republic,2008,0.45
+Dominican Republic,2007,0.68
+Dominican Republic,2006,0.89
+Dominican Republic,2005,0.99
+Dominican Republic,2004,0.62
+Dominican Republic,2003,0.41
+Dominican Republic,2002,0.35
+Dominican Republic,2001,0.28
+Dominican Republic,2000,0.33
+Egypt,2019,0.0
+Egypt,2018,0.0
+Egypt,2017,0.0
+Egypt,2016,0.0
+Egypt,2015,0.0
+Egypt,2014,0.0
+Egypt,2013,0.0
+Egypt,2012,0.0
+Egypt,2011,0.0
+Egypt,2010,0.0
+Egypt,2009,0.0
+Egypt,2008,0.0
+Egypt,2007,0.0
+Egypt,2006,0.0
+Egypt,2005,0.0
+Egypt,2004,0.0
+Egypt,2003,0.0
+Egypt,2002,0.0
+Egypt,2001,0.0
+Egypt,2000,0.0
+Eritrea,2019,57.3
+Eritrea,2018,28.88
+Eritrea,2017,33.97
+Eritrea,2016,25.64
+Eritrea,2015,19.2
+Eritrea,2014,33.12
+Eritrea,2013,15.03
+Eritrea,2012,16.15
+Eritrea,2011,23.86
+Eritrea,2010,26.33
+Eritrea,2009,8.86
+Eritrea,2008,6.78
+Eritrea,2007,12.54
+Eritrea,2006,5.63
+Eritrea,2005,9.79
+Eritrea,2004,5.55
+Eritrea,2003,19.03
+Eritrea,2002,13.23
+Eritrea,2001,22.93
+Eritrea,2000,18.34
+Ethiopia,2019,34.31
+Ethiopia,2018,37.61
+Ethiopia,2017,48.23
+Ethiopia,2016,55.21
+Ethiopia,2015,72.18
+Ethiopia,2014,80.18
+Ethiopia,2013,161.9
+Ethiopia,2012,168.6
+Ethiopia,2011,168.5
+Ethiopia,2010,185.8
+Ethiopia,2009,170.7
+Ethiopia,2008,121.2
+Ethiopia,2007,157.0
+Ethiopia,2006,185.6
+Ethiopia,2005,195.5
+Ethiopia,2004,276.9
+Ethiopia,2003,219.1
+Ethiopia,2002,175.1
+Ethiopia,2001,180.7
+Ethiopia,2000,157.3
+Gabon,2019,211.9
+Gabon,2018,223.5
+Gabon,2017,236.2
+Gabon,2016,253.3
+Gabon,2015,265.4
+Gabon,2014,264.6
+Gabon,2013,250.8
+Gabon,2012,220.6
+Gabon,2011,185.3
+Gabon,2010,153.8
+Gabon,2009,127.4
+Gabon,2008,109.3
+Gabon,2007,107.9
+Gabon,2006,121.7
+Gabon,2005,143.8
+Gabon,2004,175.8
+Gabon,2003,229.6
+Gabon,2002,274.8
+Gabon,2001,306.9
+Gabon,2000,324.5
+Haiti,2019,1.43
+Haiti,2018,1.29
+Haiti,2017,2.95
+Haiti,2016,3.98
+Haiti,2015,3.44
+Haiti,2014,3.49
+Haiti,2013,5.31
+Haiti,2012,6.53
+Haiti,2011,9.03
+Haiti,2010,9.59
+Haiti,2009,9.59
+Haiti,2008,10.39
+Haiti,2007,8.64
+Haiti,2006,9.73
+Haiti,2005,9.59
+Haiti,2004,9.59
+Haiti,2003,9.59
+Haiti,2002,9.59
+Haiti,2001,9.59
+Haiti,2000,9.59
+Kenya,2019,57.05
+Kenya,2018,60.05
+Kenya,2017,62.2
+Kenya,2016,64.48
+Kenya,2015,65.96
+Kenya,2014,66.71
+Kenya,2013,66.81
+Kenya,2012,64.75
+Kenya,2011,62.77
+Kenya,2010,61.8
+Kenya,2009,61.13
+Kenya,2008,65.26
+Kenya,2007,79.35
+Kenya,2006,103.8
+Kenya,2005,137.8
+Kenya,2004,179.8
+Kenya,2003,211.3
+Kenya,2002,224.9
+Kenya,2001,246.2
+Kenya,2000,221.8
+Liberia,2019,366.6
+Liberia,2018,370.0
+Liberia,2017,380.2
+Liberia,2016,368.0
+Liberia,2015,354.5
+Liberia,2014,353.4
+Liberia,2013,333.4
+Liberia,2012,315.9
+Liberia,2011,319.5
+Liberia,2010,329.6
+Liberia,2009,351.6
+Liberia,2008,375.7
+Liberia,2007,385.3
+Liberia,2006,393.8
+Liberia,2005,403.7
+Liberia,2004,412.0
+Liberia,2003,429.1
+Liberia,2002,443.8
+Liberia,2001,456.7
+Liberia,2000,459.8
+Morocco,2019,0.0
+Morocco,2018,0.0
+Morocco,2017,0.0
+Morocco,2016,0.0
+Morocco,2015,0.0
+Morocco,2014,0.0
+Morocco,2013,0.0
+Morocco,2012,0.0
+Morocco,2011,0.0
+Morocco,2010,0.0
+Morocco,2009,0.0
+Morocco,2008,0.0
+Morocco,2007,0.0
+Morocco,2006,0.0
+Morocco,2005,0.0
+Morocco,2004,0.0
+Morocco,2003,0.0001
+Morocco,2002,0.0007
+Morocco,2001,0.0
+Morocco,2000,0.0001
+Paraguay,2019,0.0
+Paraguay,2018,0.0
+Paraguay,2017,0.0
+Paraguay,2016,0.0
+Paraguay,2015,0.0
+Paraguay,2014,0.0
+Paraguay,2013,0.0
+Paraguay,2012,0.0
+Paraguay,2011,0.004
+Paraguay,2010,0.08
+Paraguay,2009,0.41
+Paraguay,2008,1.59
+Paraguay,2007,6.21
+Paraguay,2006,3.87
+Paraguay,2005,1.79
+Paraguay,2004,3.36
+Paraguay,2003,6.86
+Paraguay,2002,13.95
+Paraguay,2001,13.87
+Paraguay,2000,35.76
+Saudi Arabia,2019,0.013999999999999999
+Saudi Arabia,2018,0.023
+Saudi Arabia,2017,0.067
+Saudi Arabia,2016,0.1
+Saudi Arabia,2015,0.033
+Saudi Arabia,2014,0.012
+Saudi Arabia,2013,0.013999999999999999
+Saudi Arabia,2012,0.035
+Saudi Arabia,2011,0.03
+Saudi Arabia,2010,0.013000000000000001
+Saudi Arabia,2009,0.027000000000000003
+Saudi Arabia,2008,0.028999999999999998
+Saudi Arabia,2007,0.23
+Saudi Arabia,2006,0.65
+Saudi Arabia,2005,0.56
+Saudi Arabia,2004,0.66
+Saudi Arabia,2003,0.96
+Saudi Arabia,2002,1.5
+Saudi Arabia,2001,1.81
+Saudi Arabia,2000,3.99
+Sudan,2019,55.43
+Sudan,2018,51.24
+Sudan,2017,46.11
+Sudan,2016,47.05
+Sudan,2015,38.14
+Sudan,2014,35.46
+Sudan,2013,32.79
+Sudan,2012,31.65
+Sudan,2011,31.83
+Sudan,2010,32.22
+Sudan,2009,33.92
+Sudan,2008,38.42
+Sudan,2007,46.66
+Sudan,2006,52.85
+Sudan,2005,54.94
+Sudan,2004,55.58
+Sudan,2003,61.58
+Sudan,2002,67.13
+Sudan,2001,88.84
+Sudan,2000,94.39
+Syria,2019,0.0
+Syria,2018,0.0
+Syria,2017,0.0
+Syria,2016,0.0
+Syria,2015,0.0
+Syria,2014,0.0
+Syria,2013,0.0
+Syria,2012,0.0
+Syria,2011,0.0
+Syria,2010,0.0
+Syria,2009,0.0
+Syria,2008,0.0
+Syria,2007,0.0
+Syria,2006,0.0
+Syria,2005,0.0
+Syria,2004,0.0001
+Syria,2003,0.0001
+Syria,2002,0.0009
+Syria,2001,0.004
+Syria,2000,0.0004
+Venezuela,2019,32.78
+Venezuela,2018,32.9
+Venezuela,2017,32.83
+Venezuela,2016,18.89
+Venezuela,2015,10.62
+Venezuela,2014,7.06
+Venezuela,2013,6.19
+Venezuela,2012,4.21
+Venezuela,2011,3.71
+Venezuela,2010,4.07
+Venezuela,2009,2.99
+Venezuela,2008,2.71
+Venezuela,2007,3.59
+Venezuela,2006,3.25
+Venezuela,2005,4.01
+Venezuela,2004,4.23
+Venezuela,2003,2.94
+Venezuela,2002,2.79
+Venezuela,2001,1.93
+Venezuela,2000,2.94

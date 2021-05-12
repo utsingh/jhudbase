@@ -1,0 +1,29 @@
+Norway,Western Europe
+Finland,Western Europe
+Austria,Western Europe
+United States,North America
+Cabo Verde,Sub-Saharan Africa
+Colombia,Latin America & the Caribbean
+Poland,Eastern Europe
+Lesotho,Sub-Saharan Africa
+Dominican Republic,Latin America & the Caribbean
+Mongolia,Asia & Australasia
+Paraguay,Latin America & the Caribbean
+Bangladesh,Asia & Australasia
+Moldova,Eastern Europe
+Montenegro,Eastern Europe
+Liberia,Sub-Saharan Africa
+Kenya,Sub-Saharan Africa
+Morocco,Middle East & North Africa
+Haiti,Latin America & the Caribbean
+Jordan,Middle East & North Africa
+Angola,Sub-Saharan Africa
+Gabon,Sub-Saharan Africa
+Ethiopia,Sub-Saharan Africa
+Egypt,Middle East & North Africa
+Venezuela,Latin America & the Caribbean
+Afghanistan,Asia & Australasia
+Sudan,Middle East & North Africa
+Eritrea,Sub-Saharan Africa
+Saudi Arabia,Middle East & North Africa
+Syria,Middle East & North Africa
